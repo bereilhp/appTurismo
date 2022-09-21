@@ -9,63 +9,63 @@ A continuación se desglosan los requisitos en los tres grandes bloques que comp
 
 ### Itinerarios
 
-Clasificación de todos los sitios de interés (etiquetado)
+- Clasificación de todos los sitios de interés (etiquetado)
 
-Creación de los itinerarios en función de los días disponibles, gustos personales del usuario y previsión del tiempo
+- Creación de los itinerarios en función de los días disponibles, gustos personales del usuario y previsión del tiempo
 
-Sugerencia de nuevos sitios de interés en función de los gustos del usuario
+- Sugerencia de nuevos sitios de interés en función de los gustos del usuario
 
-Previsión del tiempo actual para cada día del itinerario
+- Previsión del tiempo actual para cada día del itinerario
 
-Recomendación de eventos, en función de los días de la estancia del usuario
+- Recomendación de eventos, en función de los días de la estancia del usuario
 
 ### Mapa
 
-Creación de los itinerarios del punto anterior en el mapa
+- Creación de los itinerarios del punto anterior en el mapa
 
-Creación de rutas ajustadas al usuario por su geolocalización y duración deseada
+- Creación de rutas ajustadas al usuario por su geolocalización y duración deseada
 
-Localización de los sitios de interés con marcadores distintivos en función de la temática sobre el mapa 
+- Localización de los sitios de interés con marcadores distintivos en función de la temática sobre el mapa 
 
-Establecimiento de filtros sobre el mapa: deportivo, musical, restaurantes típicos, cines, alojamientos, ocio nocturno.
+- Establecimiento de filtros sobre el mapa: deportivo, musical, restaurantes típicos, cines, alojamientos, ocio nocturno.
 
-Filtrar restaurantes en función de sus platos estrella/típicos 
+- Filtrar restaurantes en función de sus platos estrella/típicos 
 
-Filtrar discotecas en función de tipo de música, precio, popularidad
+- Filtrar discotecas en función de tipo de música, precio, popularidad
 
-Establecer un semáforo de colores, en función de la seguridad de los barrios, sobre el mapa 
+- Establecer un semáforo de colores, en función de la seguridad de los barrios, sobre el mapa 
 
-Establecer las zonas sobre el mapa que tienen wifi gratis 
+- Establecer las zonas sobre el mapa que tienen wifi gratis 
 
-Recomendaciones para comer situadas en la ruta turística 
+- Recomendaciones para comer situadas en la ruta turística 
 
-Recomendaciones de actividades culturales y turisticas en el mismo camino de la ruta 
+- Recomendaciones de actividades culturales y turisticas en el mismo camino de la ruta 
 
-Recomendar rutas alternativas dependiendo del clima o imprevistos 
+- Recomendar rutas alternativas dependiendo del clima o imprevistos 
 
-Suministrar información al usuario con geolocalización en formato audio  
+- Suministrar información al usuario con geolocalización en formato audio  
 
-Generación de rutas eficientes combinando opciones de transporte público y privado
+- Generación de rutas eficientes combinando opciones de transporte público y privado
 
-Notificaciones en tiempo real sobre transporte público y privado
+- Notificaciones en tiempo real sobre transporte público y privado
 
-Alquiler de car sharing, patinetes y motos de nuestra empresa
+- Alquiler de car sharing, patinetes y motos de nuestra empresa
 
-Comprobar disponibilidad o reservar parking en la ciudad
+- Comprobar disponibilidad o reservar parking en la ciudad
 
 ### Información turística
 
-Contar con las bases de datos necesarias para almacenar la información turística 
+- Contar con las bases de datos necesarias para almacenar la información turística 
 
-Visualizar la aplicación en cualquier idioma
+- Visualizar la aplicación en cualquier idioma
 
-Establecer alertas si se encuentra en una zona peligrosa, alteraciones en el clima y modificaciones o cancelaciones de transportes 
+- Establecer alertas si se encuentra en una zona peligrosa, alteraciones en el clima y modificaciones o cancelaciones de transportes 
 
-Noticias que pueden impactar en la estancia del turista, adaptadas a la ciudad en la que se encuentra
+- Noticias que pueden impactar en la estancia del turista, adaptadas a la ciudad en la que se encuentra
 
-Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar. En el caso de los restaurantes, pedir comida a domicilio
+- Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar. En el caso de los restaurantes, pedir comida a domicilio
 
-Acompañar los sitios de interes de una descripción básica, junto con reseñas y valoraciones de otros usuarios
+- Acompañar los sitios de interes de una descripción básica, junto con reseñas y valoraciones de otros usuarios
 
-Conversor de moneda
+- Conversor de moneda
 
