@@ -1,4 +1,4 @@
-# appTurismo
+# MadWay 
 
 Esta aplicación se enfoca en los turistas a corto plazo que visitan nuestra ciudad, para proporcionarles una experiencia inolvidable. 
 Desde proporcionar itinerarios y rutas en función de los gustos del usuario y su disponibilidad, hasta proporcionarte cualquier tipo de información útil para un viajero.  
@@ -31,23 +31,27 @@ Establecimiento de filtros sobre el mapa: deportivo, musical, restaurantes típi
 
 Filtrar restaurantes en función de sus platos estrella/típicos 
 
+Filtrar discotecas en función de tipo de música, precio, popularidad
+
 Establecer un semáforo de colores, en función de la seguridad de los barrios, sobre el mapa 
 
 Establecer las zonas sobre el mapa que tienen wifi gratis 
 
-Localización de los monumentos con marcadores sobre el mapa 
-
 Recomendaciones para comer situadas en la ruta turística 
+
+Recomendaciones de actividades culturales y turisticas en el mismo camino de la ruta 
 
 Recomendar rutas alternativas dependiendo del clima o imprevistos 
 
+Suministrar información al usuario con geolocalización en formato audio  
 
+Generación de rutas eficientes combinando opciones de transporte público y privado
 
-Historia del lugar donde te encuentras y con text to speech ?
+Notificaciones en tiempo real sobre transporte público y privado
 
-Mostrar opciones y costos de transportes de la ruta ?
+Alquiler de car sharing, patinetes y motos de nuestra empresa
 
-Costos de transporte privado y conexión a el pedido de este ? 
+Comprobar disponibilidad o reservar parking en la ciudad
 
 ### Información turística
 
@@ -57,11 +61,11 @@ Visualizar la aplicación en cualquier idioma
 
 Establecer alertas si se encuentra en una zona peligrosa, alteraciones en el clima y modificaciones o cancelaciones de transportes 
 
-Recomendaciones de lugares, actividades en el mismo camino de la ruta 
-
-Noticias que pueden impactar en la estancia del turista, adaptadas a la ciudad en al que se encuentra
+Noticias que pueden impactar en la estancia del turista, adaptadas a la ciudad en la que se encuentra
 
 Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar. En el caso de los restaurantes, pedir comida a domicilio
 
-Acompañar los monumentos de una descripción básica, junto con reseñas y valoraciones de otros usuarios
+Acompañar los sitios de interes de una descripción básica, junto con reseñas y valoraciones de otros usuarios
+
+Conversor de moneda
 
