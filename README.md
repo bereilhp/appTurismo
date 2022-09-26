@@ -129,5 +129,4 @@ P- Creación de los itinerarios del punto anterior en el mapa
         -Node.js
 - Base de datos relacionales SQL
 - 100 solicitudes por minuto
-- 
   
