@@ -10,7 +10,10 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 ### Itinerarios
 
 - Clasificación de todos los sitios de interés almacenados en la aplicación, a través de la asignación de una o múltiples etiquetas representativas de dicho lugar. 
-    - Criterio de validación:  todos los sitios de interés deberán estar asociados, como mínimo, a una etiqueta, siendo nulos los que estén asociados a la etiqueta “sin etiqueta”. 
+    - Criterio de validación: todos los sitios de interés deberán estar asociados, como mínimo, a una etiqueta, siendo nulos los que estén asociados a la etiqueta “sin etiqueta”. 
+    
+- Definición de una afinidad para cada uno de los sitios de interés almacenados en la aplicación, extraidos a partir de la similitud de etiquetas de los sitios de interés visitados.
+    - Criterio de validación: la afinidad establecida tenga una relacion con las etiquetas asociadas a los sitios más visitados, a través de las sugerencias.
 
 - Creación de itinerarios turísticos ajustados a la situación de cada usuario y del clima. Los parámetros para su creación son: los días de la estancia del visitante, sus gustos personales y previsión del tiempo durante los días seleccionados. Resaltar que el único parámetro especificado por el usuario es el número de días disponibles. 
     - Criterio de validación: tras un día de uso de la aplicación, solicitar la creación de un itinerario, en el cual solo se debe especificar los días de visita. Si el usuario considera que el itinerario sugerido lo realizaría teniendo en cuenta la climatología prevista, sus intereses en la ciudad y la duración, será validado.
@@ -22,15 +25,15 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
     -  Criterio de validación: mostrar al usuario el perfil creado por la aplicación, para comprobar si es acertado en sus intereses y zonas sugeridas.  
 
 - Sugerencia de sitios de interés, en función de los gustos del usuario, que queden fuera del itinerario definido. Permite mostrar otros lugares de interés para el usuario, con un nivel de afinidad inferior a los incluidos en la ruta. 
-    - Criterio de validación: mostrar las sugerencias de sitios de interés al usuario y confirmar si realizaría al menos la mitad de ellas, solo teniendo en cuenta la afinidad y no el tiempo disponible para realizarla. 
+    - Criterio de validación: mostrar las sugerencias de sitios de interés al usuario que este realizaría, solo teniendo en cuenta la afinidad y no el tiempo disponible para realizarla. 
 
 - Elaboración de una lista de eventos y/o actividades clásicas o puntuales que se van a realizar en el próximo mes, mostrando al usuario solo las que coincidan con su estancia, proporcionando: el nombre, la ubicación, una descripción básica y opcionalmente el precio. 
     - Criterio de validación: una lista de eventos y/o actividades almacenados con un horizonte temporal de un mes, que nunca esté vacía. 
 
 ### Mapa
 
-- Creación de los itinerarios del punto anterior en el mapa
-    - Criterios de validación:     
+P- Creación de los itinerarios del punto anterior en el mapa
+    - Criterios de validación: si la ruta trazada incluye todos los sitios de interés definidos en el itinerario, sera válido. 
 
 - Creación de rutas ajustadas al usuario por su geolocalización y duración deseada
     - Criterio de validación: mostrar las rutas al usuario y comprobar que el comienzo de la ruta coincida con la localización del usuario y que su duración sea la establecida.
@@ -39,21 +42,22 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
     - Criterios de validación: mostrar al usuario todos los sitios de interés en el mapa y comprobar que cada sitio muestre el distintivo en función de su temática.
 
 - Establecimiento de filtros sobre el mapa: deportivo, musical, restaurantes típicos, cines, alojamientos, ocio nocturno.
-    - Criterios de validación: mostrar al usuario los establecimientos y comprobar que solo aparezcan los establecimeintos de la temática escogida.
+    - Criterios de validación: mostrar al usuario los establecimientos y comprobar que solo aparezcan los establecimeintos de las temáticas escogidas.
 
-- Filtrar restaurantes en función de sus platos estrella/típicos 
-    - Criterios de validación: mostrar al usuario en el mapa todos los restaurantes, para comprobar si reservaría al menos en la mitad. 
+- Filtrar restaurantes en función del tipo de comida 
+    - Criterios de validación: mostrar al usuario en el mapa todos los restaurantes relacionados con el tipo de comida seleccionado. 
 
 - Filtrar discotecas en función de tipo de música, precio, popularidad
-    -  Criterios de validación: mostrar al usuario en el mapa todos las discotecas y comprobar si coincide con sus gustos.
+    -  Criterios de validación: mostrar al usuario en el mapa todos las discotecas filtrando por cualquier combinación de los criterios.
 
-- Establecer un semáforo de colores, en función de la seguridad de los barrios, sobre el mapa 
-    - Criterios de validación: mostrar en el mapa el color del semaforo por cada barrio y comprobar que el color de un determinado barrio coincide con el grado de seguridad del mismo. 
+- Establecer un semaforo de colores, en función de la seguridad de los barrios, sobre el mapa 
+    - Criterios de validación: mostrar en el mapa los barrios coloreados en función del grado de seguridad del mismo. 
 
-- Establecer las zonas sobre el mapa que tienen wifi gratis 
-    - Criterios de validación: mostrar al usuario las zonas que tienen wifi y comprobar si en esa zona tiene acceso a internet. 
+- Establecer los establecimientos sobre el mapa que tienen wifi gratis 
+    - Criterios de validación: mostrar al usuario los establecimientos que tienen wifi y comprobar si en ese establecimiento tiene acceso a internet. 
 
 - Recomendaciones para comer situadas en la ruta turística 
+     
 
 - Recomendaciones de actividades culturales y turisticas en el mismo camino de la ruta 
 
@@ -71,13 +75,13 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 
 ### Información turística
 
-- Registro de los usuarios con la información básica y creación de una cuenta en la aplicación a través de un formulario de registro
+- Registro de los usuarios con la información básica a través de un formulario y creación de una cuenta en la aplicación
     - Criterios de validación: tener un formulario funcional de registro el cual permita al usuario ingresar información para crear una cuenta y que la cuenta sea registrada correctamente en la base de datos.
     
 - Inicio de sesión del usuario a traves de un login para el uso de la aplicación
-    - Criterios de validación: tener un formulario funcional de login donde el usuario escriba la información de su cuenta y acceda correctamente a la aplicación
+    - Criterios de validación: tener un formulario funcional de login donde el usuario escriba su usuario y contraseña y acceda correctamente a la aplicación
    
-- Contar con las bases de datos necesarias para almacenar la información turística y que la información de los usuarios sea almacenada de forma segura y este encriptada.
+- Contar con las bases de datos necesarias para almacenar la información turística y que la información de los usuarios sea almacenada de forma segura y las contraseñas esten encriptadas.
     - Criterios de validación: confirmar que la información ha sido guardada de forma segura y que coincide con la que se introdujo en registro, y que las información confidencial este encriptada correctamente.
 
 - Contar con un menú para la selección del idioma principal al cual la aplicación va a ser traducida, teniendo distintos idiomas como opción.
@@ -87,15 +91,36 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
     - Criterios de validación: al estar en una zona o barrio peligroso que el usuario reciba alertas para tener cuidado, si el clima no va a favorecer la ruta entonces que el usuario reciba una alerta sobre esto, y si sucede algo con algún transporte que el usuario puede utilizar, que reciba una alerta explicando la situación.
 
 - Informar sobre noticias o alertas que pueden impactar en la estancia del turista. Estan adaptadas a la ciudad en la que se encuentra dicho turista y ayudan a mantenerle informado y al día.
-    - Criterios de validación: Mantener al usuario informado en todo momento sobre noticias occuriendo en esa ciudad ya sea por avisos de cierre de calles, manifestaciones, zonas concurridas, etc a través de la applicación usando notificaciones o solamente dentro de la app. 
+    - Criterios de validación: Mantener al usuario informado en todo momento sobre noticias que han o están ocurriendo en esa ciudad y que pueden afectar a la estancia del usuario, a través de la applicación usando notificaciones o solamente dentro de la app. 
 
-- Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar. En el caso de los restaurantes, pedir comida a domicilio.
-    - Criterios de validación: Usuario tiene la posibilidad de obtener datos de contacto ya sea teléfono o email de alojamientos o restaurantes. Dandole la opción de poder pedir comida a domicilio a través de la applicación. 
+- Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar o pedir comida a domicilio.
+    - Criterios de validación: Usuario tiene la posibilidad de obtener datos de contacto ya sea teléfonicamente o mediante email de alojamientos o restaurantes. 
+
+- Permitir que el usuario pueda añadir reseñas y valoraciones en los sitios visitados       
+    - Criterios de validación: el usuario pueda añadir comentarios y valorarlo con un puntaje. 
 
 - Acompañar los sitios de interés de una descripción básica pero completa, junto con reseñas y valoraciones de otros usuarios.
-    - Criterios de validación: Usuario obtiene una idea del sitio de interés como por ejemplo nombre, ubicación, tamaño y al mismo tiempo puede ver valoraciones de otros usuarios que le pueden ayudar a saber si le interesa o no este sitio de interes. 
+    - Criterios de validación: Usuario obtiene una explicación del sitio de interés y al mismo tiempo puede ver las valoraciones de otros usuarios que le pueden ayudar a saber si le interesa. 
 
 - Tener un conversor de moneda automático a la divisa que elija el usuario al visualizar cualquier tipo de precio en la aplicación
-    - Criterios de validación: que la aplicación cuente con un menú donde puedas elegir la divisa a la cual los precios van a ser automáticamente convertidas y que los precios sean mostrados en la divisa elegida y en la local de el lugar donde se encuentra el usuario.
+    - Criterios de validación: que la aplicación cuente con un menú donde puedas elegir la divisa a la cual los precios van a ser automáticamente convertidos y que los precios sean mostrados en la divisa elegida y en la local de el lugar donde se encuentra el usuario.
 
 ## Requisitos no funcionales
+
+- Aplicación Web que pueda ser visualizada en todos los navegadores actuales. 
+    - chrome
+    - firefox  
+- Aplicacion con diseño responsive para tres tipos de pantalla.
+    - Tamaño de móvil
+    - Tamaño de tablet 
+    - Tamaño de pc.  
+-  Tiempo de respuesta 2s.
+-  Lenguaje de programación
+    -Front-End: 
+        -HTML, CSS y JavaScript
+    -Back-End:
+        -Node.js
+- Base de datos relacionales SQL
+- 100 solicitudes por minuto
+- 
+  
