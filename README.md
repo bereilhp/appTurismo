@@ -12,13 +12,20 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 - Clasificación de todos los sitios de interés almacenados en la aplicación, a través de la asignación de una o múltiples etiquetas representativas de dicho lugar. 
     - Criterio de validación:  todos los sitios de interés deberán estar asociados, como mínimo, a una etiqueta, siendo nulos los que estén asociados a la etiqueta “sin etiqueta”. 
 
-- Creación de los itinerarios en función de los días disponibles, gustos personales del usuario y previsión del tiempo
+- Creación de itinerarios turísticos ajustados a la situación de cada usuario y del clima. Los parámetros para su creación son: los días de la estancia del visitante, sus gustos personales y previsión del tiempo durante los días seleccionados. Resaltar que el único parámetro especificado por el usuario es el número de días disponibles. 
+    - Criterio de validación: tras un día de uso de la aplicación, solicitar la creación de un itinerario, en el cual solo se debe especificar los días de visita. Si el usuario considera que el itinerario sugerido lo realizaría teniendo en cuenta la climatología prevista, sus intereses en la ciudad y la duración, será validado.
 
-- Sugerencia de nuevos sitios de interés en función de los gustos del usuario
+- La información mostrada en los itinerarios se divide en una composición de actividades y sitios de interés por día, sobre los cuales se muestra: el nombre, una imagen, una breve descripción, la ubicación y los aspectos más importantes de la previsión del tiempo.
+    - Criterio de validación: comprobar que en la base de datos no hay valores nulos en estos campos y al generar un itinerario, que se muestra correctamente al usuario. 
 
-- Previsión del tiempo actual para cada día del itinerario
+- Establecimiento de los gustos personales de un usuario, a través de tres variables: filtros seleccionados, sitios buscados y área geográfica transitada, pudiendo acotarse desde un barrio hasta una ciudad completa.
+    -  Criterio de validación: mostrar al usuario el perfil creado por la aplicación, para comprobar si es acertado en sus intereses y zonas sugeridas.  
 
-- Recomendación de eventos, en función de los días de la estancia del usuario
+- Sugerencia de sitios de interés, en función de los gustos del usuario, que queden fuera del itinerario definido. Permite mostrar otros lugares de interés para el usuario, con un nivel de afinidad inferior a los incluidos en la ruta. 
+    - Criterio de validación: mostrar las sugerencias de sitios de interés al usuario y confirmar si realizaría al menos la mitad de ellas, solo teniendo en cuenta la afinidad y no el tiempo disponible para realizarla. 
+
+- Elaboración de una lista de eventos y/o actividades clásicas o puntuales que se van a realizar en el próximo mes, mostrando al usuario solo las que coincidan con su estancia, proporcionando: el nombre, la ubicación, una descripción básica y opcionalmente el precio. 
+    - Criterio de validación: una lista de eventos y/o actividades almacenados con un horizonte temporal de un mes, que nunca esté vacía. 
 
 ### Mapa
 
