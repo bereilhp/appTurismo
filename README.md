@@ -74,7 +74,7 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
     - Criterios de validación: el usuario puede consultar el horario tanto del transporte público como privado para calcular cuanto va a tardar en realizar el translado. 
 
 - Mostrar sobre el mapa los puntos en los que se sitúan patinetes y motos de nuestra empresa, complementado con opciones de car-sharing en la zona
-    -Criterio de validación: el usuario pueda visualizar en tiempo real  y sobre el mapa, los coches de car-sharing en la zona y los puntos de alquiler patinetes y motos
+    - Criterio de validación: el usuario pueda visualizar en tiempo real  y sobre el mapa, los coches de car-sharing en la zona y los puntos de alquiler patinetes y motos
     
 - Comprobar disponibilidad o reservar parking en la ciudad en tiempo real
     - Criterio de validación: poder visualizar sobre el mapa los distintos parkings y el número de plazas que hay disponibles en cada una de ellas
