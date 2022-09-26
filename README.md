@@ -86,11 +86,14 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 - Establecer alertas si el usuario se encuentra en una zona peligrosa en la que debería tener cuidado, alteraciones en el clima que puedan afectar al usuario y modificaciones o cancelaciones de transportes los cuales generen un inconveniente en los planes del usuario.
     - Criterios de validación: al estar en una zona o barrio peligroso que el usuario reciba alertas para tener cuidado, si el clima no va a favorecer la ruta entonces que el usuario reciba una alerta sobre esto, y si sucede algo con algún transporte que el usuario puede utilizar, que reciba una alerta explicando la situación.
 
-- Noticias que pueden impactar en la estancia del turista, adaptadas a la ciudad en la que se encuentra
+- Informar sobre noticias o alertas que pueden impactar en la estancia del turista. Estan adaptadas a la ciudad en la que se encuentra dicho turista y ayudan a mantenerle informado y al día.
+    - Criterios de validación: Mantener al usuario informado en todo momento sobre noticias occuriendo en esa ciudad ya sea por avisos de cierre de calles, manifestaciones, zonas concurridas, etc a través de la applicación usando notificaciones o solamente dentro de la app. 
 
-- Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar. En el caso de los restaurantes, pedir comida a domicilio
+- Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar. En el caso de los restaurantes, pedir comida a domicilio.
+    - Criterios de validación: Usuario tiene la posibilidad de obtener datos de contacto ya sea teléfono o email de alojamientos o restaurantes. Dandole la opción de poder pedir comida a domicilio a través de la applicación. 
 
-- Acompañar los sitios de interés de una descripción básica, junto con reseñas y valoraciones de otros usuarios
+- Acompañar los sitios de interés de una descripción básica pero completa, junto con reseñas y valoraciones de otros usuarios.
+    - Criterios de validación: Usuario obtiene una idea del sitio de interés como por ejemplo nombre, ubicación, tamaño y al mismo tiempo puede ver valoraciones de otros usuarios que le pueden ayudar a saber si le interesa o no este sitio de interes. 
 
 - Tener un conversor de moneda automático a la divisa que elija el usuario al visualizar cualquier tipo de precio en la aplicación
     - Criterios de validación: que la aplicación cuente con un menú donde puedas elegir la divisa a la cual los precios van a ser automáticamente convertidas y que los precios sean mostrados en la divisa elegida y en la local de el lugar donde se encuentra el usuario.
