@@ -63,6 +63,10 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 
 ### Información turística
 
+- Registro de los usuarios con la información básica y creación de una cuenta
+
+- Inicio de sesión del usuario para el uso de la aplicación
+
 - Contar con las bases de datos necesarias para almacenar la información turística 
 
 - Visualizar la aplicación en cualquier idioma
