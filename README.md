@@ -3,9 +3,9 @@
 Esta aplicación se enfoca en los turistas a corto plazo que visitan nuestra ciudad, para proporcionarles una experiencia inolvidable. 
 Desde proporcionar itinerarios y rutas en función de los gustos del usuario y su disponibilidad, hasta proporcionarte cualquier tipo de información útil para un viajero.  
 
-## Requisitos 
+## Requisitos funcionales
 
-A continuación se desglosan los requisitos en los tres grandes bloques que componen la aplicación. 
+A continuación se desglosan los requisitos funcionales en los tres grandes bloques que componen la aplicación. 
 
 ### Itinerarios
 
@@ -69,3 +69,4 @@ A continuación se desglosan los requisitos en los tres grandes bloques que comp
 
 - Conversor de moneda
 
+## Requisitos no funcionales
