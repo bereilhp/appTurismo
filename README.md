@@ -123,10 +123,10 @@ P- Creación de los itinerarios del punto anterior en el mapa
     - Tamaño de pc.  
 -  Tiempo de respuesta 2s.
 -  Lenguaje de programación
-    -Front-End: 
-        -HTML, CSS y JavaScript
-    -Back-End:
-        -Node.js
+    - Front-End: 
+        - HTML, CSS y JavaScript
+    - Back-End:
+        - Node.js
 - Base de datos relacionales SQL
 - 100 solicitudes por minuto
   
