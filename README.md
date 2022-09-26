@@ -71,22 +71,28 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 
 ### Información turística
 
-- Registro de los usuarios con la información básica y creación de una cuenta
+- Registro de los usuarios con la información básica y creación de una cuenta en la aplicación a través de un formulario de registro
+    - Criterios de validación: tener un formulario funcional de registro el cual permita al usuario ingresar información para crear una cuenta y que la cuenta sea registrada correctamente en la base de datos.
+    
+- Inicio de sesión del usuario a traves de un login para el uso de la aplicación
+    - Criterios de validación: tener un formulario funcional de login donde el usuario escriba la información de su cuenta y acceda correctamente a la aplicación
+   
+- Contar con las bases de datos necesarias para almacenar la información turística y que la información de los usuarios sea almacenada de forma segura y este encriptada.
+    - Criterios de validación: confirmar que la información ha sido guardada de forma segura y que coincide con la que se introdujo en registro, y que las información confidencial este encriptada correctamente.
 
-- Inicio de sesión del usuario para el uso de la aplicación
+- Contar con un menú para la selección del idioma principal al cual la aplicación va a ser traducida, teniendo distintos idiomas como opción.
+    - Criterios de validación: tener un menú dentro de la aplicación el cual permita cambiar de idioma, en el cual al seleccionar un idioma, que toda la aplicación sea traducida a este.
 
-- Contar con las bases de datos necesarias para almacenar la información turística 
-
-- Visualizar la aplicación en cualquier idioma
-
-- Establecer alertas si se encuentra en una zona peligrosa, alteraciones en el clima y modificaciones o cancelaciones de transportes 
+- Establecer alertas si el usuario se encuentra en una zona peligrosa en la que debería tener cuidado, alteraciones en el clima que puedan afectar al usuario y modificaciones o cancelaciones de transportes los cuales generen un inconveniente en los planes del usuario.
+    - Criterios de validación: al estar en una zona o barrio peligroso que el usuario reciba alertas para tener cuidado, si el clima no va a favorecer la ruta entonces que el usuario reciba una alerta sobre esto, y si sucede algo con algún transporte que el usuario puede utilizar, que reciba una alerta explicando la situación.
 
 - Noticias que pueden impactar en la estancia del turista, adaptadas a la ciudad en la que se encuentra
 
 - Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar. En el caso de los restaurantes, pedir comida a domicilio
 
-- Acompañar los sitios de interes de una descripción básica, junto con reseñas y valoraciones de otros usuarios
+- Acompañar los sitios de interés de una descripción básica, junto con reseñas y valoraciones de otros usuarios
 
-- Conversor de moneda
+- Tener un conversor de moneda automático a la divisa que elija el usuario al visualizar cualquier tipo de precio en la aplicación
+    - Criterios de validación: que la aplicación cuente con un menú donde puedas elegir la divisa a la cual los precios van a ser automáticamente convertidas y que los precios sean mostrados en la divisa elegida y en la local de el lugar donde se encuentra el usuario.
 
 ## Requisitos no funcionales
