@@ -30,20 +30,28 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 ### Mapa
 
 - Creación de los itinerarios del punto anterior en el mapa
+    - Criterios de validación:     
 
 - Creación de rutas ajustadas al usuario por su geolocalización y duración deseada
-
+    - Criterio de validación: mostrar las rutas al usuario y comprobar que el comienzo de la ruta coincida con la localización del usuario y que su duración sea la establecida.
+   
 - Localización de los sitios de interés con marcadores distintivos en función de la temática sobre el mapa 
+    - Criterios de validación: mostrar al usuario todos los sitios de interés en el mapa y comprobar que cada sitio muestre el distintivo en función de su temática.
 
 - Establecimiento de filtros sobre el mapa: deportivo, musical, restaurantes típicos, cines, alojamientos, ocio nocturno.
+    - Criterios de validación: mostrar al usuario los establecimientos y comprobar que solo aparezcan los establecimeintos de la temática escogida.
 
 - Filtrar restaurantes en función de sus platos estrella/típicos 
+    - Criterios de validación: mostrar al usuario en el mapa todos los restaurantes, para comprobar si reservaría al menos en la mitad. 
 
 - Filtrar discotecas en función de tipo de música, precio, popularidad
+    -  Criterios de validación: mostrar al usuario en el mapa todos las discotecas y comprobar si coincide con sus gustos.
 
 - Establecer un semáforo de colores, en función de la seguridad de los barrios, sobre el mapa 
+    - Criterios de validación: mostrar en el mapa el color del semaforo por cada barrio y comprobar que el color de un determinado barrio coincide con el grado de seguridad del mismo. 
 
 - Establecer las zonas sobre el mapa que tienen wifi gratis 
+    - Criterios de validación: mostrar al usuario las zonas que tienen wifi y comprobar si en esa zona tiene acceso a internet. 
 
 - Recomendaciones para comer situadas en la ruta turística 
 
