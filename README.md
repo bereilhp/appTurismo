@@ -32,11 +32,11 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 
 ### Mapa
 
-P- Creación de los itinerarios del punto anterior en el mapa
-    - Criterios de validación: si la ruta trazada incluye todos los sitios de interés definidos en el itinerario, sera válido. 
+- Creación de la ruta de un día concreto del itinerario sobre el mapa, conectando los sitios de interés y/o actividades en orden. 
+    - Criterios de validación: la ruta trazada debe incluir todos los sitios de interés y/o actividades definidos en el día seleccionado del itinerario 
 
 - Creación de rutas ajustadas al usuario por su geolocalización y duración deseada
-    - Criterio de validación: mostrar las rutas al usuario y comprobar que el comienzo de la ruta coincida con la localización del usuario y que su duración sea la establecida.
+    - Criterio de validación: el comienzo de la ruta coincida con la localización del usuario y que su duración sea la establecida.
    
 - Localización de los sitios de interés con marcadores distintivos en función de la temática sobre el mapa 
     - Criterios de validación: mostrar al usuario todos los sitios de interés en el mapa y comprobar que cada sitio muestre el distintivo en función de su temática.
@@ -114,19 +114,24 @@ P- Creación de los itinerarios del punto anterior en el mapa
 
 ## Requisitos no funcionales
 
-- Aplicación Web que pueda ser visualizada en todos los navegadores actuales. 
-    - chrome
-    - firefox  
-- Aplicacion con diseño responsive para tres tipos de pantalla.
-    - Tamaño de móvil
-    - Tamaño de tablet 
-    - Tamaño de pc.  
--  Tiempo de respuesta 2s.
--  Lenguaje de programación
+- Aplicación Web que pueda ser visualizada en dos los navegadores, en sus versiones actuales: Chrome y Firefox.
+    - Criterio de validación: visualizar la aplicación en el navegador Chrome y Firefox y comprobar que todos los elementos se cargan correctamente.
+    
+- Aplicacion con *Web Responsive Design* para tres tamaños de pantalla: pequeño (móvil), mediano (tablet) y grande (ordenador).
+    - Criterio de validación: visualizar la aplicación en los tres tamaños especificas y comprobar que los elementos se ajustan al tamaño de la pantalla.
+    
+- Tiempo de respuesta inferior a dos segundos.
+    - Criterio de validación: medir el tiempo desde que se lanza una petición hasta que el cliente obtiene una respuesta y comprobar que es inferior a dos segundos.
+
+- Soportar una carga de cien solicitudes por minuto. 
+    - Criterio de validación: hacer una prueba de estrés de cien solicitudes durante una hora, para asegurar que la aplicación es capaz de soportar esa carga. 
+
+- Lenguaje de programación
     - Front-End: 
         - HTML, CSS y JavaScript
     - Back-End:
         - Node.js
+
 - Base de datos relacionales SQL
-- 100 solicitudes por minuto
+
   
