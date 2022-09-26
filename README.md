@@ -9,7 +9,8 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 
 ### Itinerarios
 
-- Clasificación de todos los sitios de interés (etiquetado)
+- Clasificación de todos los sitios de interés almacenados en la aplicación, a través de la asignación de una o múltiples etiquetas representativas de dicho lugar. 
+    - Criterio de validación:  todos los sitios de interés deberán estar asociados, como mínimo, a una etiqueta, siendo nulos los que estén asociados a la etiqueta “sin etiqueta”. 
 
 - Creación de los itinerarios en función de los días disponibles, gustos personales del usuario y previsión del tiempo
 
