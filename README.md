@@ -56,22 +56,28 @@ P- Creación de los itinerarios del punto anterior en el mapa
 - Establecer los establecimientos sobre el mapa que tienen wifi gratis 
     - Criterios de validación: mostrar al usuario los establecimientos que tienen wifi y comprobar si en ese establecimiento tiene acceso a internet. 
 
-- Recomendaciones para comer situadas en la ruta turística 
-     
-
-- Recomendaciones de actividades culturales y turisticas en el mismo camino de la ruta 
-
-- Recomendar rutas alternativas dependiendo del clima o imprevistos 
-
-- Suministrar información al usuario con geolocalización en formato audio  
+- Recomendaciones para comer situadas en la ruta turística que no desvíen mucho al usuario para poder seguir con la ruta sin perder mucho tiempo.
+    - Criterios de validación: Tener recomendaciones de restaurantes que estén dentro de la ruta y a menos de 150 metros de distancia desde ciertos puntos críticos de la ruta
+    
+- Recomendaciones de actividades culturales y turisticas en el mismo camino de la ruta que el usuario pueda realizar y poder continuar con la ruta luego.
+    - Criterios de validación: Tener recomendaciones de actividades que estén dentro de la ruta y a menos de 150 metros de distancia desde ciertos puntos críticos de la ruta
+  
+- Recomendar rutas alternativas dependiendo del clima o imprevistos
+    - Criterios de validación: Mostrar cambios o alternativas en el mapa para cualquier imprevisto ayudando al usuario a elegir una nueva ruta o una que le interese más. 
+- Suministrar información al usuario del sitio de interés en el que esta ubicado usando geolocalización mediante formato audio
+    - Criterios de validación: Dar la posibilidad al usuario de acceder a información a través de la aplicación en formato audio para entender donde está ubicado y sobre el sitio de interés. 
 
 - Generación de rutas eficientes combinando opciones de transporte público y privado
+    - Criterios de validación: muestra en el mapa las rutas más óptimas utilizando tanto transporte público como el privado.
 
 - Notificaciones en tiempo real sobre transporte público y privado
+    - Criterios de validación: el usuario puede consultar el horario tanto del transporte público como privado para calcular cuanto va a tardar en realizar el translado. 
 
-- Alquiler de car sharing, patinetes y motos de nuestra empresa
-
-- Comprobar disponibilidad o reservar parking en la ciudad
+- Mostrar sobre el mapa los puntos en los que se sitúan patinetes y motos de nuestra empresa, complementado con opciones de car-sharing en la zona
+    -Criterio de validación: el usuario pueda visualizar en tiempo real  y sobre el mapa, los coches de car-sharing en la zona y los puntos de alquiler patinetes y motos
+    
+- Comprobar disponibilidad o reservar parking en la ciudad en tiempo real
+    - Criterio de validación: poder visualizar sobre el mapa los distintos parkings y el número de plazas que hay disponibles en cada una de ellas
 
 ### Información turística
 
@@ -104,6 +110,7 @@ P- Creación de los itinerarios del punto anterior en el mapa
 
 - Tener un conversor de moneda automático a la divisa que elija el usuario al visualizar cualquier tipo de precio en la aplicación
     - Criterios de validación: que la aplicación cuente con un menú donde puedas elegir la divisa a la cual los precios van a ser automáticamente convertidos y que los precios sean mostrados en la divisa elegida y en la local de el lugar donde se encuentra el usuario.
+
 
 ## Requisitos no funcionales
 
