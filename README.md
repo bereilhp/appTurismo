@@ -115,24 +115,28 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 
 ## Requisitos no funcionales
 
-- Aplicación Web que pueda ser visualizada en dos los navegadores, en sus versiones actuales: Chrome y Firefox.
-    - Criterio de validación: visualizar la aplicación en el navegador Chrome y Firefox y comprobar que todos los elementos se cargan correctamente.
+- Aplicación Web que pueda ser visualizada en la versión actual de Safari.
+    - Criterio de validación: visualizar la aplicación en el navegador Safari y comprobar que todos los elementos se cargan correctamente.
     
-- Aplicacion con *Web Responsive Design* para tres tamaños de pantalla: pequeño (móvil), mediano (tablet) y grande (ordenador).
-    - Criterio de validación: visualizar la aplicación en los tres tamaños especificas y comprobar que los elementos se ajustan al tamaño de la pantalla.
+- Aplicación Web que pueda ser visualizada en la versión actual de Chrome.
+    - Criterio de validación: visualizar la aplicación en el navegador Chrome y comprobar que todos los elementos se cargan correctamente.
+
+- Aplicación Web que pueda ser visualizada en la versión actual de Firefox.
+    - Criterio de validación: visualizar la aplicación en el navegador Firefox y comprobar que todos los elementos se cargan correctamente.
+
+- Aplicacion con *Web Responsive Design* para el tamaño de pantalla pequeño (móvil).
+    - Criterio de validación: visualizar la aplicación desde un móvil y comprobar que los elementos se ajustan al tamaño de la pantalla.
+
+- Aplicacion con *Web Responsive Design* para el tamaño de pantalla mediano (tablet).
+    - Criterio de validación: visualizar la aplicación desde una tablet y comprobar que los elementos se ajustan al tamaño de la pantalla.
+
+- Aplicacion con *Web Responsive Design* para el tamaño de pantalla grande (ordenador).
+    - Criterio de validación: visualizar la aplicación desde un ordenador y comprobar que los elementos se ajustan al tamaño de la pantalla.
     
 - Tiempo de respuesta inferior a dos segundos.
     - Criterio de validación: medir el tiempo desde que se lanza una petición hasta que el cliente obtiene una respuesta y comprobar que es inferior a dos segundos.
 
 - Soportar una carga de cien solicitudes por minuto. 
     - Criterio de validación: hacer una prueba de estrés de cien solicitudes durante una hora, para asegurar que la aplicación es capaz de soportar esa carga. 
-
-- Lenguaje de programación
-    - Front-End: 
-        - HTML, CSS y JavaScript
-    - Back-End:
-        - Node.js
-
-- Base de datos relacionales SQL
 
   
