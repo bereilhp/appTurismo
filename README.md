@@ -83,34 +83,33 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 ### Información turística
 
 - Registro de los usuarios con la información básica a través de un formulario y creación de una cuenta en la aplicación
-    - Criterios de validación: tener un formulario funcional de registro el cual permita al usuario ingresar información para crear una cuenta y que la cuenta sea registrada correctamente en la base de datos.
+    - Criterio de validación: tener un formulario funcional de registro el cual permita al usuario ingresar información para crear una cuenta y que la cuenta sea registrada correctamente en la base de datos.
     
 - Inicio de sesión del usuario a traves de un login para el uso de la aplicación
-    - Criterios de validación: tener un formulario funcional de login donde el usuario escriba su usuario y contraseña y acceda correctamente a la aplicación
+    - Criterio de validación: tener un formulario funcional de login donde el usuario escriba su usuario y contraseña y acceda correctamente a la aplicación
    
-- Contar con las bases de datos necesarias para almacenar la información turística y que la información de los usuarios sea almacenada de forma segura y las contraseñas esten encriptadas.
-    - Criterios de validación: confirmar que la información ha sido guardada de forma segura y que coincide con la que se introdujo en registro, y que las información confidencial este encriptada correctamente.
+
 
 - Contar con un menú para la selección del idioma principal al cual la aplicación va a ser traducida, teniendo distintos idiomas como opción.
-    - Criterios de validación: tener un menú dentro de la aplicación el cual permita cambiar de idioma, en el cual al seleccionar un idioma, que toda la aplicación sea traducida a este.
+    - Criterio de validación: tener un menú dentro de la aplicación el cual permita cambiar de idioma, en el cual al seleccionar un idioma, que toda la aplicación sea traducida a este.
 
 - Establecer alertas si el usuario se encuentra en una zona peligrosa en la que debería tener cuidado, alteraciones en el clima que puedan afectar al usuario y modificaciones o cancelaciones de transportes los cuales generen un inconveniente en los planes del usuario.
-    - Criterios de validación: al estar en una zona o barrio peligroso que el usuario reciba alertas para tener cuidado, si el clima no va a favorecer la ruta entonces que el usuario reciba una alerta sobre esto, y si sucede algo con algún transporte que el usuario puede utilizar, que reciba una alerta explicando la situación.
+    - Criterio de validación: al estar en una zona o barrio peligroso que el usuario reciba alertas para tener cuidado, si el clima no va a favorecer la ruta entonces que el usuario reciba una alerta sobre esto, y si sucede algo con algún transporte que el usuario puede utilizar, que reciba una alerta explicando la situación.
 
 - Informar sobre noticias o alertas que pueden impactar en la estancia del turista. Estan adaptadas a la ciudad en la que se encuentra dicho turista y ayudan a mantenerle informado y al día.
-    - Criterios de validación: Mantener al usuario informado en todo momento sobre noticias que han o están ocurriendo en esa ciudad y que pueden afectar a la estancia del usuario, a través de la applicación usando notificaciones o solamente dentro de la app. 
+    - Criterio de validación: Mantener al usuario informado en todo momento sobre noticias que han o están ocurriendo en esa ciudad y que pueden afectar a la estancia del usuario, a través de la applicación usando notificaciones o solamente dentro de la app. 
 
 - Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar o pedir comida a domicilio.
-    - Criterios de validación: Usuario tiene la posibilidad de obtener datos de contacto ya sea teléfonicamente o mediante email de alojamientos o restaurantes. 
+    - Criterio de validación: Usuario tiene la posibilidad de obtener datos de contacto ya sea teléfonicamente o mediante email de alojamientos o restaurantes. 
 
 - Permitir que el usuario pueda añadir reseñas y valoraciones en los sitios visitados       
-    - Criterios de validación: el usuario pueda añadir comentarios y valorarlo con un puntaje. 
+    - Criterio de validación: el usuario pueda añadir comentarios y valorarlo con un puntaje. 
 
 - Acompañar los sitios de interés de una descripción básica pero completa, junto con reseñas y valoraciones de otros usuarios.
-    - Criterios de validación: Usuario obtiene una explicación del sitio de interés y al mismo tiempo puede ver las valoraciones de otros usuarios que le pueden ayudar a saber si le interesa. 
+    - Criterio de validación: Usuario obtiene una explicación del sitio de interés y al mismo tiempo puede ver las valoraciones de otros usuarios que le pueden ayudar a saber si le interesa. 
 
-- Tener un conversor de moneda automático a la divisa que elija el usuario al visualizar cualquier tipo de precio en la aplicación
-    - Criterios de validación: que la aplicación cuente con un menú donde puedas elegir la divisa a la cual los precios van a ser automáticamente convertidos y que los precios sean mostrados en la divisa elegida y en la local de el lugar donde se encuentra el usuario.
+- Implementar un desplegable de un conversor de moneda automático a la divisa que elija el usuario al visualizar cualquier tipo de precio en la aplicación
+    - Criterio de validación: que la aplicación cuente con un menú donde puedas elegir la divisa a la cual los precios van a ser automáticamente convertidos y que los precios sean mostrados en la divisa elegida y en la local de el lugar donde se encuentra el usuario.
 
 
 ## Requisitos no funcionales
@@ -139,4 +138,5 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 - Soportar una carga de cien solicitudes por minuto. 
     - Criterio de validación: hacer una prueba de estrés de cien solicitudes durante una hora, para asegurar que la aplicación es capaz de soportar esa carga. 
 
-  
+- La información sensible de los usuarios tiene que ser encriptada, para ser almacenada en la base de datos, utilizando mecanismos de encriptación seguros.
+    - Criterios de validación: al devolver la información sensible de los usuarios almacenada en la base de datos, esta tiene que estar encriptada y no ser legible.
