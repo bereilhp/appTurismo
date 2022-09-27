@@ -100,16 +100,16 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
     - Criterio de validación: Mantener al usuario informado en todo momento sobre noticias que han o están ocurriendo en esa ciudad y que pueden afectar a la estancia del usuario, a través de la applicación usando notificaciones o solamente dentro de la app. 
 
 - Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar o pedir comida a domicilio.
-    - Criterio de validación: Usuario tiene la posibilidad de obtener datos de contacto ya sea teléfonicamente o mediante email de alojamientos o restaurantes. 
+    - Criterio de validación: obtener la información básica y los datos de contacto de un establecimiento al seleccionarlo o buscarlo en la aplicación. 
 
-- Permitir que el usuario pueda añadir reseñas y valoraciones en los sitios visitados       
-    - Criterio de validación: el usuario pueda añadir comentarios y valorarlo con un puntaje. 
+- Permitir a los usuarios añadir reseñas y *scorings* o puntuaciones de los sitios, que coincidan con la geolocalización de un usuario, ya que se consideran visitados.
+    - Criterio de validación: añadir reseñas y puntuaciones a los sitios que han coincidido con la geolocación del usuario.  
 
-- Acompañar los sitios de interés de una descripción básica pero completa, junto con reseñas y valoraciones de otros usuarios.
-    - Criterio de validación: Usuario obtiene una explicación del sitio de interés y al mismo tiempo puede ver las valoraciones de otros usuarios que le pueden ayudar a saber si le interesa. 
+- Acompañar los sitios de interés con una descripción básica, junto con reseñas y un *scoring* o puntuación de otros usuarios.
+    - Criterio de validación: ver que al seleccionar un sitio de interés, se proporciona una breve descripción, complementado con reseñas y puntuaciones de otros usuarios pertenecientes a la aplicación, en el caso de que existan. 
 
-- Implementar un desplegable de un conversor de moneda automático a la divisa que elija el usuario al visualizar cualquier tipo de precio en la aplicación
-    - Criterio de validación: que la aplicación cuente con un menú donde puedas elegir la divisa a la cual los precios van a ser automáticamente convertidos y que los precios sean mostrados en la divisa elegida y en la local de el lugar donde se encuentra el usuario.
+- Implementar un conversor de moneda automático, que permita convertir los precios expresados en la moneda local a la moneda seleccionada dentro de la aplicación. 
+    - Criterio de validación: ver que los precios dentro de la aplicación se expresan en la moneda seleccionada y que la conversión aplicada es correcta.
 
 
 ## Requisitos no funcionales
