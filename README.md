@@ -51,33 +51,34 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
     -  Criterio de validación: comprobar que todos las discotecas recuperadas de la base de datos, tras aplicar el filtro, están asociados a cualquiera de esos criterios, permitiendo la libre combinación o uso de los mismos.
 
 - Establecer un semáforo de colores (rojo, ámbar y verde), en función de la seguridad de los barrios, sobre el mapa. Complementarlo con una descripción, indicando que: el color rojo indica que en ese barrio no se debería entrar, el color ámbar que hay que tener cuidado y el color verde que es medianamente seguro. 
-    - Criterios de validación: el mapa debe mostrar en todo momento los barrios coloreados de la ciudad, atendiendo a un semáforo de colores y poder visualizar una leyenda al pulsar sobre el barrio coloreado. 
+    - Criterio de validación: el mapa debe mostrar en todo momento los barrios coloreados de la ciudad, atendiendo a un semáforo de colores y poder visualizar una leyenda al pulsar sobre el barrio coloreado. 
 
 - Localización de los establecimientos y/o lugares en el mapa que tienen wifi gratis, que anuncian este servicio en su página web.  
-    - Criterios de validación: resaltar sobre el mapa las zonas de alcanze de los lugares que tienen wifi gratis. 
+    - Criterio de validación: resaltar sobre el mapa las zonas de alcanze de los lugares que tienen wifi gratis. 
 
-- Recomendaciones para comer situadas en la ruta turística que no desvíen mucho al usuario para poder seguir con la ruta sin perder mucho tiempo.
-    - Criterios de validación: Tener recomendaciones de restaurantes que estén dentro de la ruta y a menos de 150 metros de distancia desde ciertos puntos críticos de la ruta
+- Recomendaciones para comer situadas en la ruta turística o en las proximidades, siendo un máximo de 200 metros. Si lo realiza podrá continuar con la ruta, desde el momento en el que la dejó. 
+    - Criterio de validación: los restaurantes recomendados deben estar en la propia ruta o a menos de 200 metros de distancia de la posición en la que el usuario solicita este servicio. 
     
-- Recomendaciones de actividades culturales y turisticas en el mismo camino de la ruta que el usuario pueda realizar y poder continuar con la ruta luego.
-    - Criterios de validación: Tener recomendaciones de actividades que estén dentro de la ruta y a menos de 150 metros de distancia desde ciertos puntos críticos de la ruta
+- Recomendaciones de actividades culturales y turísticas en la ruta turística o en las proximidades, siendo un máximo de 500 metros. Si la realiza podrá continuar con la ruta, desde el momento en el que la dejó. 
+    - Criterio de validación: los actividades recomendadas deben estar en la propia ruta o a menos de 500 metros de distancia de algún punto del trazado de la ruta. 
   
-- Recomendar rutas alternativas dependiendo del clima o imprevistos
-    - Criterios de validación: Mostrar cambios o alternativas en el mapa para cualquier imprevisto ayudando al usuario a elegir una nueva ruta o una que le interese más. 
-- Suministrar información al usuario del sitio de interés en el que esta ubicado usando geolocalización mediante formato audio
-    - Criterios de validación: Dar la posibilidad al usuario de acceder a información a través de la aplicación en formato audio para entender donde está ubicado y sobre el sitio de interés. 
+- Recomendar rutas alternativas dependiendo de cambios drásticos en el clima o previsiones incorrectas.
+    - Criterio de validación: por cambio bruscos en el clima o fallo en la previsión inicial, la aplicación deberá sugerir una ruta más acorde a la climatología actual y desde la posición actual del usuario.
+   
+- Suministrar información de un sitio de interés, en función de la geolocalización del usuario, a través de un icono que le proporcionará una descripción en mediante formato audio.
+    - Criterio de validación: Dar la posibilidad al usuario de acceder a información a través de la aplicación en formato audio para entender donde está ubicado y sobre el sitio de interés. 
 
-- Generación de rutas eficientes combinando opciones de transporte público y privado
-    - Criterios de validación: muestra en el mapa las rutas más óptimas utilizando tanto transporte público como el privado.
+- Generación de rutas eficientes combinando opciones de transporte público y privado.
+    - Criterio de validación: muestra las rutas más óptimas de forma gráfica sobre el mapa, utilizando transporte público, privado o combinaciones de ambas.
 
-- Notificaciones en tiempo real sobre transporte público y privado
-    - Criterios de validación: el usuario puede consultar el horario tanto del transporte público como privado para calcular cuanto va a tardar en realizar el translado. 
+- Notificaciones en tiempo real al utilizar el transporte público y privado.
+    - Criterio de validación: envío de una notificación al usuario en el momento que está a una distancia inferior a 200 metros del destino y una vez en el destino. 
 
 - Mostrar sobre el mapa los puntos en los que se sitúan patinetes y motos de nuestra empresa, complementado con opciones de car-sharing en la zona
-    - Criterio de validación: el usuario pueda visualizar en tiempo real  y sobre el mapa, los coches de car-sharing en la zona y los puntos de alquiler patinetes y motos
+    - Criterio de validación: visualizar en tiempo real y sobre el mapa, los coches de car-sharing disponibles en la zona y los puntos de alquiler patinetes y motos
     
-- Comprobar disponibilidad o reservar parking en la ciudad en tiempo real
-    - Criterio de validación: poder visualizar sobre el mapa los distintos parkings y el número de plazas que hay disponibles en cada una de ellas
+- Comprobar disponibilidad o reservar plazas de parking en la ciudad en tiempo real
+    - Criterio de validación: resaltar sobre el mapa los distintos parkings y devolver el número de plazas que hay disponibles en cada una de ellas
 
 ### Información turística
 
