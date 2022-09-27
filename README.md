@@ -82,14 +82,21 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 
 ### Información turística
 
-- Registro de los usuarios con la información básica a través de un formulario y creación de una cuenta en la aplicación
-    - Criterio de validación: tener un formulario funcional de registro el cual permita al usuario ingresar información para crear una cuenta y que la cuenta sea registrada correctamente en la base de datos.
+- Registrar usuarios en la aplicación, tras rellenar un formulario con su información básica, para la creación de una cuenta y contraseña asociada. En el caso de que falte algún campo de inforamción obligatoria, no permitir crear la cuenta.  
+    - Criterio de validación: comprobar que los campos obligatorios dentro de la base de datos, asociados a la información de los usuarios, no estén vacíos.
     
-- Inicio de sesión del usuario a traves de un login para el uso de la aplicación
-    - Criterio de validación: tener un formulario funcional de login donde el usuario escriba su usuario y contraseña y acceda correctamente a la aplicación
+- No permitir que haya cuentas con nombres de usuario que no sean únicos. En el caso de que se trate de utilizar un nombre de cuenta ya usado, no permitirá continuar con el proceso. 
+    - Criterio de validación: comprobar que el nuevo nombre de cuenta no coincida con ninguno de los almacenados en la base de datos. 
+
+- No permitir el uso de claves no seguras. Para ello, todas las claves deberán contar con una mayúscula, una minúscula, un caracter especial y un número. En caso contrario, no permitirá continuar con el proceso. 
+    - Criterio de validación: comprobar que la contraseña contiene todos los caracteres descritos anteriormente. 
+
+- Remplazar una contraseña por otra si el usuario se ha olvidado de su contraseña actual. Para ello, deberá completar un breve formulario para autentificarse y poder cambiarla. 
+    - Criterio de validación: actualizar la contraseña de un usuario existente en la base de datos. 
+ 
+- Iniciar sesión o *log in* de un usuario previamente registrado en la aplicación, a través de la introducción del nombre de cuenta y su contraseña. 
+    - Criterio de validación: acceder con un usuario registrado y comprobar que accede correctamente a la aplicación, al especificar su nombre de cuenta y contraseña. 
    
-
-
 - Implementar un traductor automático, que permita traducir el idioma por defecto a cualquier idioma seleccionado, a través del uso de un desplegable de banderas asociadas al idioma correspondiente.
     - Criterio de validación: al seleccionar una bandera, que todo el contenido de la aplicación pase a estar en el idioma correspondiente.
 
