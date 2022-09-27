@@ -32,29 +32,29 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
 
 ### Mapa
 
-- Creación de la ruta de un día concreto del itinerario sobre el mapa, conectando los sitios de interés y/o actividades en orden. 
-    - Criterios de validación: la ruta trazada debe incluir todos los sitios de interés y/o actividades definidos en el día seleccionado del itinerario 
+- Creación de la ruta de un día concreto del itinerario sobre el mapa, conectando los sitios de interés y/o actividades. El orden de los sitios de la ruta se establece en función de la distancia, siendo de menor a mayor distancia. 
+    - Criterios de validación: la ruta trazada debe incluir todos los sitios de interés y/o actividades definidos en el día seleccionado del itinerario, estando ordenados de menor a mayor distancia 
 
-- Creación de rutas ajustadas al usuario por su geolocalización y duración deseada
-    - Criterio de validación: el comienzo de la ruta coincida con la localización del usuario y que su duración sea la establecida.
+- Creación de rutas personalizadas a cada usuario, en función de su ubicación y duración deseada. Para poder crear la ruta, el usuario solo tendrá que especificar el tiempo del trayecto, acorde a las medidas de tiempo aceptadas (horas y minutos). 
+    - Criterio de validación: el comienzo de la ruta trazada debe coincidir con la posición actual del usuario y que su duración sea igual o inferior a la introducida, pero nunca superior.
    
-- Localización de los sitios de interés con marcadores distintivos en función de la temática sobre el mapa 
-    - Criterios de validación: mostrar al usuario todos los sitios de interés en el mapa y comprobar que cada sitio muestre el distintivo en función de su temática.
+- Localización de los sitios de interés con marcadores distintivos, en función de su temática, sobre el mapa 
+    - Criterio de validación: todos los sitios de interés almacenados en la base datos deberán tener asociado un marcador distintivo y representativo de su temática, ubicándose correctamente sobre el mapa. 
 
 - Establecimiento de filtros sobre el mapa: deportivo, musical, restaurantes típicos, cines, alojamientos, ocio nocturno.
-    - Criterios de validación: mostrar al usuario los establecimientos y comprobar que solo aparezcan los establecimeintos de las temáticas escogidas.
+    - Criterio de validación: al seleccionar un filtro, comprobar que las etiquetas de los sitios de interés, establecimientos y/o actividades recuperadas de la base de datos se asocian a dicho filtro.
 
 - Filtrar restaurantes en función del tipo de comida 
-    - Criterios de validación: mostrar al usuario en el mapa todos los restaurantes relacionados con el tipo de comida seleccionado. 
+    - Criterio de validación: comprobar que todos los restaurantes recuperados de la base de datos, tras aplicar el filtro, están asociados a ese tipo de comida. 
 
-- Filtrar discotecas en función de tipo de música, precio, popularidad
-    -  Criterios de validación: mostrar al usuario en el mapa todos las discotecas filtrando por cualquier combinación de los criterios.
+- Filtrar discotecas en función de tipo de música, precio y popularidad
+    -  Criterio de validación: comprobar que todos las discotecas recuperadas de la base de datos, tras aplicar el filtro, están asociados a cualquiera de esos criterios, permitiendo la libre combinación o uso de los mismos.
 
-- Establecer un semaforo de colores, en función de la seguridad de los barrios, sobre el mapa 
-    - Criterios de validación: mostrar en el mapa los barrios coloreados en función del grado de seguridad del mismo. 
+- Establecer un semáforo de colores (rojo, ámbar y verde), en función de la seguridad de los barrios, sobre el mapa. Complementarlo con una descripción, indicando que: el color rojo indica que en ese barrio no se debería entrar, el color ámbar que hay que tener cuidado y el color verde que es medianamente seguro. 
+    - Criterios de validación: el mapa debe mostrar en todo momento los barrios coloreados de la ciudad, atendiendo a un semáforo de colores y poder visualizar una leyenda al pulsar sobre el barrio coloreado. 
 
-- Establecer los establecimientos sobre el mapa que tienen wifi gratis 
-    - Criterios de validación: mostrar al usuario los establecimientos que tienen wifi y comprobar si en ese establecimiento tiene acceso a internet. 
+- Localización de los establecimientos y/o lugares en el mapa que tienen wifi gratis, que anuncian este servicio en su página web.  
+    - Criterios de validación: resaltar sobre el mapa las zonas de alcanze de los lugares que tienen wifi gratis. 
 
 - Recomendaciones para comer situadas en la ruta turística que no desvíen mucho al usuario para poder seguir con la ruta sin perder mucho tiempo.
     - Criterios de validación: Tener recomendaciones de restaurantes que estén dentro de la ruta y a menos de 150 metros de distancia desde ciertos puntos críticos de la ruta
