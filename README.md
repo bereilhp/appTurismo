@@ -90,14 +90,14 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
    
 
 
-- Contar con un menú para la selección del idioma principal al cual la aplicación va a ser traducida, teniendo distintos idiomas como opción.
-    - Criterio de validación: tener un menú dentro de la aplicación el cual permita cambiar de idioma, en el cual al seleccionar un idioma, que toda la aplicación sea traducida a este.
+- Implementar un traductor automático, que permita traducir el idioma por defecto a cualquier idioma seleccionado, a través del uso de un desplegable de banderas asociadas al idioma correspondiente.
+    - Criterio de validación: al seleccionar una bandera, que todo el contenido de la aplicación pase a estar en el idioma correspondiente.
 
-- Establecer alertas si el usuario se encuentra en una zona peligrosa en la que debería tener cuidado, alteraciones en el clima que puedan afectar al usuario y modificaciones o cancelaciones de transportes los cuales generen un inconveniente en los planes del usuario.
-    - Criterio de validación: al estar en una zona o barrio peligroso que el usuario reciba alertas para tener cuidado, si el clima no va a favorecer la ruta entonces que el usuario reciba una alerta sobre esto, y si sucede algo con algún transporte que el usuario puede utilizar, que reciba una alerta explicando la situación.
+- Establecer alertas si el usuario se encuentra en una zona considerada peligrosa, hay alteraciones significativas en el clima y modificaciones o cancelaciones de transportes a utilizar por el usuario.
+    - Criterio de validación: recepción de una alerta en el caso de encontrarse en una zona peligrosa, sufrir cambios drásticos en el clima o transportes.
 
-- Informar sobre noticias o alertas que pueden impactar en la estancia del turista. Estan adaptadas a la ciudad en la que se encuentra dicho turista y ayudan a mantenerle informado y al día.
-    - Criterio de validación: Mantener al usuario informado en todo momento sobre noticias que han o están ocurriendo en esa ciudad y que pueden afectar a la estancia del usuario, a través de la applicación usando notificaciones o solamente dentro de la app. 
+- Informar sobre noticias de última hora o alertas que puedan impactar negativamente en la estancia del turista. Estas están acotadas a la ciudad destino. 
+    - Criterio de validación: mostrar noticias o alertas relevantes en la ciudad destino, a través del uso de notificaciones, que sean relevantes para los turistas. 
 
 - Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar o pedir comida a domicilio.
     - Criterio de validación: obtener la información básica y los datos de contacto de un establecimiento al seleccionarlo o buscarlo en la aplicación. 
