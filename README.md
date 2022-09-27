@@ -54,7 +54,7 @@ A continuación se desglosan los requisitos funcionales en los tres grandes bloq
     - Criterio de validación: el mapa debe mostrar en todo momento los barrios coloreados de la ciudad, atendiendo a un semáforo de colores y poder visualizar una leyenda al pulsar sobre el barrio coloreado. 
 
 - Localización de los establecimientos y/o lugares en el mapa que tienen wifi gratis, que anuncian este servicio en su página web.  
-    - Criterio de validación: resaltar sobre el mapa las zonas de alcanze de los lugares que tienen wifi gratis. 
+    - Criterio de validación: resaltar sobre el mapa las zonas de alcance de los lugares que tienen wifi gratis. 
 
 - Recomendaciones para comer situadas en la ruta turística o en las proximidades, siendo un máximo de 200 metros. Si lo realiza podrá continuar con la ruta, desde el momento en el que la dejó. 
     - Criterio de validación: los restaurantes recomendados deben estar en la propia ruta o a menos de 200 metros de distancia de la posición en la que el usuario solicita este servicio. 
