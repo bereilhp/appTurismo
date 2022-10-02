@@ -1,0 +1,18 @@
+.divTitulo{
+    background-color: rgb(11, 176, 212); 
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+}
+
+.centrar{
+    margin:auto;
+    display:block;
+}
+
+#global{
+        margin-top: 100px;
+        
+}
