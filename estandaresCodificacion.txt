@@ -1,6 +1,0 @@
-En el presente documento se establecen cuales son los estandares de codificación a 
-seguir por todos los programadores. 
-
-1. Todas las variables declaradas al principio. 
-2. Camel Case 
-3. 
