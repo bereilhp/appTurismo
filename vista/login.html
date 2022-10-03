@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Log In</title>
+        <title>Log In - MadWay</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="./images/Favi.png">
         <link href="signing.css" rel="stylesheet">
@@ -9,32 +9,39 @@
         
     </head>
 
-    <body class="text-center" style="background-color: rgba(22, 178, 218);">
+    <body class="text-center" style="background-color: rgb(99, 220, 248);">
         <main class="form-signin">
-            <form action="">
-                <img src="./images/Favi.png" alt="MadWayLogo">
-                <h1 class="h3 mb-3 fw-normal">Welcome to MadWay.</h1>
+            
+            <div class="row justify-content-sm-center h-200">
+                
+                <div style="width: 900; height: 400px; background-color:  rgba(22, 178, 218);" class="card shadow-lg">
+                    
+                    <form action="">
+                        
+                        <img src="./images/Favi.png" alt="MadWayLogo">
+                        <h1 class="h3 mb-3 fw-normal">Welcome to MadWay.</h1>
 
-                <div class="">
-                    <input type="email" id="email" placeholder="name@example.com" required>
+                <div>
+                    <input class="form-control" type="email" id="email" placeholder="name@example.com" required>
                 </div>
 
-                <br>
+                <div style="padding-top: 4%;"></div>
 
-                <div class="">
-                    <input type="password" id="pass" placeholder="Password" required>
+                <div>
+                    <input class="form-control" type="password" id="pass" placeholder="Password" required>
+                </div>
+                
+                <div class="card-footer py-3 border-0" style="background-color: rgb(22, 178, 218);">							
+                    <div class="text-center">Don't have an account?  
+                        <a href="register.html" class="text-dark"> Create One</a>
+                    </div>						
                 </div>
 
-                <div class="checkbox mb-3">
-                    <label for="">
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-
-                <button class="btn btn-lg btn-primary"  type="button">Create an account</button>
-                <button class="btn btn-lg btn-primary" type="submit">Log in</button>
+                <button class="btn btn-warning" type="submit">Log in</button>
 
             </form>
+        </div>
+    </div>
         </main>
         
     </body>
