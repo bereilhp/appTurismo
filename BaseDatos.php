@@ -21,10 +21,11 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
           echo "Name: " . $row["name"]. " - Email: " . $row["email"]. " - Password " . $row["password"]. "<br>";
+
   }
 } 
 else {
-  echo "0 results";
+  echo "No results found";
 }
 
 $conn->close();
