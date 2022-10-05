@@ -1,5 +1,7 @@
 <?php 
 
+require_once '../model/database.php';
+
 /**This classs handles the queries against the database */
 class UserDB {
 
@@ -17,13 +19,8 @@ class UserDB {
 		$this->conection = null;
 	}
 
-	/* Set conection ¿Otra vez la conexión?*/
-	public function getConection(){
-
-	}
-
 	public function insertUserData($name, $surname, $email, $password){
-		$sql = "INSERT INTO User (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
+		$sql = "INSERT INTO user (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
 		if ($this->conection->query($sql) === TRUE) {
 			echo "New record created successfully";
 		  } else {

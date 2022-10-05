@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'database.php';
+require_once '../model/userDB.php';
 
 /**This class handles the requests from the view, returning or modifying information from the model*/
 class Controller{
@@ -14,9 +14,9 @@ class Controller{
 	}
 
 	public function receiveUserData(){
-		echo "Inicio Método";
 		$this->page_title = 'Editar nota';
 		$this->view = 'edit_note';
+
 		/* User information sent by the form */
 		if(isset($_POST["name"])){
 			$name = $_POST["name"];
@@ -27,9 +27,7 @@ class Controller{
 		$this->userObj->insertUserData($name, $surname, $email, $password);
 	}
 }
-echo "Inicio";
 $controlador = new Controller();
 // Quién me ha llamado
 $controlador->receiveUserData();
-echo "To bien";
 ?>
