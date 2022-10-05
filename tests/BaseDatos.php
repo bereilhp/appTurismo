@@ -1,34 +1,18 @@
 <?php
 
-//Connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "madway";
+// First test
+$db = new Database();
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+// Create database
+$sql = "CREATE DATABASE myDB";
+if ($conn->query($sql) === TRUE) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . $conn->error;
 }
-
-$sql = "SELECT * FROM usuario";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-          echo "Name: " . $row["name"]. " - Email: " . $row["email"]. " - Password " . $row["password"]. "<br>";
-
-  }
-} 
-else {
-  echo "No results found";
-}
-
-$conn->close();
-
 ?>
 
+
+CREATE DATABASE;
+CREATE TABLE user (name VARCHAR(30), surname1 VARCHAR(20), email VARCHAR(50), password VARCHAR(20));
+INSERT INTO user VALUES ('Patricia', 'Herrera', 'gp.herrera@ceu.es', 'contraseña');

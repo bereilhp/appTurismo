@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'config/config.php';
+require_once '../config/config.php';
 
 /**This class handles sets the database properties*/
 class Database {
