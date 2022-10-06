@@ -1,116 +1,66 @@
-function iniciarMap(){
 
-  let ceu = {lat: 40.39805, lng: -3.83490};
-  let museoDelPrado = {lat: 40.41395, lng: -3.69215};
-  let museoThyssen = {lat: 40.41618, lng: -3.69490};
-  let laCaixaForum = {lat: 40.41122, lng: -3.69358};
-  let museoReinaSofia = {lat: 40.40805, lng: -3.69460}; 
-  let teatroReal = {lat: 40.41847, lng: -3.71055};
-  let jardinesSabatini = {lat: 40.42048, lng: -3.71405}; 
-  let palacioReal = {lat: 40.41803, lng: -3.71438};
-  let catedralAlmudena = {lat: 40.41596, lng: -3.71455}; 
-  let madrid = {lat:40.4165,lng: -3.70256};
-  let coordRetiro = {lat:40.41317 ,lng: -3.68307};
-  let puertaDeAlcala = {lat: 40.42028, lng: -3.68880};
-  let plazaMayor = {lat: 40.41583, lng: -3.70738};
-  let museoSorolla = {lat: 40.43548, lng: -3.69247};
-  let berna = {lat: 40.45316, lng: -3.68832};
-  let torres = {lat: 40.47729, lng: -3.68798};
-  let wanda = {lat: 40.43633, lng: -3.59948};
-  let warner = {lat: 40.44566,lng: -3.65693};
-  
-  
-  
-  let map = new google.maps.Map(document.getElementById('map'),{
-    zoom: 14,
-    center: madrid
+/*var lt = lg = 0;
+
+if(navigator.geolocation){
+
+  var success = function(position){
+
+      var latitud = position.coords.latitude,
+          longitud = position.coords.longitude;
+          console.log(longitud);
+          console.log(latitud);  
+          lt = latitud;
+          lg = longitud;
+  }
+  navigator.geolocation.getCurrentPosition(success, function(msg){
+
+      console.error( msg );
+
   });
 
-  let parqueWarner = new google.maps.Marker({
-    position: warner,
-    map: map
-  })
+}*/
 
-  let wandaMetro = new google.maps.Marker({
-    position: wanda,
-    map: map
-  })
+import "leaflet.locatecontrol";
 
-  let cuatroTorres = new google.maps.Marker({
-    position: torres,
-    map: map
-  })
+  var map = L.map('map').
+     setView([41.66, -4.72],
+     15);
 
-  let sorolla = new google.maps.Marker({
-    position: museoSorolla,
-    map: map
-  })
+     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+      maxZoom: 18
+      }).addTo(map);
 
-  let bernabeu = new google.maps.Marker({
-    position: berna,
-    map: map
-  })
+      L.control.scale().addTo(map);
 
-  let ceuMonteprincipe = new google.maps.Marker({
-    position: ceu,
-    map: map
-  })
+     // L.marker([41.66, -4.71],{draggable: true}).addTo(map);
 
-  let puertaAlcala = new google.maps.Marker({
-    position: puertaDeAlcala,
-    map: map
-  })
-
-  let plazaMayo = new google.maps.Marker({
-    position: plazaMayor,
-    map: map
-  })
-  
+      var lc = L.control.locate({
+        position: 'topleft',
+        strings: {
+          title: "Show me where I am!"
+        }
+      }).addTo(map);
 
 
 
-  let museoPrado = new google.maps.Marker({
-    position: museoDelPrado,
-    map: map
-  })
-  
-  let museoDeThyssen = new google.maps.Marker({
-    position: museoThyssen,
-    map: map
-  })
 
-  let caixaForum = new google.maps.Marker({
-    position: laCaixaForum,
-    map: map
-  })
-
-  let reinaSofia = new google.maps.Marker({
-    position: museoReinaSofia,
-    map: map
-  })
-
-  let teatroReales = new google.maps.Marker({
-    position: teatroReal,
-    map: map
-  })
-
-  let sabatini = new google.maps.Marker({
-    position: jardinesSabatini,
-    map: map
-  })
-
-  let palacioReales = new google.maps.Marker({
-    position: palacioReal,
-    map: map
-  })
-
-  let almudena = new google.maps.Marker({
-    position: catedralAlmudena,
-    map: map
-  })
-
-  let retiro = new google.maps.Marker({
-    position: coordRetiro,
-    map: map 
-  });
-}
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const { coords } = pos
+          const { latitude, longitude } = coords
+          console.log(latitude, longitude);
+          L.marker([latitude, longitude], { icon: iconMarker }).addTo(myMap)
+      
+          setTimeout(() => {
+            myMap.panTo(new L.LatLng(latitude, longitude))
+          }, 5000)
+        },
+        (error) => {
+          console.log(error)
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        })
