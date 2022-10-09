@@ -1,18 +1,21 @@
 <?php
 
-require_once '../model/database.php';
+namespace App\Model;
+
+require_once __DIR__ ."/../../src/Model/Database.php";
+//require_once '../Model/Database.php';
 
 /**This classs handles the user queries against the database */
 class UserDB
 {
 
-	private $table;
+	//private $table;
 	private $conection;
-	private $sql;
+	//private $sql;
 
-	public function __construct()
+	public function __construct($test=false)
 	{
-		$dbObj = new Database();
+		$dbObj = new \App\Model\Database($test);
 		$this->conection = $dbObj->conection;
 	}
 
@@ -21,14 +24,18 @@ class UserDB
 		$this->conection = null;
 	}
 
+	public function getConection(){
+		return $this->conection;
+	}
+
 	public function insertUserData($name, $surname, $email, $password)
 	{
 		try{
-			$this->conection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$this->conection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 			$sql = "INSERT INTO user (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
 			$this->conection->exec($sql);
 		}
-		catch (PDOException $e) {
+		catch (\PDOException $e) {
 			echo $sql . "<br>" . $e->getMessage();
 			exit;
 		}
@@ -38,12 +45,12 @@ class UserDB
 	{
 
 		try {
-			$this->conection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$this->conection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 			$stmt = $this->conection->prepare("SELECT email, password FROM user WHERE email='$email' AND password='$password'");
 			$stmt->execute();
 
 			
-		} catch (PDOException $e) {
+		} catch (\PDOException $e) {
 			echo "Error: " . $e->getMessage();
 			exit;
 		}

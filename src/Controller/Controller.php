@@ -1,12 +1,15 @@
 <?php 
 
-require_once '../model/userDB.php';
+namespace App\Controller;
+
+require_once '../Model/UserDB.php';
 
 /**This class handles the requests from the view, returning or modifying information from the model*/
 class Controller{
 
 	public function __construct() {
-		$this->userObj = new UserDB();
+		$this->userObj = new \App\Model\UserDB();
+		//$this->userObj = new UserDB();
 	}
 
 	public function receiveUserData(){
