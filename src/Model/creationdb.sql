@@ -6,18 +6,18 @@ CREATE TABLE user (name VARCHAR(30) NOT NULL, surname VARCHAR(20) NOT NULL, emai
 
 CREATE TABLE icon (icon_category VARCHAR(50) NOT NULL, image_icon LONGBLOB NOT NULL, PRIMARY KEY (icon_category));
 
-CREATE TABLE place (id_place int NOT NULL AUTO_INCREMENT, description_place VARCHAR(200) NOT NULL, tag VARCHAR(100) NOT NULL, time_place VARCHAR(50) NOT NULL, icon_category VARCHAR(50) NOT NULL, coordinate POINT NOT NULL, PRIMARY KEY (id_place), FOREIGN KEY (icon_category) REFERENCES icon(icon_category));
+CREATE TABLE place (id_place INT NOT NULL AUTO_INCREMENT, description_place VARCHAR(200) NOT NULL, schedule VARCHAR(50) NOT NULL, icon_category VARCHAR(50) NOT NULL, coordinate POINT NOT NULL, PRIMARY KEY (id_place), FOREIGN KEY (icon_category) REFERENCES icon(icon_category));
 
-CREATE TABLE userPlace (email VARCHAR(50) NOT NULL REFERENCES user, id_place int NOT NULL REFERENCES place, PRIMARY KEY (email, id_place));
+CREATE TABLE userPlace (email VARCHAR(50) NOT NULL, id_place INT NOT NULL, PRIMARY KEY (email, id_place), FOREIGN KEY (email) REFERENCES user(email), FOREIGN KEY (id_place) REFERENCES place(id_place));
 
-CREATE TABLE tag (id_tag int NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(40) NOT NULL, description_tag VARCHAR(1000) NOT NULL);
+CREATE TABLE tag (id_tag INT NOT NULL AUTO_INCREMENT, name VARCHAR(40) NOT NULL, description_tag VARCHAR(1000) NOT NULL, PRIMARY KEY (id_tag));
 
-CREATE TABLE placeTag (id_place int NOT NULL REFERENCES place, id_tag int NOT NULL REFERENCES tag, PRIMARY KEY (id_tag, id_place));
+CREATE TABLE placeTag (id_place INT NOT NULL, id_tag int NOT NULL, PRIMARY KEY (id_tag, id_place), FOREIGN KEY (id_place) REFERENCES place(id_place), FOREIGN KEY (id_tag) REFERENCES tag(id_tag));
 
-
-INSERT INTO place (description_place, tag, time_place, icon_category, coordinate)
+/*INSERT INTO place (description_place, tag, schedule, icon_category, coordinate)*/
+INSERT INTO place (description_place, schedule, icon_category, coordinate)
 VALUES 
-    ("Museo del prado", "Museo", "10:00 - 19:00", "IconoMonumento", Point(40.41395, -3.69215)),
+    ("Museo del prado", "10:00 - 19:00", "IconoMonumento", Point(40.41395, -3.69215)),
     ("Museo Thyssen", "Museo", "10:00 - 19:00", "IconoMonumento", Point(40.41618, -3.69490)),
     ("Caixa Forum", "Museo", "10:00 - 20:00", "IconoMonumento", Point(40.41122, -3.69358)),
     ("Museo Reina Sofia", "Museo", "10:00 - 21:00", "IconoMonumento", Point(40.40805, -3.69460)),
