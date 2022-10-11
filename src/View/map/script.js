@@ -79,7 +79,7 @@ var IconoComida = L.icon({
   popupAnchor: [0, -40]
 });
 
-var IconoRestaurantes = L.icon({
+var IconoBar = L.icon({
   iconUrl: "https://img.icons8.com/external-flatarticons-blue-flatarticons/344/external-location-coffee-shop-flatart-icons-lineal-color-flatarticons-1.png",
   iconSize: [40, 40],
   iconAnchor: [15, 40],
@@ -169,8 +169,8 @@ let locationData = [{Coordenadas: [40.41395, -3.69215], Nombre : "Museo del Prad
 {Coordenadas: [40.41203, -3.75009], Nombre: "Parque de Atracciones de Madrid", Icono: IconoParqueAtracciones},
 {Coordenadas: [40.42400, -3.67173], Nombre: "Wizink Center", Icono: IconoMusica},
 {Coordenadas: [40.38614, -3.738], Nombre: "Palacio Vistalegre Arena", Icono: IconoMusica},
-{Coordenadas: [40.42556, -3.70394], Nombre: "Ojala Bar", Icono: IconoRestaurantes},
-{Coordenadas: [40.44120, -3.71532], Nombre: "Cherry Pecas Bar", Icono: IconoRestaurantes},
+{Coordenadas: [40.42556, -3.70394], Nombre: "Ojala Bar", Icono: IconoBar},
+{Coordenadas: [40.44120, -3.71532], Nombre: "Cherry Pecas Bar", Icono: IconoBar},
 {Coordenadas: [40.42526, -3.70073], Nombre: "Oven Restaurante", Icono: IconoComida},
 {Coordenadas: [40.41990, -3.69937], Nombre: "Steak Burger Restaurante", Icono: IconoComida},
 {Coordenadas: [40.41872, -3.69443], Nombre: "Banco de España", Icono: IconoBancos},
