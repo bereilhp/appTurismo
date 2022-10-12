@@ -1,17 +1,22 @@
+<html>
+    <body>
 <?php
 $servername = "localhost";
 $username = "root";
+$dbpassword = "";
 $dbname = "madway";
 
+
 // Create connection
-$conn = new mysqli($servername, $username, $dbname);
+$conn = new mysqli($servername, $username, $dbpassword, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$sql = "SELECT * FROM place";
 $result = $conn->query($sql);
+
 
 if ($result->num_rows > 0) {
     // output data of each row
@@ -24,3 +29,5 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+</body>
+</html>
