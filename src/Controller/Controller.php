@@ -9,22 +9,21 @@ class Controller{
 
 	public function __construct() {
 		$this->userObj = new \App\Model\UserDB();
-		//$this->userObj = new UserDB();
 	}
 
 	public function receiveUserData(){
 		/* User information sent by the form */
-		if(isset($_POST["name"])){
+		if(isset($_POST["name"], $_POST["surname"], $_POST["email"], $_POST["password"])){
 			$name = $_POST["name"];
 			$surname = $_POST["surname"];
 			$email = $_POST["email"];
 			$password = $_POST["password"];
+			$this->userObj->insertUserData($name, $surname, $email, $password);
 		} 
-		$this->userObj->insertUserData($name, $surname, $email, $password);
+		
 	}
 
 	public function checkUserData(){
-
 		/* User information sent by the form */
 		if(isset($_POST["email"])){
 			$email = $_POST["email"];
@@ -35,7 +34,6 @@ class Controller{
 	}
 }
 
-/* Simular main*/
 $controlador = new Controller();
 
 

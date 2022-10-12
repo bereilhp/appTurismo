@@ -9,9 +9,10 @@ require_once __DIR__ ."/../../src/Model/Database.php";
 class UserDB
 {
 
-	//private $table;
 	private $conection;
-	//private $sql;
+	private $exceptionSQL;
+	private $exceptionPDO;
+	
 
 	public function __construct($test=false)
 	{
@@ -28,6 +29,14 @@ class UserDB
 		return $this->conection;
 	}
 
+	public function getExceptionSQL(){
+		return $this->exceptionSQL;
+	}
+
+	public function getExceptionPDO(){
+		return $this->exceptionPDO;
+	}
+
 	public function insertUserData($name, $surname, $email, $password)
 	{
 		try{
@@ -36,8 +45,10 @@ class UserDB
 			$this->conection->exec($sql);
 		}
 		catch (\PDOException $e) {
-			echo $sql . "<br>" . $e->getMessage();
-			exit;
+			//echo $sql . "<br>" . $e->getMessage();
+			$this->exceptionSQL = $sql;
+			$this->exceptionPDO = $e->getMessage();
+			//exit;
 		}
 	}
 

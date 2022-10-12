@@ -4,15 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
 
-//require_once "userDB.php";
-//require_once __DIR__ . '/../../vendor/autoload.php';
-
-//require_once __DIR__ ."config.php";
-
-//require_once __DIR__ ."/../../src/model/database.php";
-
-//require_once __DIR__ ."/../../src/model/userDB.php";
-
+/**This class checks all methods regarding the user management */
 
 class UserDBTest extends TestCase
 {
@@ -30,15 +22,13 @@ class UserDBTest extends TestCase
 	    $stmt = $obj->getConection()->prepare("SELECT * FROM user WHERE email='$email'");
 		$stmt->execute();
 
-		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$row = $stmt->fetch();
 
-        $row = $stmt->fetch();
+        assertEquals($name,     $row["name"],       "Inserted user name does not match the specified one");
+        assertEquals($surname,  $row["surname"],    "Inserted user surname does not match the specified one");
+        assertEquals($email,    $row["email"],      "Inserted user email does not match the specified one");
+        assertEquals($password, $row["password"],   "Inserted user password does not match the specified one");
 
-        assertEquals($row["name"]    , $name    , "Name does not match");
-        assertEquals($row["surname"] , $surname , "Surname does not match");
-        assertEquals($row["email"]   , $email   , "Email does not match");
-        assertEquals($row["password"], $password, "Password does not match");
-		
         $sql = "DELETE FROM user WHERE email='$email'";
         $obj->getConection()->exec($sql);
     }
@@ -57,21 +47,19 @@ class UserDBTest extends TestCase
 	    $stmt = $obj->getConection()->prepare("SELECT * FROM user WHERE email='$email'");
 		$stmt->execute();
 
-		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$row = $stmt->fetch();
 
-        $row = $stmt->fetch();
-
-        assertEquals($row["name"]    , $name    , "Name does not match");
-        assertEquals($row["surname"] , $surname , "Surname does not match");
-        assertEquals($row["email"]   , $email   , "Email does not match");
-        assertEquals($row["password"], $password, "Password does not match");
+        assertEquals($name,     $row["name"],       "Inserted user name does not match the specified one");
+        assertEquals($surname,  $row["surname"],    "Inserted user surname does not match the specified one");
+        assertEquals($email,    $row["email"],      "Inserted user email does not match the specified one");
+        assertEquals($password, $row["password"],   "Inserted user password does not match the specified one");
 		
         $sql = "DELETE FROM user WHERE email='$email'";
         $obj->getConection()->exec($sql);
     }
 
-    /** This test checks that a user can be register with same values except the email (primary key) */
-    public function testNotInsertUserDataEmail():void
+    /** This test checks that a user can be registered with same values, except the email (primary key) */
+    public function testInsertUserDataDifferentEmail():void
     {
         $name = "paula";
         $surname = "gutiérrez";
@@ -86,7 +74,6 @@ class UserDBTest extends TestCase
         $email = "paugutierrez@yahoo.es";
         $password = "pau!123";
 
-        $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
          
 	    $stmt = $obj->getConection()->prepare("SELECT * FROM user");
@@ -94,15 +81,15 @@ class UserDBTest extends TestCase
 
 		$numberRow = $stmt->rowCount();
         
-		assertEquals($numberRow, 2, "Number of rows does not match");
+		assertEquals(2, $numberRow, "The number of rows in the database does not match the number of insertions");
 
         $sql = "DELETE FROM user";
         $obj->getConection()->exec($sql);
 
     }
 
-    /** This test checks that a user can not be register if their email is early used */
-    /**public function testNotInsertUserDataEmail():void
+    /** This test checks that a user can not be registered if their email is early used */
+    public function testInsertUserDataSameEmail():void
     {
         $name = "josé";
         $surname = "gómez";
@@ -112,22 +99,36 @@ class UserDBTest extends TestCase
         $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
 
-        $name = "josé maría";
-        $surname = "gómez";
+        //¿Comprobar que este usuarios se ha registrado?, aunque lo haga otro test
+
+        $name = "José María";
+        $surname = "Gómez";
         $email = "joségómez@gmail.com";
         $password = "josé2";
 
-        $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
+        
+        $exceptionRealSQL = $obj->getExceptionSQL();
+        $exceptionExpectedSQL = "INSERT INTO user (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
+    
+        assertEquals($exceptionExpectedSQL, $exceptionRealSQL, "Not throwing the right SQL exception");
+
+        $exceptionRealPDO = $obj->getExceptionPDO();
+        $exceptionExpectedPDO = "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '$email' for key 'PRIMARY'";
          
-	    $stmt = $obj->getConection()->prepare("SELECT * FROM user WHERE email='$email'");
+	    assertEquals($exceptionExpectedPDO, $exceptionRealPDO, "Not throwing the right PDO exception");
+
+        $stmt = $obj->getConection()->prepare("SELECT * FROM user");
 		$stmt->execute();
 
 		$numberRow = $stmt->rowCount();
 
-		assertEquals($numberRow, 1, "Number of rows does not match");
+		assertEquals(1, $numberRow, "The number of rows in the database does not match the number of insertions");
+        
+        $sql = "DELETE FROM user";
+        $obj->getConection()->exec($sql);
     }
-    */
+    
 
     /** This test checks if a user data insertion with missing values can not be performed against the database */
     /**public function testNotInsertUserData():void
