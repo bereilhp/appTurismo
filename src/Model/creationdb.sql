@@ -14,7 +14,26 @@ CREATE TABLE tag (id_tag INT NOT NULL AUTO_INCREMENT, name VARCHAR(40) NOT NULL,
 
 CREATE TABLE placeTag (id_place INT NOT NULL, id_tag int NOT NULL, PRIMARY KEY (id_tag, id_place), FOREIGN KEY (id_place) REFERENCES place(id_place), FOREIGN KEY (id_tag) REFERENCES tag(id_tag));
 
-/*INSERT INTO place (description_place, tag, schedule, icon_category, coordinate)*/
+
+INSERT INTO icon (icon_category, image_icon)
+VALUES
+    ("IconoMonumento",LOAD_FILE('./Images/IconoMonumento.png')),
+    ("IconoVerde",LOAD_FILE('./Images/IconoVerde.png')),
+    ("IconoDeportes",LOAD_FILE('./Images/IconoDeportes.png')),
+    ("IconoParqueAtracciones",LOAD_FILE('./Images/IconoParqueAtracciones.png')),
+    ("IconoWifi",LOAD_FILE('./Images/IconoWifi.png')),
+    ("IconoMusica",LOAD_FILE('./Images/IconoMusica.png')),
+    ("IconoBar",LOAD_FILE('./Images/IconoBar.png')),
+    ("IconoComida",LOAD_FILE('./Images/IconoComida.png')),
+    ("IconoFarmacias",LOAD_FILE('./Images/IconoFarmacia.png')),
+    ("IconoBancos",LOAD_FILE('./Images/IconoBanco.png')),
+    ("IconoCine",LOAD_FILE('./Images/IconoCine.png')),
+    ("IconoEmpresa",LOAD_FILE('./Images/IconoEmpresa.png'));
+    ("IconoIglesia",LOAD_FILE('./Images/IconoIglesia.png')),
+    ("IconoSuper",LOAD_FILE('./Images/IconoSuper.png'));
+
+    
+
 INSERT INTO place (description_place, schedule, icon_category, coordinate)
 VALUES 
     ("Museo del prado", "10:00 - 19:00", "IconoMonumento", Point(40.41395, -3.69215)),
