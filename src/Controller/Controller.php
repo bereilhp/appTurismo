@@ -12,29 +12,32 @@ class Controller{
 	}
 
 	public function receiveUserData(){
-		/* User information sent by the form */
+		/* User information sent by the sign up form */
 		if(isset($_POST["name"], $_POST["surname"], $_POST["email"], $_POST["password"])){
 			$name = $_POST["name"];
 			$surname = $_POST["surname"];
 			$email = $_POST["email"];
 			$password = $_POST["password"];
-			$this->userObj->insertUserData($name, $surname, $email, $password);
+			return $this->userObj->insertUserData($name, $surname, $email, $password);
 		} 
 		
 	}
 
 	public function checkUserData(){
-		/* User information sent by the form */
-		if(isset($_POST["email"])){
+		/* User information sent by the sign in form */
+		if(isset($_POST["email"], $_POST["password"])){
 			$email = $_POST["email"];
 			$password = $_POST["password"];
+			return $this->userObj->checkUserExists($email, $password);
 		} 
-		
-		return $this->userObj->checkUserExits($email, $password);
+	}
+
+	public function displayMessage($message) {
+		/** Display an error message */
+		echo "<script>alert('$message');</script>";
 	}
 }
 
 $controlador = new Controller();
-
 
 ?>

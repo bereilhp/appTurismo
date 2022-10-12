@@ -2,7 +2,11 @@
 
 require_once 'Controller.php';
 
-$controlador->checkUserData(); 
+//$controlador->checkUserData(); 
 
-if ($controlador->checkUserData()) header('Location: ../View/map/map.html');
-else echo "Usuario no registrado";
+if ($controlador->checkUserData()){
+    header('Location: ../View/map/map.html');
+}
+else {
+    $controlador->displayMessage("User not registered");;
+}

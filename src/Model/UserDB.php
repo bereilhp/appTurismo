@@ -9,7 +9,7 @@ require_once __DIR__ ."/../../src/Model/Database.php";
 class UserDB
 {
 
-	private $conection;
+	private $connection;
 	private $exceptionSQL;
 	private $exceptionPDO;
 	
@@ -17,16 +17,16 @@ class UserDB
 	public function __construct($test=false)
 	{
 		$dbObj = new \App\Model\Database($test);
-		$this->conection = $dbObj->conection;
+		$this->connection = $dbObj->getConnection();
 	}
 
 	public function __destruct()
 	{
-		$this->conection = null;
+		$this->connection = null;
 	}
 
-	public function getConection(){
-		return $this->conection;
+	public function getConnection(){
+		return $this->connection;
 	}
 
 	public function getExceptionSQL(){
@@ -40,30 +40,27 @@ class UserDB
 	public function insertUserData($name, $surname, $email, $password)
 	{
 		try{
-			$this->conection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 			$sql = "INSERT INTO user (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
-			$this->conection->exec($sql);
+			$this->connection->exec($sql);
+			return true;
 		}
 		catch (\PDOException $e) {
-			//echo $sql . "<br>" . $e->getMessage();
 			$this->exceptionSQL = $sql;
 			$this->exceptionPDO = $e->getMessage();
-			//exit;
+			return false;
 		}
 	}
 
-	public function checkUserExits($email, $password)
+	public function checkUserExists($email, $password)
 	{
-
 		try {
-			$this->conection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$stmt = $this->conection->prepare("SELECT email, password FROM user WHERE email='$email' AND password='$password'");
-			$stmt->execute();
-
-			
+			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			$stmt = $this->connection->prepare("SELECT email, password FROM user WHERE email='$email' AND password='$password'");
+			$stmt->execute();	
 		} catch (\PDOException $e) {
 			echo "Error: " . $e->getMessage();
-			exit;
+			$this->excepcionPDO = $e->getMessage();
 		}
 		
 		$numberRow = $stmt->rowCount();

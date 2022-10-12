@@ -13,7 +13,7 @@ class Database {
 	private $db;
 	private $user;
 	private $pass;
-	public $conection;
+	private $connection;
 
 	public function __construct($test=false) {		
 
@@ -29,12 +29,16 @@ class Database {
 		}
 
 		try {
-           $this->conection = new \PDO('mysql:host='.$this->host.'; dbname='.$this->db, $this->user, $this->pass);
+           $this->connection = new \PDO('mysql:host='.$this->host.'; dbname='.$this->db, $this->user, $this->pass);
         } catch (\PDOException $e) {
             echo $e->getMessage();
             exit();
         }
 
+	}
+
+	public function getConnection(){
+		return $this->connection;
 	}
 
 }

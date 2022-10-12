@@ -3,6 +3,8 @@
 use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertFalse;
+use function PHPUnit\Framework\assertTrue;
 
 /**This class checks all methods regarding the user management */
 
@@ -19,7 +21,7 @@ class UserDBTest extends TestCase
         $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
          
-	    $stmt = $obj->getConection()->prepare("SELECT * FROM user WHERE email='$email'");
+	    $stmt = $obj->getConnection()->prepare("SELECT * FROM user WHERE email='$email'");
 		$stmt->execute();
 
 		$row = $stmt->fetch();
@@ -30,7 +32,7 @@ class UserDBTest extends TestCase
         assertEquals($password, $row["password"],   "Inserted user password does not match the specified one");
 
         $sql = "DELETE FROM user WHERE email='$email'";
-        $obj->getConection()->exec($sql);
+        $obj->getConnection()->exec($sql);
     }
 
     /** This test checks if a user data insertion (spanish charset) can be performed against the database */
@@ -44,7 +46,7 @@ class UserDBTest extends TestCase
         $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
          
-	    $stmt = $obj->getConection()->prepare("SELECT * FROM user WHERE email='$email'");
+	    $stmt = $obj->getConnection()->prepare("SELECT * FROM user WHERE email='$email'");
 		$stmt->execute();
 
 		$row = $stmt->fetch();
@@ -55,8 +57,14 @@ class UserDBTest extends TestCase
         assertEquals($password, $row["password"],   "Inserted user password does not match the specified one");
 		
         $sql = "DELETE FROM user WHERE email='$email'";
-        $obj->getConection()->exec($sql);
+        $obj->getConnection()->exec($sql);
     }
+
+    /** Case sensitive 
+    public function testInsertUserDataCaseSensitive():void
+    {
+        
+    }*/
 
     /** This test checks that a user can be registered with same values, except the email (primary key) */
     public function testInsertUserDataDifferentEmail():void
@@ -76,7 +84,7 @@ class UserDBTest extends TestCase
 
         $obj->insertUserData($name, $surname, $email, $password);
          
-	    $stmt = $obj->getConection()->prepare("SELECT * FROM user");
+	    $stmt = $obj->getConnection()->prepare("SELECT * FROM user");
 		$stmt->execute();
 
 		$numberRow = $stmt->rowCount();
@@ -84,7 +92,7 @@ class UserDBTest extends TestCase
 		assertEquals(2, $numberRow, "The number of rows in the database does not match the number of insertions");
 
         $sql = "DELETE FROM user";
-        $obj->getConection()->exec($sql);
+        $obj->getConnection()->exec($sql);
 
     }
 
@@ -118,7 +126,7 @@ class UserDBTest extends TestCase
          
 	    assertEquals($exceptionExpectedPDO, $exceptionRealPDO, "Not throwing the right PDO exception");
 
-        $stmt = $obj->getConection()->prepare("SELECT * FROM user");
+        $stmt = $obj->getConnection()->prepare("SELECT * FROM user");
 		$stmt->execute();
 
 		$numberRow = $stmt->rowCount();
@@ -126,28 +134,37 @@ class UserDBTest extends TestCase
 		assertEquals(1, $numberRow, "The number of rows in the database does not match the number of insertions");
         
         $sql = "DELETE FROM user";
-        $obj->getConection()->exec($sql);
+        $obj->getConnection()->exec($sql);
     }
     
-
-    /** This test checks if a user data insertion with missing values can not be performed against the database */
-    /**public function testNotInsertUserData():void
+    /** This test checks that a user can login when it's already registered */
+    public function testcheckUserExists():void
     {
-        $name = "josé";
-        $surname = "gómez";
-        $email = null;
-        $password = "josé";
+        $name = "antonio";
+        $surname = "pérez";
+        $email = "aperez123@gmail.com";
+        $password = "antonio";
 
         $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
-         
-	    $stmt = $obj->getConection()->prepare("SELECT * FROM user WHERE email='$email'");
-		$stmt->execute();
 
-		$numberRow = $stmt->rowCount();
+        $existance = $obj->checkUserExists($email, $password);
 
-		assertEquals($numberRow, 0, "Number of rows does not match");
+        assertTrue($existance, "The user does not exist in the database");
+
+        $sql = "DELETE FROM user";
+        $obj->getConnection()->exec($sql);
     }
-    */
-    
+
+    /** This test checks that a user can not login when it's already registered  */
+    public function testcheckNotUserExists():void
+    {
+        $email = "anaramos@gmail.com";
+        $password = "anaRamos";
+        
+        $obj = new App\Model\UserDB("madwayTest");
+        $existance = $obj->checkUserExists($email, $password);
+
+        assertFalse($existance, "The user does  exist in the database");
+    }
 }
