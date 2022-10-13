@@ -3,8 +3,6 @@
 use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertFalse;
-use function PHPUnit\Framework\assertTrue;
 
 /**This class checks all methods regarding the user management */
 /*
@@ -34,11 +32,14 @@ class PlaceDBTest extends TestCase
 		$row = $stmt->fetch();
 
         
-        assertEquals($description_place, $row["description_place"], "Inserted description place does not match the specified one");
+        assertEquals($description_place, $row["description_place"], "Inserted place description does not match the specified one");
         assertEquals($schedule,          $row["schedule"],          "Inserted place schedule does not match the specified one");
         assertEquals($id_icon,           $row["id_icon"],           "Inserted place id_icon does not match the specified one");
-        assertEquals($latitude,          $row["latitude"],            "Inserted place coordinate does not match the specified one");
-        assertEquals($longitude,         $row["longitude"],          "Inserted place coordinate does not match the specified one");
+        assertEquals($latitude,          $row["latitude"],          "Inserted place latitude does not match the specified one");
+        assertEquals($longitude,         $row["longitude"],         "Inserted place longitude does not match the specified one");
+        
+        $sql = "DELETE FROM place";
+        $obj->getConnection()->exec($sql);
     }
 
 }
