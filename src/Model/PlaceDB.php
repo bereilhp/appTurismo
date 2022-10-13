@@ -37,11 +37,11 @@ class PlaceDB
 		return $this->exceptionPDO;
 	}
 
-	public function insertPlaceData($description_place, $schedule, $id_icon, $coordinate)
+	public function insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude)
 	{
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO place (description_place, schedule, id_icon, coordinate) VALUES ('$description_place', '$schedule', '$id_icon', '$coordinate')";
+			$sql = "INSERT INTO place (description_place, schedule, id_icon, latitude, longitude) VALUES ('$description_place', '$schedule', '$id_icon', '$latitude', '$longitude')";
 			$this->connection->exec($sql);
 			return true;
 		}
@@ -80,7 +80,6 @@ class PlaceDB
 	}*/
 
 
-
-
+	
 	
 }
