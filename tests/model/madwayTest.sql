@@ -1,8 +1,8 @@
-CREATE DATABASE madwayTest;
+CREATE DATABASE madwayTest1;
 
-ALTER DATABASE madwayTest CHARACTER SET='utf8' COLLATE='utf8_bin';
+ALTER DATABASE madwayTest1 CHARACTER SET='utf8' COLLATE='utf8_bin';
 
-CREATE TABLE user (name VARCHAR(30) NOT NULL, surname VARCHAR(20) NOT NULL, email VARCHAR(50) NOT NULL, password VARCHAR(20) NOT NULL, PRIMARY KEY (email));
+CREATE TABLE user (id_user INT NOT NULL AUTO_INCREMENT, name VARCHAR(30) NOT NULL, surname VARCHAR(20) NOT NULL, email VARCHAR(50) UNIQUE, password VARCHAR(20) NOT NULL, PRIMARY KEY (id_user));
 
 CREATE TABLE icon (id_icon INT NOT NULL AUTO_INCREMENT, icon_category VARCHAR(50) NOT NULL, image_icon BLOB, PRIMARY KEY (id_icon));
 
@@ -12,7 +12,7 @@ CREATE TABLE place (id_place INT NOT NULL AUTO_INCREMENT, description_place VARC
 
 CREATE TABLE placeTag (id_place INT NOT NULL, id_tag int NOT NULL, PRIMARY KEY (id_tag, id_place), FOREIGN KEY (id_place) REFERENCES place(id_place), FOREIGN KEY (id_tag) REFERENCES tag(id_tag));
 
-CREATE TABLE userPlace (email VARCHAR(50) NOT NULL, id_place INT NOT NULL, PRIMARY KEY (email, id_place), FOREIGN KEY (email) REFERENCES user(email), FOREIGN KEY (id_place) REFERENCES place(id_place));
+CREATE TABLE userPlace (id_user INT NOT NULL, id_place INT NOT NULL, PRIMARY KEY (id_user, id_place), FOREIGN KEY (id_user) REFERENCES user(id_user), FOREIGN KEY (id_place) REFERENCES place(id_place));
 
 /*Para realizar los Test de la tabla Place dependemos de la tabla Icon para que los Test funcionen correctamente*/
 INSERT INTO icon (icon_category, image_icon)

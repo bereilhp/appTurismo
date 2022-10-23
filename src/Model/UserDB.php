@@ -61,7 +61,7 @@ class UserDB
 	{
 		try {
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$stmt = $this->connection->prepare("SELECT email, password FROM user WHERE email='$email' AND password='$password'");
+			$stmt = $this->connection->prepare("SELECT id_user FROM user WHERE email='$email' AND password='$password'");
 			$stmt->execute();	
 		} catch (\PDOException $e) {
 			echo "Error: " . $e->getMessage();
@@ -71,7 +71,8 @@ class UserDB
 		$numberRow = $stmt->rowCount();
 
 		if ($numberRow == 1) {
-			return true;
+			$result = $stmt->fetch(\PDO::FETCH_ASSOC);
+			return $result['id_user'];
 		}
 		return false;
 	}

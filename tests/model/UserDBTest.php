@@ -147,9 +147,12 @@ class UserDBTest extends TestCase
         $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
 
-        $existance = $obj->checkUserExists($email, $password);
+        //$idCurrent = SELECT id_user... 
 
-        assertTrue($existance, "The user does not exist in the database");
+        $idExpected = $obj->checkUserExists($email, $password);
+
+        assertTrue ($idExpected > 0, "The user's id is in the right range");
+        //assertEquals(1, $idExpected, "The ID of the user does not match");
 
         $sql = "DELETE FROM user";
         $obj->getConnection()->exec($sql);
