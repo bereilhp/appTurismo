@@ -12,6 +12,7 @@ class UserDB
 	private $connection;
 	private $exceptionSQL;
 	private $exceptionPDO;
+	private $id;
 	
 
 	public function __construct($test=false)
@@ -35,6 +36,10 @@ class UserDB
 
 	public function getExceptionPDO(){
 		return $this->exceptionPDO;
+	}
+
+	public function getIdUser(){
+		return $this->id;
 	}
 
 	public function insertUserData($name, $surname, $email, $password)
@@ -70,4 +75,5 @@ class UserDB
 		}
 		return false;
 	}
+
 }

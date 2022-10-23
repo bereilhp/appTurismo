@@ -107,8 +107,7 @@ class UserDBTest extends TestCase
         $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
 
-        //¿Comprobar que este usuarios se ha registrado?, aunque lo haga otro test
-
+        
         $name = "José María";
         $surname = "Gómez";
         $email = "joségómez@gmail.com";
@@ -122,7 +121,7 @@ class UserDBTest extends TestCase
         assertEquals($exceptionExpectedSQL, $exceptionRealSQL, "Not throwing the right SQL exception");
 
         $exceptionRealPDO = $obj->getExceptionPDO();
-        $exceptionExpectedPDO = "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '$email' for key 'PRIMARY'";
+        $exceptionExpectedPDO = "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '$email' for key 'email'";
          
 	    assertEquals($exceptionExpectedPDO, $exceptionRealPDO, "Not throwing the right PDO exception");
 
