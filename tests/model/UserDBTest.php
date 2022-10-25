@@ -50,9 +50,6 @@ class UserDBTest extends TestCase
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         try {
-            $sqlUser = "DROP TABLE user";
-            $conn->exec($sqlUser);
-
             $sqlUser = "DROP DATABASE madwayTest";
             $conn->exec($sqlUser);
         } catch (Exception $e) {

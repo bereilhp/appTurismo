@@ -57,12 +57,6 @@ class PlaceDBTest extends TestCase
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
             try {
-                $sqlPlace = "DROP TABLE place";
-                $conn->exec($sqlPlace);
-                
-                $sqlIcon = "DROP TABLE icon";
-                $conn->exec($sqlIcon);
-    
                 $sqlUser = "DROP DATABASE madwayTest";
                 $conn->exec($sqlUser);
             } catch (Exception $e) {
