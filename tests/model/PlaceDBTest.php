@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\UserDB;
 use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
@@ -38,8 +39,15 @@ class PlaceDBTest extends TestCase
         assertEquals($latitude,          $row["latitude"],          "Inserted place latitude does not match the specified one");
         assertEquals($longitude,         $row["longitude"],         "Inserted place longitude does not match the specified one");
         
-        $sql = "DELETE FROM place";
-        $obj->getConnection()->exec($sql);
+        //$sql = "DELETE FROM place";
+        //$obj->getConnection()->exec($sql);
+    }
+
+    public function testGetDescriptionPlace():void{
+        $obj = new App\Model\PlaceDB("madwayTest");
+        $expected = $obj->getDescriptionPlace();
+
+        assertEquals("Estadio Civitas Metropolitano", $expected[0],"no funciona");
     }
 
 }

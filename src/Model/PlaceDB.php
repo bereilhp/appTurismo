@@ -52,6 +52,23 @@ class PlaceDB
 		}
 	}
 
+	public function getDescriptionPlace(){
+		try{
+			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			$sql = "SELECT description_place from place";
+			$stmt = $this->connection->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
+			return $result;
+
+		}
+		catch (\PDOException $e) {
+			$this->exceptionSQL = $sql;
+			$this->exceptionPDO = $e->getMessage();
+			return null;
+		}
+	}
+
     /*
     public function GetDataTag($name, $description_place)
 	{
