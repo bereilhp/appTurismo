@@ -10,6 +10,12 @@ use function PHPUnit\Framework\assertTrue;
 
 class UserDBTest extends TestCase
 {
+    
+    /** Set the database for the tests */
+    protected function SetUpDatabase(){
+        // leer del fichero de creationdb
+    }
+    
     /** This test checks if a user data insertion can be performed against the database */
     public function testInsertUserData():void
     {
