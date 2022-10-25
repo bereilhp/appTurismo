@@ -11,9 +11,53 @@ use function PHPUnit\Framework\assertTrue;
 class UserDBTest extends TestCase
 {
     
-    /** Set the database for the tests */
-    protected function SetUpDatabase(){
-        // leer del fichero de creationdb
+    /** Create a database and tables required for the tests */
+    protected function setUp():void
+    {
+        $servername = "localhost";
+        $dbname = "madwayTest";
+        $username = "root";
+        $password = "";
+
+        $db = new PDO("mysql:host=$servername", $username, $password);
+
+        try {
+            $sqlDatabase = "CREATE DATABASE madwayTest CHARACTER SET='utf8' COLLATE='utf8_bin'";
+            $db->exec($sqlDatabase);
+            
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sqlUser = "CREATE TABLE user (id_user INT NOT NULL AUTO_INCREMENT, name VARCHAR(30) NOT NULL, surname VARCHAR(20) NOT NULL, email VARCHAR(50) UNIQUE, password VARCHAR(20) NOT NULL, PRIMARY KEY (id_user))"; 
+            $conn->exec($sqlUser);
+            
+            //$sql = file_get_contents("prueba.txt");
+            //$db->exec($sql);
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+    }
+
+    /** Delete all tables and the database created */
+    protected function tearDown(): void
+    {
+        $servername = "localhost";
+        $dbname = "madwayTest";
+        $username = "root";
+        $password = "";
+
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        try {
+            $sqlUser = "DROP TABLE user";
+            $conn->exec($sqlUser);
+
+            $sqlUser = "DROP DATABASE madwayTest";
+            $conn->exec($sqlUser);
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
     
     /** This test checks if a user data insertion can be performed against the database */
@@ -36,9 +80,6 @@ class UserDBTest extends TestCase
         assertEquals($surname,  $row["surname"],    "Inserted user surname does not match the specified one");
         assertEquals($email,    $row["email"],      "Inserted user email does not match the specified one");
         assertEquals($password, $row["password"],   "Inserted user password does not match the specified one");
-
-        $sql = "DELETE FROM user WHERE email='$email'";
-        $obj->getConnection()->exec($sql);
     }
 
     /** This test checks if a user data insertion (spanish charset) can be performed against the database */
@@ -61,9 +102,6 @@ class UserDBTest extends TestCase
         assertEquals($surname,  $row["surname"],    "Inserted user surname does not match the specified one");
         assertEquals($email,    $row["email"],      "Inserted user email does not match the specified one");
         assertEquals($password, $row["password"],   "Inserted user password does not match the specified one");
-		
-        $sql = "DELETE FROM user WHERE email='$email'";
-        $obj->getConnection()->exec($sql);
     }
 
     /** Case sensitive 
@@ -96,10 +134,6 @@ class UserDBTest extends TestCase
 		$numberRow = $stmt->rowCount();
         
 		assertEquals(2, $numberRow, "The number of rows in the database does not match the number of insertions");
-
-        $sql = "DELETE FROM user";
-        $obj->getConnection()->exec($sql);
-
     }
 
     /** This test checks that a user can not be registered if their email is early used */
@@ -137,9 +171,6 @@ class UserDBTest extends TestCase
 		$numberRow = $stmt->rowCount();
 
 		assertEquals(1, $numberRow, "The number of rows in the database does not match the number of insertions");
-        
-        $sql = "DELETE FROM user";
-        $obj->getConnection()->exec($sql);
     }
     
     /** This test checks that a user can login when it's already registered */
@@ -159,9 +190,6 @@ class UserDBTest extends TestCase
 
         assertTrue ($idExpected > 0, "The user's id is in the right range");
         //assertEquals(1, $idExpected, "The ID of the user does not match");
-
-        $sql = "DELETE FROM user";
-        $obj->getConnection()->exec($sql);
     }
 
     /** This test checks that a user can not login when it's already registered  */
