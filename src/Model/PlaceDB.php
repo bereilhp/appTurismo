@@ -106,11 +106,27 @@ class PlaceDB
 	}
 
 	
-
 	public function getLatitude(){
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 			$sql = "SELECT latitude from place";
+			$stmt = $this->connection->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
+			return $result;
+
+		}
+		catch (\PDOException $e) {
+			$this->exceptionSQL = $sql;
+			$this->exceptionPDO = $e->getMessage();
+			return null;
+		}
+	}
+
+	public function getLongitude(){
+		try{
+			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			$sql = "SELECT longitude from place";
 			$stmt = $this->connection->prepare($sql);
 			$stmt->execute();
 			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
