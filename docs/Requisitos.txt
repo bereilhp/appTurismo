@@ -1,0 +1,142 @@
+Requisitos funcionales
+
+A continuación se desglosan los requisitos funcionales en los tres grandes bloques que componen la aplicación.
+Itinerarios
+
+    Clasificación de todos los sitios de interés almacenados en la aplicación, a través de la asignación de una o múltiples etiquetas representativas de dicho lugar.
+        Criterio de validación: todos los sitios de interés deberán estar asociados, como mínimo, a una etiqueta, siendo nulos los que estén asociados a la etiqueta “sin etiqueta”.
+
+    Definición de una afinidad para cada uno de los sitios de interés almacenados en la aplicación, extraidos a partir de la similitud de etiquetas de los sitios de interés visitados.
+        Criterio de validación: la afinidad establecida tenga una relacion con las etiquetas asociadas a los sitios más visitados, a través de las sugerencias.
+
+    Creación de itinerarios turísticos ajustados a la situación de cada usuario y del clima. Los parámetros para su creación son: los días de la estancia del visitante, sus gustos personales y previsión del tiempo durante los días seleccionados. Resaltar que el único parámetro especificado por el usuario es el número de días disponibles.
+        Criterio de validación: tras un día de uso de la aplicación, solicitar la creación de un itinerario, en el cual solo se debe especificar los días de visita. Si el usuario considera que el itinerario sugerido lo realizaría teniendo en cuenta la climatología prevista, sus intereses en la ciudad y la duración, será validado.
+
+    La información mostrada en los itinerarios se divide en una composición de actividades y sitios de interés por día, sobre los cuales se muestra: el nombre, una imagen, una breve descripción, la ubicación y los aspectos más importantes de la previsión del tiempo.
+        Criterio de validación: comprobar que en la base de datos no hay valores nulos en estos campos y al generar un itinerario, que se muestra correctamente al usuario.
+
+    Establecimiento de los gustos personales de un usuario, a través de tres variables: filtros seleccionados, sitios buscados y área geográfica transitada, pudiendo acotarse desde un barrio hasta una ciudad completa.
+        Criterio de validación: mostrar al usuario el perfil creado por la aplicación, para comprobar si es acertado en sus intereses y zonas sugeridas.
+
+    Sugerencia de sitios de interés, en función de los gustos del usuario, que queden fuera del itinerario definido. Permite mostrar otros lugares de interés para el usuario, con un nivel de afinidad inferior a los incluidos en la ruta.
+        Criterio de validación: mostrar las sugerencias de sitios de interés al usuario que este realizaría, solo teniendo en cuenta la afinidad y no el tiempo disponible para realizarla.
+
+    Elaboración de una lista de eventos y/o actividades clásicas o puntuales que se van a realizar en el próximo mes, mostrando al usuario solo las que coincidan con su estancia, proporcionando: el nombre, la ubicación, una descripción básica y opcionalmente el precio.
+        Criterio de validación: una lista de eventos y/o actividades almacenados con un horizonte temporal de un mes, que nunca esté vacía.
+
+Mapa
+
+    Creación de la ruta de un día concreto del itinerario sobre el mapa, conectando los sitios de interés y/o actividades. El orden de los sitios de la ruta se establece en función de la distancia, siendo de menor a mayor distancia.
+        Criterios de validación: la ruta trazada debe incluir todos los sitios de interés y/o actividades definidos en el día seleccionado del itinerario, estando ordenados de menor a mayor distancia
+
+    Creación de rutas personalizadas a cada usuario, en función de su ubicación y duración deseada. Para poder crear la ruta, el usuario solo tendrá que especificar el tiempo del trayecto, acorde a las medidas de tiempo aceptadas (horas y minutos).
+        Criterio de validación: el comienzo de la ruta trazada debe coincidir con la posición actual del usuario y que su duración sea igual o inferior a la introducida, pero nunca superior.
+
+    Localización de los sitios de interés con marcadores distintivos, en función de su temática, sobre el mapa
+        Criterio de validación: todos los sitios de interés almacenados en la base datos deberán tener asociado un marcador distintivo y representativo de su temática, ubicándose correctamente sobre el mapa.
+
+    Establecimiento de filtros sobre el mapa: deportivo, musical, restaurantes típicos, cines, alojamientos, ocio nocturno.
+        Criterio de validación: al seleccionar un filtro, comprobar que las etiquetas de los sitios de interés, establecimientos y/o actividades recuperadas de la base de datos se asocian a dicho filtro.
+
+    Filtrar restaurantes en función del tipo de comida
+        Criterio de validación: comprobar que todos los restaurantes recuperados de la base de datos, tras aplicar el filtro, están asociados a ese tipo de comida.
+
+    Filtrar discotecas en función de tipo de música, precio y popularidad
+        Criterio de validación: comprobar que todos las discotecas recuperadas de la base de datos, tras aplicar el filtro, están asociados a cualquiera de esos criterios, permitiendo la libre combinación o uso de los mismos.
+
+    Establecer un semáforo de colores (rojo, ámbar y verde), en función de la seguridad de los barrios, sobre el mapa. Complementarlo con una descripción, indicando que: el color rojo indica que en ese barrio no se debería entrar, el color ámbar que hay que tener cuidado y el color verde que es medianamente seguro.
+        Criterio de validación: el mapa debe mostrar en todo momento los barrios coloreados de la ciudad, atendiendo a un semáforo de colores y poder visualizar una leyenda al pulsar sobre el barrio coloreado.
+
+    Localización de los establecimientos y/o lugares en el mapa que tienen wifi gratis, que anuncian este servicio en su página web.
+        Criterio de validación: resaltar sobre el mapa las zonas de alcance de los lugares que tienen wifi gratis.
+
+    Recomendaciones para comer situadas en la ruta turística o en las proximidades, siendo un máximo de 200 metros. Si lo realiza podrá continuar con la ruta, desde el momento en el que la dejó.
+        Criterio de validación: los restaurantes recomendados deben estar en la propia ruta o a menos de 200 metros de distancia de la posición en la que el usuario solicita este servicio.
+
+    Recomendaciones de actividades culturales y turísticas en la ruta turística o en las proximidades, siendo un máximo de 500 metros. Si la realiza podrá continuar con la ruta, desde el momento en el que la dejó.
+        Criterio de validación: los actividades recomendadas deben estar en la propia ruta o a menos de 500 metros de distancia de algún punto del trazado de la ruta.
+
+    Recomendar rutas alternativas dependiendo de cambios drásticos en el clima o previsiones incorrectas.
+        Criterio de validación: por cambio bruscos en el clima o fallo en la previsión inicial, la aplicación deberá sugerir una ruta más acorde a la climatología actual y desde la posición actual del usuario.
+
+    Suministrar información de un sitio de interés, en función de la geolocalización del usuario, a través de un icono que le proporcionará una descripción en mediante formato audio.
+        Criterio de validación: Dar la posibilidad al usuario de acceder a información a través de la aplicación en formato audio para entender donde está ubicado y sobre el sitio de interés.
+
+    Generación de rutas eficientes combinando opciones de transporte público y privado.
+        Criterio de validación: muestra las rutas más óptimas de forma gráfica sobre el mapa, utilizando transporte público, privado o combinaciones de ambas.
+
+    Notificaciones en tiempo real al utilizar el transporte público y privado.
+        Criterio de validación: envío de una notificación al usuario en el momento que está a una distancia inferior a 200 metros del destino y una vez en el destino.
+
+    Mostrar sobre el mapa los puntos en los que se sitúan patinetes y motos de nuestra empresa, complementado con opciones de car-sharing en la zona
+        Criterio de validación: visualizar en tiempo real y sobre el mapa, los coches de car-sharing disponibles en la zona y los puntos de alquiler patinetes y motos
+
+    Comprobar disponibilidad o reservar plazas de parking en la ciudad en tiempo real
+        Criterio de validación: resaltar sobre el mapa los distintos parkings y devolver el número de plazas que hay disponibles en cada una de ellas
+
+Información turística
+
+    Registrar usuarios en la aplicación, tras rellenar un formulario con su información básica, para la creación de una cuenta y contraseña asociada. En el caso de que falte algún campo de inforamción obligatoria, no permitir crear la cuenta.
+        Criterio de validación: comprobar que los campos obligatorios dentro de la base de datos, asociados a la información de los usuarios, no estén vacíos.
+
+    No permitir que haya cuentas con nombres de usuario que no sean únicos. En el caso de que se trate de utilizar un nombre de cuenta ya usado, no permitirá continuar con el proceso.
+        Criterio de validación: comprobar que el nuevo nombre de cuenta no coincida con ninguno de los almacenados en la base de datos.
+
+    No permitir el uso de claves no seguras. Para ello, todas las claves deberán contar con una mayúscula, una minúscula, un caracter especial y un número. En caso contrario, no permitirá continuar con el proceso.
+        Criterio de validación: comprobar que la contraseña contiene todos los caracteres descritos anteriormente.
+
+    Remplazar una contraseña por otra si el usuario se ha olvidado de su contraseña actual. Para ello, deberá completar un breve formulario para autentificarse y poder cambiarla.
+        Criterio de validación: actualizar la contraseña de un usuario existente en la base de datos.
+
+    Iniciar sesión o log in de un usuario previamente registrado en la aplicación, a través de la introducción del nombre de cuenta y su contraseña.
+        Criterio de validación: acceder con un usuario registrado y comprobar que accede correctamente a la aplicación, al especificar su nombre de cuenta y contraseña.
+
+    Implementar un traductor automático, que permita traducir el idioma por defecto a cualquier idioma seleccionado, a través del uso de un desplegable de banderas asociadas al idioma correspondiente.
+        Criterio de validación: al seleccionar una bandera, que todo el contenido de la aplicación pase a estar en el idioma correspondiente.
+
+    Establecer alertas si el usuario se encuentra en una zona considerada peligrosa, hay alteraciones significativas en el clima y modificaciones o cancelaciones de transportes a utilizar por el usuario.
+        Criterio de validación: recepción de una alerta en el caso de encontrarse en una zona peligrosa, sufrir cambios drásticos en el clima o transportes.
+
+    Informar sobre noticias de última hora o alertas que puedan impactar negativamente en la estancia del turista. Estas están acotadas a la ciudad destino.
+        Criterio de validación: mostrar noticias o alertas relevantes en la ciudad destino, a través del uso de notificaciones, que sean relevantes para los turistas.
+
+    Proporcionar los datos de contacto e información básica de alojamientos y restaurantes para reservar o pedir comida a domicilio.
+        Criterio de validación: obtener la información básica y los datos de contacto de un establecimiento al seleccionarlo o buscarlo en la aplicación.
+
+    Permitir a los usuarios añadir reseñas y scorings o puntuaciones de los sitios, que coincidan con la geolocalización de un usuario, ya que se consideran visitados.
+        Criterio de validación: añadir reseñas y puntuaciones a los sitios que han coincidido con la geolocación del usuario.
+
+    Acompañar los sitios de interés con una descripción básica, junto con reseñas y un scoring o puntuación de otros usuarios.
+        Criterio de validación: ver que al seleccionar un sitio de interés, se proporciona una breve descripción, complementado con reseñas y puntuaciones de otros usuarios pertenecientes a la aplicación, en el caso de que existan.
+
+    Implementar un conversor de moneda automático, que permita convertir los precios expresados en la moneda local a la moneda seleccionada dentro de la aplicación.
+        Criterio de validación: ver que los precios dentro de la aplicación se expresan en la moneda seleccionada y que la conversión aplicada es correcta.
+
+Requisitos no funcionales
+
+    Aplicación Web que pueda ser visualizada en la versión actual de Safari.
+        Criterio de validación: visualizar la aplicación en el navegador Safari y comprobar que todos los elementos se cargan correctamente.
+
+    Aplicación Web que pueda ser visualizada en la versión actual de Chrome.
+        Criterio de validación: visualizar la aplicación en el navegador Chrome y comprobar que todos los elementos se cargan correctamente.
+
+    Aplicación Web que pueda ser visualizada en la versión actual de Firefox.
+        Criterio de validación: visualizar la aplicación en el navegador Firefox y comprobar que todos los elementos se cargan correctamente.
+
+    Aplicacion con Web Responsive Design para el tamaño de pantalla pequeño (móvil).
+        Criterio de validación: visualizar la aplicación desde un móvil y comprobar que los elementos se ajustan al tamaño de la pantalla.
+
+    Aplicacion con Web Responsive Design para el tamaño de pantalla mediano (tablet).
+        Criterio de validación: visualizar la aplicación desde una tablet y comprobar que los elementos se ajustan al tamaño de la pantalla.
+
+    Aplicacion con Web Responsive Design para el tamaño de pantalla grande (ordenador).
+        Criterio de validación: visualizar la aplicación desde un ordenador y comprobar que los elementos se ajustan al tamaño de la pantalla.
+
+    Tiempo de respuesta inferior a dos segundos.
+        Criterio de validación: medir el tiempo desde que se lanza una petición hasta que el cliente obtiene una respuesta y comprobar que es inferior a dos segundos.
+
+    Soportar una carga de cien solicitudes por minuto.
+        Criterio de validación: hacer una prueba de estrés de cien solicitudes durante una hora, para asegurar que la aplicación es capaz de soportar esa carga.
+
+    La información sensible de los usuarios tiene que ser encriptada, para ser almacenada en la base de datos, utilizando mecanismos de encriptación seguros.
+        Criterios de validación: al devolver la información sensible de los usuarios almacenada en la base de datos, esta tiene que estar encriptada y no ser legible.
