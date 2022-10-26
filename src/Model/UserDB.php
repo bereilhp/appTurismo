@@ -83,7 +83,7 @@ class UserDB
 			$_SESSION['ID_USER']=$result['id_user'];
 			return $result['id_user'];
 		}
-		return false;
+		return 0;
 	}
 
 }

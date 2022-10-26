@@ -32,7 +32,7 @@ class Controller{
 	}
 
 	public function checkPatterns(){
-		/** Check the input matches the patterns */
+		/** Checks that the input matches the patterns */
 		$patternNameSurname= "/^[A-Za-zÁÉÍÓÚáéíóú]+( [A-Za-zÁÉÍÓÚáéíóú]+)*$/i";
 		$patternEmail= "/^[A-Za-z][A-Za-z0-9]+@[A-Za-z]+(\.[A-Za-z]+)*\.(com|es|net|org)$/i";
 
@@ -72,6 +72,7 @@ class Controller{
 	}
 
 	public function redirect($page){
+		/** Redirect to another page */
 		$script = "<script>
 		window.location = '$page';</script>";
 		echo $script;

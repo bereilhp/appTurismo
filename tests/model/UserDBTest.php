@@ -198,7 +198,7 @@ class UserDBTest extends TestCase
         $obj = new App\Model\UserDB("madwayTest");
         $existance = $obj->checkUserExists($email, $password);
 
-        assertFalse($existance, "The user does  exist in the database");
+        assertEquals($existance, 0, "The user does  exist in the database");
     }
 
     /**This test checks the ID_USER for the session at the beginning*/
