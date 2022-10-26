@@ -107,12 +107,6 @@ class UserDBTest extends TestCase
         assertEquals($password, $row["password"],   "Inserted user password does not match the specified one");
     }
 
-    /** Case sensitive 
-    public function testInsertUserDataCaseSensitive():void
-    {
-        
-    }*/
-
     /** This test checks that a user can be registered with same values, except the email (primary key) */
     public function testInsertUserDataDifferentEmail():void
     {

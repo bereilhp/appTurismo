@@ -58,6 +58,9 @@ class UserDB
 		catch (\PDOException $e) {
 			$this->exceptionSQL = $sql;
 			$this->exceptionPDO = $e->getMessage();
+			if ($this->exceptionPDO == "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '$email' for key 'email'"){
+				$_SESSION['ERROR_DUPLICATE']="This email is already used by another user";
+			}
 			return false;
 		}
 	}
