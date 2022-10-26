@@ -2,21 +2,21 @@
 /* system pwd desde MySQL para lanzar la petición*/
 INSERT INTO icon (icon_category, image_icon)
 VALUES
-    ("IconoMonumento", LOAD_FILE('./Images/IconoMonumento.png')),
-    ("IconoVerde",LOAD_FILE('./Images/IconoVerde.png')),
-    ("IconoDeportes",LOAD_FILE('./Images/IconoDeportes.png')),
-    ("IconoParqueAtracciones",LOAD_FILE('./Images/IconoParqueAtracciones.png')),
-    ("IconoWifi",LOAD_FILE('./Images/IconoWifi.png')),
-    ("IconoMusica",LOAD_FILE('./Images/IconoMusica.png')),
-    ("IconoBar",LOAD_FILE('./Images/IconoBar.png')),
-    ("IconoComida",LOAD_FILE('./Images/IconoComida.png')),
-    ("IconoFarmacias",LOAD_FILE('./Images/IconoFarmacia.png')),
-    ("IconoBancos",LOAD_FILE('./Images/IconoBanco.png')),
-    ("IconoCine",LOAD_FILE('./Images/IconoCine.png')),
-    ("IconoEmpresa",LOAD_FILE('./Images/IconoEmpresa.png')),
-    ("IconoIglesia",LOAD_FILE('./Images/IconoIglesia.png')),
-    ("IconoSuper",LOAD_FILE('./Images/IconoSuper.png'));
-
+    ("IconoMonumento","https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/344/external-location-banking-and-financial-xnimrodx-lineal-color-xnimrodx.png"),
+    ("IconoVerde","https://img.icons8.com/doodle/344/spinach.png"),
+    ("IconoDeportes", "https://img.icons8.com/fluency/344/stadium-.png"),
+    ("IconoParqueAtracciones", "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-theme-park-summer-travel-flaticons-lineal-color-flat-icons-2.png"),
+    ("IconoWifi","https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/344/external-location-internet-of-things-flatart-icons-lineal-color-flatarticons.png"),
+    ("IconoMusica", "https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/344/external-location-music-icongeek26-linear-colour-icongeek26.png"),
+    ("IconoBar", "https://img.icons8.com/external-flatarticons-blue-flatarticons/344/external-location-coffee-shop-flatart-icons-lineal-color-flatarticons-1.png"),
+    ("IconoComida", "https://img.icons8.com/external-nawicon-outline-color-nawicon/344/external-location-food-delivery-nawicon-outline-color-nawicon.png"),
+    ("IconoFarmacias", "https://img.icons8.com/color-glass/452/find-clinic.png"),
+    ("IconoBancos", "https://img.icons8.com/external-anggara-filled-outline-anggara-putra/344/external-location-ecommerce-anggara-filled-outline-anggara-putra.png"),
+    ("IconoCine", "https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/344/external-location-news-flatart-icons-lineal-color-flatarticons.png"),
+    ("IconoEmpresa", "https://img.icons8.com/external-linector-lineal-color-linector/2x/external-location-hotel-service-linector-lineal-color-linector.png"),
+    ("IconoIglesia", "https://img.icons8.com/external-flatarticons-blue-flatarticons/344/external-location-easter-flatarticons-blue-flatarticons.png"),
+    ("IconoSuper", "https://img.icons8.com/external-flat-zulfa-mahendra/344/external-location-ecommerce-flat-zulfa-mahendra.png"),
+    ("IconoSombra", "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono_sombra.png");
 
 
 
