@@ -225,4 +225,24 @@ class PlaceDBTest extends TestCase
         assertEquals(1, $expected[0],"no funciona");
     }
 
+    public function testGetIdIcon():void
+    {
+        $description_place = "Museo del prado";
+        $schedule = "10:00 - 19:00";
+        $id_icon = 1;
+        $latitude = 40.41395;
+        $longitude =  -3.69215;
+
+        $obj = new App\Model\PlaceDB("madwayTest");
+        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+         
+	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
+		$stmt->execute();
+
+        $obj = new App\Model\PlaceDB("madwayTest");
+        $expected = $obj->getLatitude();
+
+        assertEquals(40.41395, $expected[0],"no funciona");
+    }
+
 }
