@@ -66,7 +66,7 @@ class PlaceDBTest extends TestCase
         }
     
     /** This test checks if a user data insertion can be performed against the database */
-    public function testInsertPlaceData():void
+    public function testInsertPlaceDescription():void
     {
         $description_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
@@ -85,7 +85,26 @@ class PlaceDBTest extends TestCase
         assertEquals($description_place, $row["description_place"], "Inserted place description does not match the specified one");       
     }
 
-    public function testInsertPlaceData():void
+    public function testInsertPlaceId_Icon():void
+    {
+        $description_place = "Museo del prado";
+        $schedule = "10:00 - 19:00";
+        $id_icon = 1;
+        $latitude = 40.41395;
+        $longitude =  -3.69215;
+
+        $obj = new App\Model\PlaceDB("madwayTest");
+        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+         
+	    $stmt = $obj->getConnection()->prepare("SELECT id_icon FROM place WHERE id_icon = $id_icon");
+		$stmt->execute();
+
+		$row = $stmt->fetch();
+
+        assertEquals($id_icon, $row["id_icon"], "Inserted id_icon does not match the specified one");       
+    }
+
+    public function testInsertPlaceSchedule():void
     {
         $description_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
@@ -101,9 +120,30 @@ class PlaceDBTest extends TestCase
 
 		$row = $stmt->fetch();
 
-        assertEquals($schedule,          $row["schedule"],          "Inserted place schedule does not match the specified one");
+        assertEquals($schedule, $row["schedule"], "Inserted place schedule does not match the specified one");
                
     }
+
+    public function testInsertPlaceLatitude():void
+    {
+        $description_place = "Museo del prado";
+        $schedule = "10:00 - 19:00";
+        $id_icon = 1;
+        $latitude = 40.41395;
+        $longitude =  -3.69215;
+
+        $obj = new App\Model\PlaceDB("madwayTest");
+        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+         
+	    $stmt = $obj->getConnection()->prepare("SELECT latitude FROM place WHERE id_icon = $id_icon");
+		$stmt->execute();
+
+		$row = $stmt->fetch();
+
+        assertEquals($latitude, $row["latitude"], "Inserted latitude does not match the specified one");
+               
+    }
+
 
     public function testGetDescriptionPlace():void
     {
