@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+$_SESSION['ID_USER']=0;
+
 use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
@@ -52,6 +56,8 @@ class UserDBTest extends TestCase
         try {
             $sqlUser = "DROP DATABASE madwayTest";
             $conn->exec($sqlUser);
+
+            $_SESSION['ID_USER']=0;
         } catch (Exception $e) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
@@ -199,5 +205,27 @@ class UserDBTest extends TestCase
         $existance = $obj->checkUserExists($email, $password);
 
         assertFalse($existance, "The user does  exist in the database");
+    }
+
+    /**This test checks the ID_USER for the session at the beginning*/
+    public function testcheckSessionBeginning():void
+    {
+        assertEquals($_SESSION['ID_USER'], 0, "The initial session ID_USER value is wrong");
+    }
+
+    /**This test checks the ID_USER for the session at the beginning*/
+    public function testcheckSessionAfterInsert():void
+    {
+        $name = "john";
+        $surname = "smith";
+        $email = "john@gmail.com";
+        $password = "johnsmith";
+
+        $obj = new App\Model\UserDB("madwayTest");
+        $obj->insertUserData($name, $surname, $email, $password);
+
+        $obj->checkUserExists($email, $password);
+
+        assertEquals($_SESSION['ID_USER'], 1, "The session ID_USER value is wrong after insert");
     }
 }

@@ -2,6 +2,11 @@
 
 namespace App\Model;
 
+if(!isset($_SESSION)) 
+{ 
+	session_start(); 
+}
+
 require_once __DIR__ ."/../../src/Model/Database.php";
 //require_once '../Model/Database.php';
 
@@ -72,6 +77,7 @@ class UserDB
 
 		if ($numberRow == 1) {
 			$result = $stmt->fetch(\PDO::FETCH_ASSOC);
+			$_SESSION['ID_USER']=$result['id_user'];
 			return $result['id_user'];
 		}
 		return false;

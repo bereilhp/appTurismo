@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+session_start();
+
+$_SESSION['ID_USER']=0;
+
 require_once '../Model/UserDB.php';
 
 /**This class handles the requests from the view, returning or modifying information from the model*/
