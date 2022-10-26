@@ -200,7 +200,7 @@ class PlaceDBTest extends TestCase
 		$stmt->execute();
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $expected = $obj->getDescriptionPlace();
+        $expected = $obj->getSchedule();
 
         assertEquals("10:00 - 19:00", $expected[1],"no funciona");
     }
