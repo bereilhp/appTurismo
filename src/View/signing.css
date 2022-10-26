@@ -15,3 +15,8 @@ body {
     padding: 0px;
     margin: auto;
 }
+
+.text{
+    text-align: left;
+    color: black;
+}
