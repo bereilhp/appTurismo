@@ -37,7 +37,6 @@ VALUES
     ("Museo Sorolla", "9:30 - 20:00", 1, 40.43548, -3.69247),
     ("Estadio Santiago Bernabeu", "9:30 - 19:00", 2, 40.45316, -3.68832),
     ("Las Cuatro Torres", "24h", 1, 40.47729, -3.68798),
-    ("Museo del prado", "10:00 - 19:00", 1, 40.41395, -3.69215),
     ("Estadio Civitas Metropolitano","10:00 - 19:00", 3, 40.43633, -3.59948),
     ("Parque de atracciones Warner", "10:00 - 19:00", 4, 40.44566, -3.65693),
     ("Centro comercial ABC Serrano", "10:00 - 19:00", 5, 40.43256, -3.68720),
