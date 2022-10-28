@@ -32,10 +32,10 @@ class PlaceDBTest extends TestCase
                 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-                $sqlIcon = "CREATE TABLE icon (id_icon INT NOT NULL AUTO_INCREMENT, icon_category VARCHAR(50) NOT NULL UNIQUE, image_icon BLOB, PRIMARY KEY (id_icon))"; 
+                $sqlIcon = "CREATE TABLE icon (id_icon INT NOT NULL AUTO_INCREMENT, icon_category VARCHAR(50) NOT NULL UNIQUE, image_icon VARCHAR(200) NOT NULL, PRIMARY KEY (id_icon))"; 
                 $conn->exec($sqlIcon);
 
-                $sqlDataIcon= "INSERT INTO icon (icon_category, image_icon) VALUES ('IconoDeportes', null)";
+                $sqlDataIcon= "INSERT INTO icon (icon_category, image_icon) VALUES ('IconoDeportes', 'https://img.icons8.com/fluency/344/stadium-.png')";
                 $conn->exec($sqlDataIcon);
 
                 $sqlPlace = "CREATE TABLE place (id_place INT NOT NULL AUTO_INCREMENT, description_place VARCHAR(200) NOT NULL UNIQUE, schedule VARCHAR(50) NOT NULL, id_icon INT NOT NULL, latitude decimal(7,5) NOT NULL, longitude decimal(7,5) NOT NULL, PRIMARY KEY (id_place), FOREIGN KEY (id_icon) REFERENCES icon(id_icon))"; 

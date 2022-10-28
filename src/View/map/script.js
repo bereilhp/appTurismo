@@ -1,3 +1,11 @@
+$.ajax({
+  url: '../../Controller/ControllerMap.php',
+  type: 'GET',
+  dataType: 'json',
+  success:function(result){
+      alert(result);
+  }
+});
 
 var Icono = L.icon({
   iconUrl: "https://vivaelsoftwarelibre.com/wp-content/uploads/2020/05/icono.png",
