@@ -52,13 +52,14 @@ class PlaceDB
 		}
 	}
 
+
 	public function getDescriptionPlace(){
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 			$sql = "SELECT description_place from place";
 			$stmt = $this->connection->prepare($sql);
 			$stmt->execute();
-			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
+			$result = $stmt->fetchAll(\PDO::FETCH_DEFAULT);
 			return $result;
 
 		}
@@ -69,13 +70,14 @@ class PlaceDB
 		}
 	}
 
-	public function getSchedule(){
+	//super consulta
+	public function getPlaceData(){
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT schedule from place";
+			$sql = "SELECT description_place, id_icon, latitude, longitude from place";
 			$stmt = $this->connection->prepare($sql);
 			$stmt->execute();
-			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
+			$result = $stmt->fetchAll(\PDO::FETCH_CLASS);
 			return $result;
 
 		}
@@ -85,8 +87,6 @@ class PlaceDB
 			return null;
 		}
 	}
-
-	
 
 	public function getId_Icon(){
 		try{
@@ -105,6 +105,22 @@ class PlaceDB
 		}
 	}
 
+	public function getImage_Icon(){
+		try{
+			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			$sql = "SELECT image_icon from icon";
+			$stmt = $this->connection->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
+			return $result;
+
+		}
+		catch (\PDOException $e) {
+			$this->exceptionSQL = $sql;
+			$this->exceptionPDO = $e->getMessage();
+			return null;
+		}
+	}
 	
 	public function getLatitude(){
 		try{
