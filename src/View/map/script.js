@@ -6,7 +6,6 @@ $.ajax({
   async: false,
   success:function(result){
     locationData = result;
-    console.log(result);
   }
 });
 
