@@ -20,8 +20,7 @@ Para instalar y configurar el entorno de pruebas es necesario ejecutar los sigui
         	    "App\\": "src/"
         	}
     	}
-	}
-  
+	}  
 Nota: tener claro que ahora se van a tener que usar las directivas namespace en las clases que se van a querer instanciar en el entorno de pruebas. Ej: namespace App\Controller.  
 4. Crear el archivo vendor/autoload.php: composer dump-autoload  
 5. Ejecutar los test: ./vendor/bin/phpunit tests
