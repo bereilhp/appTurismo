@@ -8,12 +8,12 @@ El entorno de pruebas, llamado PHPUnit, se ha instalado a través del uso de Com
 Para instalar y configurar el entorno de pruebas es necesario ejecutar los siguientes comandos (SO Ubuntu):  
 1. Instalar a través de composer: composer require --dev phpunit/phpunit ^9
 2. Probar que se ha instalado correctamente: ./vendor/bin/phpunit --version
-3. Crear un archivo composer.json con las siguientes directivas:  
+3. Crear un archivo composer.json con las siguientes directivas:
 		
-	` {  
-	"require-dev": {  
+	{
+	"require-dev": {
 		"phpunit/phpunit": "^9.5"  
-	},` 
+	}, 
 	
     	"autoload-dev": {
         	"psr-4": {
