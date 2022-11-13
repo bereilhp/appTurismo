@@ -3,31 +3,99 @@
 
 <head>
 	<style>
-		#map {
+
+		#map{
 			width: 100%;
-			height: 600px;
+			height: 800px;
 			box-shadow: 5px 5px 5px #888;
 		}
 
-		.center {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			width: 50%;
+		.contenido{
+			width: 100%;
+		}	
+
+		.title{
+			font-size: 20px;
+			font-weight: bold;
+			padding-left: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			width: 97%;
+		}
+
+		.left{
+			padding-left: 10px;
+			padding-top: 10px;
+			margin-left: 57px;
+			float: left;
+			position: relative;
+			width: 68%;
+			height: auto;
+		}
+
+		.right{
+			padding-top: 10px;
+			padding-left: 10px;
+			margin-left: 10px;
+			position: relative;
+			float: left;
+			width: 25%;
+			height: auto;
 		}
 	</style>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="#">
 	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet.locatecontrol/0.60.0/L.Control.Locate.min.css" />
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+
+	<script src="https://cdn.jsdelivr.net/leaflet.locatecontrol/0.60.0/L.Control.Locate.min.js" charset="utf-8"></script>
+
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+		
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 </head>
 
 <body>
-	<img class="center" src="../images/logoMadWaySinFondo(1).png" height="250px">
-	<div id='map'></div>
+	<div class="contenido">
+		<div class="left">
+			<div id='map'></div>
+		</div>
+		<div class="right">
+			<div> <img src="../images/logoMadWaySinFondo(1).png" alt="MadWayLogo" width="100%" style="padding-top: 30px"/></div>
+			<div class="title"> ¿Dónde quieres ir?</div>
+			<input type="text" class="form-control"><br><button class="btn btn-primary">Buscar</button>
+			<button class="btn btn-primary" id="formRuta" onclick="mostrar(this)">Hacer Ruta</button>
+			<br>
+			<br>
+			<div id="ocultarMostrar" style="display: none;">
+			<p>Origen:</p>
+			<input type="text" class="form-control" id="nom1">
+			<p>Destino:</p>
+			<input type="text" class="form-control" id="nom2">
+			<br>
+			<button class="btn btn-primary" type="button" id="hacerRuta" onclick="mostrar(this)">GO</button>
+			<br>
+			</div>
+		</div>
+	</div>
+	
 	<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js></script>
-	<script src="./script.js">
-	</script>
+	<script src="./script.js"></script>
 </body>
 
 </html>
