@@ -10,9 +10,9 @@ Para instalar y configurar el entorno de pruebas es necesario ejecutar los sigui
 2. Probar que se ha instalado correctamente: ./vendor/bin/phpunit --version
 3. Crear un archivo composer.json con las siguientes directivas:  
 		
-	` {
-	"require-dev": {
-		"phpunit/phpunit": "^9.5"
+	` {  
+	"require-dev": {  
+		"phpunit/phpunit": "^9.5"  
 	},` 
 	
     	"autoload-dev": {
