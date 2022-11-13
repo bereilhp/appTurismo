@@ -13,6 +13,7 @@ Para instalar y configurar el entorno de pruebas es necesario ejecutar los sigui
 	"require-dev": {
 		"phpunit/phpunit": "^9.5"
 	},
+	
     	"autoload-dev": {
         	"psr-4": {
         	    "App\\": "src/"
