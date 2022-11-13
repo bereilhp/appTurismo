@@ -9,6 +9,7 @@ Para instalar y configurar el entorno de pruebas es necesario ejecutar los sigui
 1. Instalar a través de composer: composer require --dev phpunit/phpunit ^9
 2. Probar que se ha instalado correctamente: ./vendor/bin/phpunit --version
 3. Crear un archivo composer.json con las siguientes directivas:  
+		
 	{
 	"require-dev": {
 		"phpunit/phpunit": "^9.5"
