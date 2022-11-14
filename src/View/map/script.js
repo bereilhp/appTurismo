@@ -21,7 +21,13 @@ function createIcon(url){
   })
 }
 
+//create icon objects
+Icons = [];
 
+for(var url of locationData.image_icon) {
+  Icons.push(createIcon(url)); 
+}
+ 
 
 //setup map
 
@@ -61,22 +67,18 @@ function drawMarker(data){
     opacity: 0.95,
     icon: data.Icono
   }).bindPopup("<i>" + data.Nombre + "</i>")
-    .addTo(map);
+    .addTo(map).on('click', onClick);
 }
 
-
-//create icon objects
-Icons = [];
-
-for(var url of locationData.image_icon) {
-  Icons.push(createIcon(url)); 
+function onClick(e) {
+  alert(this.getLatLng());
 }
- 
+
  
 //draw map markers
 
 
-for(var i = 0; i < locationData.Locations.length; i++){
+/*for(var i = 0; i < locationData.Locations.length; i++){
   const location = locationData.Locations[i];
   
   drawMarker({
@@ -84,11 +86,9 @@ for(var i = 0; i < locationData.Locations.length; i++){
     Nombre: location.description_place, //hay que cambiar esta linea luego --------------------------------------------------------------------
     Icono: Icons[location.id_icon - 1] //por array indexing
   });
-}
+}*/
 
-function onClick(e) {
-  alert(this.getLatLng());
-}
+
 
 const rutas = [];
 
@@ -97,8 +97,6 @@ const rutas = [];
     mapa();
    
     
-    console.log("HE DADO AL BOTONNNNNNN");
-    console.log(e.id);
     if(e.id == 'formRuta'){
       $("#ocultarMostrar").each(function() {
         displaying = $(this).css("display");
@@ -115,64 +113,37 @@ const rutas = [];
 
     }if(e.id == 'hacerRuta'){
       
-      console.log("array de las rutas:");
-      console.log(rutas[0], rutas[1]);
-
       var origen = document.getElementById('nom1').value;
       var destino = document.getElementById('nom2').value;
-      
-      
-      console.log("---------");
-      console.log(origen, destino);
-      console.log("------yuyuytu---");
+    
 
       for(var i = 0; i < locationData.Locations.length; i++){
         const location = locationData.Locations[i];
         if(origen.toUpperCase() == location.description_place.toUpperCase()){
-          
-          rutas.push([location.latitude, location.longitude]);
+          rutas.push(location);
         }else if(destino.toUpperCase() == location.description_place.toUpperCase()){
-          rutas.push([location.latitude, location.longitude]);
+          rutas.push(location);
         }else{
          // console.log("No existe ningún destino con ese nombre");    
         }
       }
 
-      console.log(rutas[0], rutas[1]);
-      L.Routing.control({ 
+      var control = L.Routing.control({ 
         waypoints: [ 
-           L.latLng(rutas[0]), 
-           L.latLng(rutas[1])] 
+           L.latLng([rutas[0].latitude, rutas[0].longitude]), 
+           L.latLng([rutas[1].latitude, rutas[1].longitude])],
+           router: new L.Routing.osrmv1({
+            language: 'en',
+           }),
+           collapsible: true,
         }).addTo(map);
 
-        rutas.pop();
-        rutas.pop(); 
-        console.log("array de las rutas3:");
-      console.log(rutas[0], rutas[1]);
-    
-      /*for(var key in locationData){
-        
-        if(origen.toUpperCase() == locationData[key].Nombre.toUpperCase()){
-          rutas.push(locationData[key]);
-        }else if(destino.toUpperCase() == locationData[key].Nombre.toUpperCase()){
-          rutas.push(locationData[key]);
-        }else{
-         // console.log("No existe ningún destino con ese nombre");    
-        }
-      }
-      console.log("array de las rutas2:");
-      console.log(rutas[0], rutas[1]);
-      
-      L.Routing.control({ 
-        waypoints: [ 
-           L.latLng(rutas[0].Coordenadas), 
-           L.latLng(rutas[1].Coordenadas)] 
-        }).addTo(map);
+        setTimeout(function(){
+          control.hide();
+        },1);
 
         rutas.pop();
-        rutas.pop(); 
-        console.log("array de las rutas3:");
-      console.log(rutas[0], rutas[1]);*/
+        rutas.pop();   
     }
   }
 
