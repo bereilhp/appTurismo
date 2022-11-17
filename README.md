@@ -13,14 +13,14 @@ Para instalar y configurar el entorno de pruebas es necesario ejecutar los sigui
 ~~~
 {
 	"require-dev": {
-	"phpunit/phpunit": "^9.5"  
-}, 
+		"phpunit/phpunit": "^9.5"  
+	}, 
 
    	"autoload-dev": {
-       	"psr-4": {
-       	    "App\\": "src/"
-       	}
-   	}
+    	"psr-4": {
+       		"App\\": "src/"
+    	}
+	}
 }
 ~~~   
 Para que funcione psr-4 es necesario que **todos los nombres de los archivos estén en mayúsculas**. 
