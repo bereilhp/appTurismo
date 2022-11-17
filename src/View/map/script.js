@@ -137,10 +137,12 @@ const rutas = [];
         waypoints: [ 
            L.latLng([rutas[0].latitude, rutas[0].longitude]), 
            L.latLng([rutas[1].latitude, rutas[1].longitude])],
+           createMarker: function()  {return null},
            router: new L.Routing.osrmv1({
             language: 'en',
            }),
            collapsible: true,
+          
         }).addTo(map);
 
         rutas.pop();
