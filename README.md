@@ -11,21 +11,21 @@ Para instalar y configurar el entorno de pruebas es necesario ejecutar los sigui
 3. Probar que se ha instalado correctamente: `./vendor/bin/phpunit --version`
 4. Crear un archivo composer.json con las siguientes directivas (o incluir la relativa a psr-4):		
 ~~~
-	{
+{
 	"require-dev": {
-		"phpunit/phpunit": "^9.5"  
-	}, 
-	
-    	"autoload-dev": {
-        	"psr-4": {
-        	    "App\\": "src/"
-        	}
-    	}
-	}
+	"phpunit/phpunit": "^9.5"  
+}, 
+
+   	"autoload-dev": {
+       	"psr-4": {
+       	    "App\\": "src/"
+       	}
+   	}
+}
 ~~~   
 Para que funcione psr-4 es necesario que **todos los nombres de los archivos estén en mayúsculas**. 
 Nota: tener claro que ahora se van a tener que usar las directivas `namespace` en las clases que se van a querer instanciar en el entorno de pruebas y las relacionadas con estas (ej: `namespace App\Model`), para las cuales habrá que especificar todo el namespace completo (ej: `new App\Model\UserDB("madwayTest")`)       
-5. Crear el archivo vendor/autoload.php: `composer dump-autoload` 
-6. Las clases de tests tienen que tener la directiva `use PHPUnit\Framework\TestCase;` y heredar de la clase TestCase (ej: `class UserDBTest extends TestCase`)   
+5. Crear el archivo vendor/autoload.php: `composer dump-autoload`  
+6. Las clases de tests tienen que tener la directiva `use PHPUnit\Framework\TestCase;` y heredar de la clase TestCase (ej: `class UserDBTest extends TestCase`)    
 7. Ejecutar los test: `./vendor/bin/phpunit tests`  
 
