@@ -3,6 +3,21 @@
 Esta aplicación se enfoca en los turistas a corto plazo que visitan nuestra ciudad (Madrid), para proporcionarles una experiencia inolvidable.  
 Desde proporcionar itinerarios y rutas en función de los gustos del usuario y su disponibilidad, hasta proporcionarte cualquier tipo de información útil para un viajero.  
 
+## Dependencias
+
+### XAMPP para Linux
+Los pasos para instalar XAMPP, en SO Ubuntu, han sido: 
+1. Descargar XAMPP para Linux [aquí] (https://www.apachefriends.org/download.html)  
+2. Dar al instalador permisos de ejecución: `sudo chmod +x xampp-linux-x64-...-installer.run`  
+3. Ejecutar el instalador: `sudo ./xampp-linux-x64-...-installer.run`. Se instala en el directorio `opt/lampp`  
+4. Ir a `Manage Servers`, para activar `MySQL Database` y `Apache Web Server`.Simplemente hay que seleccionar el servidor y pulsar el botón de `Start`.  
+5. En el navegador, escribir `localhost` y debería salir la página de bienvenida de XAMPP.   
+6. Para iniciar todos los servicios desde el terminal: `sudo /opt/lampp/lampp start`. Equivalentemente para pararlos: `sudo /opt/lampp/lampp stop`.  
+7. Los contenidos que se quieran visualizar en el navegador, deberán estar en el directorio `/opt/lampp/htdocs` y con permisos de ejecución `sudo chmod 755` al archivo.
+
+### Leaflet
+
+
 ## ¿Cómo replicar el entorno de pruebas?
 El entorno de pruebas, llamado PHPUnit, se ha instalado a través del uso de Composer (sistema de gestión de paquetes de PHP).  
 Para instalar y configurar el entorno de pruebas es necesario ejecutar los siguientes comandos (SO Ubuntu):
@@ -17,9 +32,9 @@ Para instalar y configurar el entorno de pruebas es necesario ejecutar los sigui
 	}, 
 
    	"autoload-dev": {
-    	"psr-4": {
-       		"App\\": "src/"
-    	}
+		"psr-4": {
+			"App\\": "src/"
+		}
 	}
 }
 ~~~   
