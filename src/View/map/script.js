@@ -36,15 +36,23 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18
 }).addTo(map);
 
+var lc = L.control.locate({
+  position: "topleft",
+  strings:{
+    title: "show me where i am, yo!"
+  }
+}).addTo(map);
+
+lc.start();
 //L.control.scale().addTo(map);
 
 
 
-var browserLat;
-var browserLong;  
-mapa();
+//var browserLat;
+//var browserLong;  
+//mapa();
 
-function mapa (){
+/*function mapa (){
 navigator.geolocation.getCurrentPosition(function(position) {
     browserLat =  position.coords.latitude;
     browserLong = position.coords.longitude;
@@ -56,7 +64,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
     console.error(err);
 });
 
-}
+}*/
 
 L.control.scale().addTo(map);
 
@@ -78,7 +86,7 @@ function onClick(e) {
 //draw map markers
 
 
-/*for(var i = 0; i < locationData.Locations.length; i++){
+for(var i = 0; i < locationData.Locations.length; i++){
   const location = locationData.Locations[i];
   
   drawMarker({
@@ -86,7 +94,7 @@ function onClick(e) {
     Nombre: location.description_place, //hay que cambiar esta linea luego --------------------------------------------------------------------
     Icono: Icons[location.id_icon - 1] //por array indexing
   });
-}*/
+}
 
 
 
@@ -94,9 +102,6 @@ const rutas = [];
 
   function mostrar(e){
 
-    mapa();
-   
-    
     if(e.id == 'formRuta'){
       $("#ocultarMostrar").each(function() {
         displaying = $(this).css("display");
@@ -137,10 +142,6 @@ const rutas = [];
            }),
            collapsible: true,
         }).addTo(map);
-
-        setTimeout(function(){
-          control.hide();
-        },1);
 
         rutas.pop();
         rutas.pop();   
