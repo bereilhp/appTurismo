@@ -1,3 +1,4 @@
+
 var locationData;
 $.ajax({
   url: '../../Controller/ControllerMap.php',
@@ -28,43 +29,82 @@ for(var url of locationData.image_icon) {
   Icons.push(createIcon(url)); 
 }
  
-
 //setup map
-
-var map = L.map('map').setView([40.39801, -3.83492], 15);
+//$(document).ready(function () {
+var map = L.map('map').setView([40.416775, -3.703790], 14);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18
 }).addTo(map);
 
-var lc = L.control.locate({
-  position: "topleft",
-  strings:{
-    title: "show me where i am, yo!"
-  }
+
+L.geolet({ 
+  position: 'topleft'
 }).addTo(map);
 
-lc.start();
-//L.control.scale().addTo(map);
 
 
+ L.control.Legend({
+  position: "bottomright",
+  legends: [{
+    label: " Monuments",
+    type: "image",
+    url: "https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/344/external-location-banking-and-financial-xnimrodx-lineal-color-xnimrodx.png",
+  },{
+    label: " Park",
+    type: "image",
+    url: "https://img.icons8.com/doodle/344/spinach.png",
+  },{
+    label: " Sports",
+    type: "image",
+    url: "https://img.icons8.com/fluency/344/stadium-.png",
+  },{
+    label: " Theme park",
+    type: "image",
+    url: "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-theme-park-summer-travel-flaticons-lineal-color-flat-icons-2.png",
+  },{
+    label: " Music",
+    type: "image",
+    url: "https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/344/external-location-music-icongeek26-linear-colour-icongeek26.png",
+  },{
+    label: " Wifi",
+    type: "image",
+    url: "https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/344/external-location-internet-of-things-flatart-icons-lineal-color-flatarticons.png",
+  },{
+    label: " Coffee",
+    type: "image",
+    url: "https://img.icons8.com/external-flatarticons-blue-flatarticons/344/external-location-coffee-shop-flatart-icons-lineal-color-flatarticons-1.png",
+  },{
+    label: " Foot",
+    type: "image",
+    url: "https://img.icons8.com/external-nawicon-outline-color-nawicon/344/external-location-food-delivery-nawicon-outline-color-nawicon.png",
+  },{
+    label: " Pharmacy",
+    type: "image",
+    url: "https://img.icons8.com/color-glass/452/find-clinic.png",
+  },{
+    label: " Bank",
+    type: "image",
+    url: "https://img.icons8.com/external-anggara-filled-outline-anggara-putra/344/external-location-ecommerce-anggara-filled-outline-anggara-putra.png",
+  },{
+    label: " Cinema",
+    type: "image",
+    url: "https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/344/external-location-news-flatart-icons-lineal-color-flatarticons.png",
+  },{
+    label: " Business",
+    type: "image",
+    url: "https://img.icons8.com/external-linector-lineal-color-linector/2x/external-location-hotel-service-linector-lineal-color-linector.png",
+  },{
+    label: " Church",
+    type: "image",
+    url: "https://img.icons8.com/external-flatarticons-blue-flatarticons/344/external-location-easter-flatarticons-blue-flatarticons.png",
+  },{
+    label: " SuperMarket",
+    type: "image",
+    url: "https://img.icons8.com/external-flat-zulfa-mahendra/344/external-location-ecommerce-flat-zulfa-mahendra.png",
+  }]
 
-//var browserLat;
-//var browserLong;  
-//mapa();
+}).addTo(map);
 
-/*function mapa (){
-navigator.geolocation.getCurrentPosition(function(position) {
-    browserLat =  position.coords.latitude;
-    browserLong = position.coords.longitude;
-
-    marker_actual = L.marker([browserLat,browserLong]).addTo(map);
-    map.setView([browserLat,browserLong], 18);  
-    
-}, function(err) {
-    console.error(err);
-});
-
-}*/
 
 L.control.scale().addTo(map);
 
@@ -84,7 +124,6 @@ function onClick(e) {
 
  
 //draw map markers
-
 
 for(var i = 0; i < locationData.Locations.length; i++){
   const location = locationData.Locations[i];
@@ -150,3 +189,4 @@ const rutas = [];
     }
   }
 
+//});
