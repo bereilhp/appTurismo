@@ -1,2 +1,2 @@
 docs/.~lock.RegistroTareas.ods#
-vendor/bin/.phpunit.result.cache
+*.cache
