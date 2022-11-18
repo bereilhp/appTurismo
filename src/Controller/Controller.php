@@ -33,9 +33,8 @@ class Controller{
 
 	public function checkPatterns(){
 		/** Checks that the input matches the patterns */
-		$patternNameSurname= "/^[A-Za-zÁÉÍÓÚáéíóú]+( [A-Za-zÁÉÍÓÚáéíóú]+)*$/i";
-		$patternEmail= "/^[A-Za-z][A-Za-z0-9]+@[A-Za-z]+(\.[A-Za-z]+)*\.(com|es|net|org)$/i";
-
+		$patternNameSurname= "/^[\p{Lu}\p{Lt}][\p{Ll}\p{Lm}\p{Lo}]+([ -][\p{Lu}\p{Lt}][\p{Ll}\p{Lm}\p{Lo}]+)*$/u";
+		$patternEmail= "/^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/i";
 		$conditions=true;
 		
 		if(isset($_POST["name"], $_POST["surname"], $_POST["email"], $_POST["password"])){
