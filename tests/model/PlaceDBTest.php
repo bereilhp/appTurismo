@@ -38,7 +38,7 @@ class PlaceDBTest extends TestCase
                 $sqlDataIcon= "INSERT INTO icon (icon_category, image_icon) VALUES ('IconoDeportes', 'https://img.icons8.com/fluency/344/stadium-.png')";
                 $conn->exec($sqlDataIcon);
 
-                $sqlPlace = "CREATE TABLE place (id_place INT NOT NULL AUTO_INCREMENT, description_place VARCHAR(200) NOT NULL UNIQUE, schedule VARCHAR(50) NOT NULL, id_icon INT NOT NULL, latitude decimal(7,5) NOT NULL, longitude decimal(7,5) NOT NULL, PRIMARY KEY (id_place), FOREIGN KEY (id_icon) REFERENCES icon(id_icon))"; 
+                $sqlPlace = "CREATE TABLE place (id_place INT NOT NULL AUTO_INCREMENT, name_place VARCHAR(200) NOT NULL UNIQUE, schedule VARCHAR(50) NOT NULL, id_icon INT NOT NULL, latitude decimal(7,5) NOT NULL, longitude decimal(7,5) NOT NULL, PRIMARY KEY (id_place), FOREIGN KEY (id_icon) REFERENCES icon(id_icon))"; 
                 $conn->exec($sqlPlace);
             } catch (Exception $e) {
                 echo 'Caught exception: ',  $e->getMessage(), "\n";
@@ -68,33 +68,33 @@ class PlaceDBTest extends TestCase
     /** This test checks if a user data insertion can be performed against the database */
     public function testInsertPlaceDescription():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
-	    $stmt = $obj->getConnection()->prepare("SELECT description_place FROM place WHERE id_icon = $id_icon");
+	    $stmt = $obj->getConnection()->prepare("SELECT name_place FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
 
 		$row = $stmt->fetch();
 
-        assertEquals($description_place, $row["description_place"], "Inserted place description does not match the specified one");       
+        assertEquals($name_place, $row["name_place"], "Inserted place description does not match the specified one");       
     }
 
     public function testInsertPlaceId_Icon():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT id_icon FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
@@ -106,14 +106,14 @@ class PlaceDBTest extends TestCase
 
     public function testInsertPlaceSchedule():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT schedule FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
@@ -126,14 +126,14 @@ class PlaceDBTest extends TestCase
 
     public function testInsertPlaceLatitude():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT latitude FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
@@ -146,14 +146,14 @@ class PlaceDBTest extends TestCase
 
     public function testInsertPlaceLongitude():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT longitude FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
@@ -167,14 +167,14 @@ class PlaceDBTest extends TestCase
 
     public function testGetDescriptionPlace():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
@@ -187,14 +187,14 @@ class PlaceDBTest extends TestCase
 
     public function testGetSchedule():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
@@ -207,14 +207,14 @@ class PlaceDBTest extends TestCase
 
     public function testGetIdIcon():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
@@ -227,14 +227,14 @@ class PlaceDBTest extends TestCase
 
     public function testGetLatitude():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();
@@ -247,14 +247,14 @@ class PlaceDBTest extends TestCase
 
     public function testGetLongitude():void
     {
-        $description_place = "Museo del prado";
+        $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
         $id_icon = 1;
         $latitude = 40.41395;
         $longitude =  -3.69215;
 
         $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude);
+        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
 	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
 		$stmt->execute();

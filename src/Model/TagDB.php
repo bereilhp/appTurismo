@@ -38,11 +38,11 @@ class MapDB
 	}
 
 	
-    public function insertTagData($name, $description_place)
+    public function insertTagData($name, $name_place)
 	{
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO tag (name, description_place) VALUES ('$name', '$description_place')";
+			$sql = "INSERT INTO tag (name, name_place) VALUES ('$name', '$name_place')";
 			$this->connection->exec($sql);
 			return true;
 		}
