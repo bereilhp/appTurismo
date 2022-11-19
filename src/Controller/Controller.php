@@ -21,38 +21,12 @@ class Controller{
 
 	public function receiveUserData(){
 		/* User information sent by the sign up form */
-		if($this->checkPatterns()){
+		if(isset($_POST["name"], $_POST["surname"], $_POST["email"], $_POST["password"])){
 			$name = ucwords(strtolower($_POST["name"]));
 			$surname = ucwords(strtolower($_POST["surname"]));
 			$email = strtolower($_POST["email"]);
 			$password = $_POST["password"];
 			return $this->userObj->insertUserData($name, $surname, $email, $password);
-		}
-		
-	}
-
-	public function checkPatterns(){
-		/** Checks that the input matches the patterns */
-		$patternNameSurname= "/^[\p{Lu}\p{Lt}][\p{Ll}\p{Lm}\p{Lo}]+([ -][\p{Lu}\p{Lt}][\p{Ll}\p{Lm}\p{Lo}]+)*$/u";
-		$patternEmail= "/^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/i";
-		$conditions=true;
-		
-		if(isset($_POST["name"], $_POST["surname"], $_POST["email"], $_POST["password"])){
-			if (!preg_match($patternNameSurname, $_POST["name"])){
-				$_SESSION['ERROR_NAME']="Name not following the pattern";
-				$conditions = false;
-			}
-			if (!preg_match($patternNameSurname, $_POST["surname"])){
-				$_SESSION['ERROR_SURNAME']="Surname not following the pattern";
-				$conditions = false;
-			}
-			if (!preg_match($patternEmail, $_POST["email"])){
-				$_SESSION['ERROR_EMAIL']="Email not following the pattern";
-				$conditions = false;
-			}
-			if ($conditions) return true;
-			else return false;
-			
 		}
 	}
 

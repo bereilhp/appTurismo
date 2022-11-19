@@ -66,8 +66,8 @@ class UserDBTest extends TestCase
     /** This test checks if a user data insertion can be performed against the database */
     public function testInsertUserData():void
     {
-        $name = "jaime";
-        $surname = "ruiz";
+        $name = "Jaime";
+        $surname = "Ruiz";
         $email = "jaimeruiz@gmail.com";
         $password = "jaime";
 
@@ -88,9 +88,9 @@ class UserDBTest extends TestCase
     /** This test checks if a user data insertion (spanish charset) can be performed against the database */
     public function testInsertUserDataSpanish():void
     {
-        $name = "josé";
-        $surname = "gómez";
-        $email = "joségómez@gmail.com";
+        $name = "José";
+        $surname = "Gómez";
+        $email = "josegomez@gmail.com";
         $password = "josé";
 
         $obj = new App\Model\UserDB("madwayTest");
@@ -110,16 +110,16 @@ class UserDBTest extends TestCase
     /** This test checks that a user can be registered with same values, except the email (primary key) */
     public function testInsertUserDataDifferentEmail():void
     {
-        $name = "paula";
-        $surname = "gutiérrez";
+        $name = "Paula";
+        $surname = "Gutiérrez";
         $email = "pg@gmail.com";
         $password = "pau!123";
 
         $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
 
-        $name = "paula";
-        $surname = "gutiérrez";
+        $name = "Paula";
+        $surname = "Gutiérrez";
         $email = "paugutierrez@yahoo.es";
         $password = "pau!123";
 
@@ -136,9 +136,9 @@ class UserDBTest extends TestCase
     /** This test checks that a user can not be registered if their email is early used */
     public function testInsertUserDataSameEmail():void
     {
-        $name = "josé";
-        $surname = "gómez";
-        $email = "joségómez@gmail.com";
+        $name = "José";
+        $surname = "Gómez";
+        $email = "josegomez@gmail.com";
         $password = "josé1";
 
         $obj = new App\Model\UserDB("madwayTest");
@@ -147,7 +147,7 @@ class UserDBTest extends TestCase
         
         $name = "José María";
         $surname = "Gómez";
-        $email = "joségómez@gmail.com";
+        $email = "josegomez@gmail.com";
         $password = "josé2";
 
         $obj->insertUserData($name, $surname, $email, $password);
@@ -173,8 +173,8 @@ class UserDBTest extends TestCase
     /** This test checks that a user can login when it's already registered */
     public function testcheckUserExists():void
     {
-        $name = "antonio";
-        $surname = "pérez";
+        $name = "Antonio";
+        $surname = "Pérez";
         $email = "aperez123@gmail.com";
         $password = "antonio";
 
@@ -210,8 +210,8 @@ class UserDBTest extends TestCase
     /**This test checks the ID_USER for the session at the beginning*/
     public function testcheckSessionAfterInsert():void
     {
-        $name = "john";
-        $surname = "smith";
+        $name = "John";
+        $surname = "Smith";
         $email = "john@gmail.com";
         $password = "johnsmith";
 
