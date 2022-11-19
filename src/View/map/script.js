@@ -114,8 +114,9 @@ function drawMarker(data){
     draggable: false,
     opacity: 0.95,
     icon: data.Icono
-  }).bindPopup("<i>" + data.Nombre + "</i>")
+  }).bindPopup("<div class=\"M" + data.ID  + "\"></div>")
     .addTo(map).on('click', onClick);
+  $("#M" + data.ID).load("popup.html?name=" + data.Nombre + " .popup")
 }
 
 function onClick(e) {
@@ -130,6 +131,7 @@ for(var i = 0; i < locationData.Locations.length; i++){
   
   drawMarker({
     Coordenadas: [location.latitude, location.longitude],
+    ID: location.ID,
     Nombre: location.description_place, //hay que cambiar esta linea luego --------------------------------------------------------------------
     Icono: Icons[location.id_icon - 1] //por array indexing
   });

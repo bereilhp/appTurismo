@@ -1,0 +1,8 @@
+<script>
+    let url = new URLSearchParams(window.location.search);
+    $("#name").text(url.get('name'));
+</script>
+
+<div class="popup">
+   <div class="popup-small"><i id="name"></i></div>
+</div>
