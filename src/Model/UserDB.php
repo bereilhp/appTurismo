@@ -47,21 +47,45 @@ class UserDB
 		return $this->id;
 	}
 
+	public function checkPatterns($name, $surname, $email){
+		/** Checks that the input matches the patterns */
+		$patternNameSurname= "/^[\p{Lu}\p{Lt}][\p{Ll}\p{Lm}\p{Lo}]+([ -][\p{Lu}\p{Lt}][\p{Ll}\p{Lm}\p{Lo}]+)*$/u";
+		$patternEmail= "/^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/i";
+		$conditions=true;
+		
+		if (!preg_match($patternNameSurname, $name)){
+			$_SESSION['ERROR_NAME']="Name not following the pattern";
+			$conditions = false;
+		}
+		if (!preg_match($patternNameSurname, $surname)){
+			$_SESSION['ERROR_SURNAME']="Surname not following the pattern";
+			$conditions = false;
+		}
+		if (!preg_match($patternEmail, $email)){
+			$_SESSION['ERROR_EMAIL']="Email not following the pattern";
+			$conditions = false;
+		}
+		if ($conditions) return true;
+		else return false;
+	}
+
 	public function insertUserData($name, $surname, $email, $password)
 	{
-		try{
-			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO user (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
-			$this->connection->exec($sql);
-			return true;
-		}
-		catch (\PDOException $e) {
-			$this->exceptionSQL = $sql;
-			$this->exceptionPDO = $e->getMessage();
-			if ($this->exceptionPDO == "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '$email' for key 'email'"){
-				$_SESSION['ERROR_DUPLICATE']="This email is already used by another user";
+		if ($this->checkPatterns($name, $surname, $email)){
+			try{
+				$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+				$sql = "INSERT INTO user (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
+				$this->connection->exec($sql);
+				return true;
 			}
-			return false;
+			catch (\PDOException $e) {
+				$this->exceptionSQL = $sql;
+				$this->exceptionPDO = $e->getMessage();
+				if ($this->exceptionPDO == "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '$email' for key 'email'"){
+					$_SESSION['ERROR_DUPLICATE']="This email is already used by another user";
+				}
+				return false;
+			}
 		}
 	}
 
