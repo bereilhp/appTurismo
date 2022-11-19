@@ -360,7 +360,7 @@ class UserDBTest extends TestCase
         $name = "Åsa";
         $surname = "Åström";
         $email = "asaastrom@gmail.com";
-        $password = "adel1234";
+        $password = "asaastrom";
 
         $obj = new App\Model\UserDB("madwayTest");
         $obj->insertUserData($name, $surname, $email, $password);
@@ -390,5 +390,81 @@ class UserDBTest extends TestCase
 		$numberRow = $stmt->rowCount();
         
 		assertEquals(0, $numberRow, "The number of rows in the database does not match the number of insertions");
+    }
+
+    /**This test checks the user's first name is not correct according to the form pattern (starts with lowercase)*/
+    public function testcheckNamePatternIncorrectLowercase():void
+    {
+        $name = "anna";
+        $surname = "johnson";
+        $email = "anjohnson34@hotmail.com";
+        $password = "An%naJohn/son34";
+
+        $obj = new App\Model\UserDB("madwayTest");
+        $obj->insertUserData($name, $surname, $email, $password);
+
+        $stmt = $obj->getConnection()->prepare("SELECT * FROM user");
+		$stmt->execute();
+
+		$numberRow = $stmt->rowCount();
+        
+		assertEquals(0, $numberRow, "The number of rows in the database does not match the number of insertions");
+    }
+
+    /**This test checks the user's first name is not correct according to the form pattern (contains numbers)*/
+    public function testcheckNamePatternIncorrectNumbers():void
+    {
+        $name = "anna23";
+        $surname = "34Johnson";
+        $email = "anjohnson34@hotmail.com";
+        $password = "An%naJohn/son34";
+
+        $obj = new App\Model\UserDB("madwayTest");
+        $obj->insertUserData($name, $surname, $email, $password);
+
+        $stmt = $obj->getConnection()->prepare("SELECT * FROM user");
+		$stmt->execute();
+
+		$numberRow = $stmt->rowCount();
+        
+		assertEquals(0, $numberRow, "The number of rows in the database does not match the number of insertions");
+    }
+
+    /**This test checks the user's first name is not correct according to the form pattern (contains invalid characters)*/
+    public function testcheckNamePatternIncorrectInvalidCharacters():void
+    {
+        $name = "anna%";
+        $surname = "!Johnson";
+        $email = "anjohnson34@hotmail.com";
+        $password = "An%naJohn/son34";
+
+        $obj = new App\Model\UserDB("madwayTest");
+        $obj->insertUserData($name, $surname, $email, $password);
+
+        $stmt = $obj->getConnection()->prepare("SELECT * FROM user");
+		$stmt->execute();
+
+		$numberRow = $stmt->rowCount();
+        
+		assertEquals(0, $numberRow, "The number of rows in the database does not match the number of insertions");
+    }
+
+    /**This test checks the user's email is correct according to the form pattern*/
+    public function testcheckEmailPatternCorrect():void
+    {
+        $name = "Anna";
+        $surname = "Johnson";
+        $email = "anna.johnson34@info.company.com";
+        $password = "An%naJohn/son34";
+
+        $obj = new App\Model\UserDB("madwayTest");
+        $obj->insertUserData($name, $surname, $email, $password);
+
+        $stmt = $obj->getConnection()->prepare("SELECT * FROM user");
+		$stmt->execute();
+
+		$numberRow = $stmt->rowCount();
+        
+		assertEquals(1, $numberRow, "The number of rows in the database does not match the number of insertions");
     }
 }
