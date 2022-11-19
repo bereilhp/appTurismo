@@ -37,11 +37,11 @@ class PlaceDB
 		return $this->exceptionPDO;
 	}
 
-	public function insertPlaceData($description_place, $schedule, $id_icon, $latitude, $longitude)
+	public function insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude)
 	{
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO place (description_place, schedule, id_icon, latitude, longitude) VALUES ('$description_place', '$schedule', '$id_icon', '$latitude', '$longitude')";
+			$sql = "INSERT INTO place (name_place, schedule, id_icon, latitude, longitude) VALUES ('$name_place', '$schedule', '$id_icon', '$latitude', '$longitude')";
 			$this->connection->exec($sql);
 			return true;
 		}
@@ -56,7 +56,7 @@ class PlaceDB
 	public function getDescriptionPlace(){
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT description_place from place";
+			$sql = "SELECT name_place from place";
 			$stmt = $this->connection->prepare($sql);
 			$stmt->execute();
 			$result = $stmt->fetchAll(\PDO::FETCH_DEFAULT);
@@ -74,7 +74,7 @@ class PlaceDB
 	public function getPlaceData(){
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT description_place, id_icon, latitude, longitude from place";
+			$sql = "SELECT name_place, id_icon, latitude, longitude from place";
 			$stmt = $this->connection->prepare($sql);
 			$stmt->execute();
 			$result = $stmt->fetchAll(\PDO::FETCH_CLASS);
@@ -160,7 +160,7 @@ class PlaceDB
 
 
     /*
-    public function GetDataTag($name, $description_place)
+    public function GetDataTag($name, $name_place)
 	{
 
     $sql = "SELECT * FROM place";
@@ -172,7 +172,7 @@ class PlaceDB
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo "<br> id: ". $row["id_place"]. " - Desccription: ". $row["description_place"]. " Schedule: " . $row["schedule"]. " Icon_ID " . $row["id_icon"]. " Coordinates: " . $row["coordinates"]. "<br>";
+                echo "<br> id: ". $row["id_place"]. " - Desccription: ". $row["name_place"]. " Schedule: " . $row["schedule"]. " Icon_ID " . $row["id_icon"]. " Coordinates: " . $row["coordinates"]. "<br>";
             }   
         } else {
             echo "0 results";
