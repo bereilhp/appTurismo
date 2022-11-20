@@ -173,16 +173,16 @@ const rutas = [];
       });
 
     }if(e.id == 'hacerRuta'){
-
+      console.log("fgdfbghgf");
       var origen = document.getElementById('nom1').value;
       var destino = document.getElementById('nom2').value;
 
 
       for(var i = 0; i < locationData.Locations.length; i++){
         const location = locationData.Locations[i];
-        if(origen.toUpperCase() == location.description_place.toUpperCase()){
+        if(origen.toUpperCase() == location.name_place.toUpperCase()){
           rutas.push(location);
-        }else if(destino.toUpperCase() == location.description_place.toUpperCase()){
+        }else if(destino.toUpperCase() == location.name_place.toUpperCase()){
           rutas.push(location);
         }else{
          // console.log("No existe ningún destino con ese nombre");
