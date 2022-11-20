@@ -1,8 +1,7 @@
-<script>
-    let url = new URLSearchParams(window.location.search);
-    $("#name").text(url.get('name'));
-</script>
-
+<!--Popup management file-->
 <div class="popup">
-   <div class="popup-small"><i id="name"></i></div>
+   <div class="popup-small"><i id="name">Name</i></div>
+   <div class="popup-big" style="display:none;">
+    <span id="description">Description</span>
+   </div>
 </div>
