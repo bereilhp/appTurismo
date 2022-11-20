@@ -155,9 +155,25 @@ for(var i = 0; i < locationData.Locations.length; i++){
 
 
 const rutas = [];
+let buslat = null;
+let buslon = null;	
 
   function mostrar(e){
+    if(e.id == 'buscar'){
+      var busqueda = document.getElementById('nom0').value;
+      for(var i = 0; i < locationData.Locations.length; i++){
+        const location = locationData.Locations[i];
 
+        if(busqueda.toUpperCase() == location.name_place.toUpperCase()){
+          buslat = (location.latitude);
+          buslon = (location.longitude);
+        }
+      }
+
+      map.flyTo([buslat, buslon], 18);
+
+
+    }
     if(e.id == 'formRuta'){
       $("#ocultarMostrar").each(function() {
         displaying = $(this).css("display");
@@ -173,7 +189,6 @@ const rutas = [];
       });
 
     }if(e.id == 'hacerRuta'){
-      console.log("fgdfbghgf");
       var origen = document.getElementById('nom1').value;
       var destino = document.getElementById('nom2').value;
 
@@ -203,7 +218,9 @@ const rutas = [];
 
         rutas.pop();
         rutas.pop();
+
     }
   }
+
 
 //});
