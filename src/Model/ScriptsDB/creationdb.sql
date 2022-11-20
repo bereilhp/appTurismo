@@ -10,7 +10,7 @@ CREATE TABLE place (id_place INT NOT NULL AUTO_INCREMENT, name_place VARCHAR(200
 
 CREATE TABLE userPlace (id_user INT NOT NULL, id_place INT NOT NULL, PRIMARY KEY (id_user, id_place), FOREIGN KEY (id_user) REFERENCES user(id_user), FOREIGN KEY (id_place) REFERENCES place(id_place));
 
-CREATE TABLE tag (id_tag INT NOT NULL AUTO_INCREMENT, name_tag VARCHAR(40) NOT NULL UNIQUE, description_tag VARCHAR(1000) NOT NULL UNIQUE, PRIMARY KEY (id_tag));
+CREATE TABLE tag (id_tag INT NOT NULL AUTO_INCREMENT, name VARCHAR(40) NOT NULL UNIQUE, description_tag VARCHAR(1000) NOT NULL UNIQUE, PRIMARY KEY (id_tag));
 
 CREATE TABLE placeTag (id_place INT NOT NULL, id_tag INT NOT NULL, PRIMARY KEY (id_tag, id_place), FOREIGN KEY (id_place) REFERENCES place(id_place), FOREIGN KEY (id_tag) REFERENCES tag(id_tag));
 

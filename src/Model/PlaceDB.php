@@ -12,7 +12,7 @@ class PlaceDB
 	private $connection;
 	private $exceptionSQL;
 	private $exceptionPDO;
-	
+
 
 	public function __construct($test=false)
 	{
@@ -37,6 +37,7 @@ class PlaceDB
 		return $this->exceptionPDO;
 	}
 
+//WARNING: This method is not following the pattern in getPlaceData() method
 	public function insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude)
 	{
 		try{
@@ -74,7 +75,7 @@ class PlaceDB
 	public function getPlaceData(){
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT name_place, id_icon, latitude, longitude from place";
+			$sql = "SELECT id_place, name_place, description_place, schedule, link_place, id_icon, latitude, longitude from place";
 			$stmt = $this->connection->prepare($sql);
 			$stmt->execute();
 			$result = $stmt->fetchAll(\PDO::FETCH_CLASS);
@@ -121,7 +122,7 @@ class PlaceDB
 			return null;
 		}
 	}
-	
+
 	public function getLatitude(){
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
@@ -173,12 +174,12 @@ class PlaceDB
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo "<br> id: ". $row["id_place"]. " - Desccription: ". $row["name_place"]. " Schedule: " . $row["schedule"]. " Icon_ID " . $row["id_icon"]. " Coordinates: " . $row["coordinates"]. "<br>";
-            }   
+            }
         } else {
             echo "0 results";
         }
-            
-			
+
+
 	}catch (\PDOException $e) {
 			$this->exceptionSQL = $sql;
 			$this->exceptionPDO = $e->getMessage();
@@ -187,6 +188,6 @@ class PlaceDB
 	}*/
 
 
-	
-	
+
+
 }

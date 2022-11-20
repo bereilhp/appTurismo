@@ -85,7 +85,7 @@ VALUES
     ("Universidad CEU San Pablo Monteprincipe", "10:00 - 19:00", 1, (40.39801, -3.83492));*/
 
 
-INSERT INTO tag (name_tag, description_tag)
+INSERT INTO tag (name, description_tag)
 VALUES
     ("Museo", "institución sin ánimo de lucro, permanente y al servicio de la sociedad, que investiga, colecciona, conserva, interpreta y exhibe el patrimonio material e inmaterial."),
     ("Teatro", "El teatro es la rama de las artes escénicas relacionada con la actuación. Representa historias actuadas frente a los espectadores o frente a una cámara usando una combinación de discurso, gestos, escenografía, música, sonido y espectáculo."),
