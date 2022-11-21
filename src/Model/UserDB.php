@@ -87,6 +87,9 @@ class UserDB
 				return false;
 			}
 		}
+		else {
+			return false;
+		}
 	}
 
 	public function checkUserExists($email, $password)
