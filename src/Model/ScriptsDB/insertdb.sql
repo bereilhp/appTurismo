@@ -20,7 +20,7 @@ VALUES
 
 
 
-
+/*TODOS LOS NOMBRES TIENEN QUE SER ÚNICOS*/
 INSERT INTO place (name_place, description_place, schedule, link_place, id_icon, latitude, longitude)
 VALUES
     ("Museo del prado", "Museo Nacional del Prado - The Prado Museum is the main Spanish museum national art museum. It is widely considered to house one of the world's finest collections of Europe art, dating from the 12th century to the early 20th century, based on the former Spanish royal collection. We can find there the numerous works by Francisco Goya, Diego Velázquel or Peter Paul Rubens.", "10:00 - 19:00", "https://www.museodelprado.es/", 1, 40.41395, -3.69215),
@@ -50,39 +50,41 @@ VALUES
     ("Banco de España", "Banco de España is the central bank of Spain. Established in Madrid in 1782 by Charles III, today the bank is a member of the European System of Central Banks and is also Spain's national competent authority for banking supervision within the Single Supervisory Mechanism. ", "10:00 - 19:00", "https://www.bde.es/bde/es/", 10, 40.41872, -3.69443),
     ("Hospital Gregorio Marañon", "Hospital Gregorio Marañon - The Hospital General Universitario Gregorio Marañón is a public general hospital located at the neighborhood of Ibiza in Madrid, Spain, part of the hospital network of the Servicio Madrileño de Salud (SERMAS). It is one of the healthcare institutions associated to the Complutense University of Madrid (UCM) for the purpose of clinical internship.", "10:00 - 19:00", "https://www.comunidad.madrid/hospital/gregoriomaranon/", 9, 40.41966, -3.67130),
     ("Carrefour", "Carrefour - hypermarket of a French multinational retail and wholesaling corporation headquartered in Massy, France.", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.41793, -3.67321),
+    ("Restaurante Gloria Bendita Madrid", "restaurnat", "11:00 - 24:00", "https://restaurante.covermanager.com/gloria-bendita-madrid/", 8, 40.41692334893603, -3.709958079106618), 
+    ("McDonald's", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.41303322073356, -3.708161362955339), 
+    ("McDonald's1", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.41878383661649, -3.698891649019737), 
+    ("McDonald's2", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.43442127989187, -3.672823729221636), 
+    ("McDonald's3", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.399722141532166, -3.6687038566373915), 
+    ("McDonald's4", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.399722141532166, -3.6687038566373915), 
+    ("Burguer King", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.43947592622751, -3.717761637354845), 
+    ("Burguer King1", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.429349786474404, -3.667979838151149), 
+    ("Burguer King2", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.41288338822543, -3.6933857216330876), 
+    ("Burguer King3", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.44633580042253, -3.6666848951544684), 
+    ("Burguer King4", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.45107754453927, -3.711278044951719), 
+    ("Banco Santander", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.46071712519201, -3.6890883467524995), 
+    ("Banco Santander1", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.431585063104535, -3.7206740386812185), 
+    ("Banco Santander2", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.4166875613916, -3.7177557966336945), 
+    ("CaixaBank", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.46211091439578, -3.6983803485434295), 
+    ("CaixaBank1", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.414422800509996, -3.6976937030667174), 
+    ("CaixaBank2", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.4099788973523, -3.747818826046741), 
+    ("Farmacia Goya 12", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.426038044617265, -3.6853175733749484),
+    ("Farmacia Recoletos", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.42250969636057, -3.689694938391637),
+    ("Farmacia Molina 58", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.43845113202247, -3.6787944411932174),
+    ("Farmacia Intercontinental", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.430415552767876, -3.665919838202958),
+    ("Farmacia Narvaez", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.425253983221396, -3.675876197848758),
+    ("Farmacia Sol", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.418393056158685, -3.702054557534137),
+    ("Hospital La Princesa", "Hospitales", "10:00 - 19:00", "http://www.madrid.org", 9, 40.434724805833305, -3.675532880258475),
+    ("Hospital Universitario Santa Cristina", "Hospitales", "10:00 - 19:00", "http://www.madrid.org", 9, 40.422899103168206, -3.670726361808778),
+    ("Hospital Universitario San Francisco de Asís", "Hospitales", "10:00 - 19:00", "http://www.madrid.org", 9, 40.44419693499059, -3.6838584573837956),
+    ("Hospital General Universitario Gregorio Marañón", "Hospitales", "10:00 - 19:00", "http://www.madrid.org", 9, 40.42080815501913, -3.6715846689297726),
+    ("Dia", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.423612568849066, -3.6862617263894935),
+    ("La sirena", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.42674883612803, -3.6752753985044726),
+    ("Mercado de la Paz", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.42617651169036, -3.7020540237541177),
+    ("Mercado de san Miguel", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.44171485952008, -3.6789404341520386),
+    ("Sanchez Romero", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.428832114361796, -3.7065296516447104),
+    ("Mercadona", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.43463353522741, -3.7168810824955303),
     ("Universidad CEU San Pablo Monteprincipe", "Universidad CEU San Pablo Monteprincipe - campus of the University CEU San Pablo, part of the largest and most traditional private education institution in Spain, CEU, founded in 1933 by the Catholic Association of Propagandists (ACdP). Here we can find faculties: pharmacy, medicine and an institute of technology.", "10:00 - 19:00", "https://www.uspceu.com/", 1, 40.39801, -3.83492);
 
-/*INSERT INTO place (name_place, schedule, icon_category, coordinate)
-VALUES
-    ("Museo del prado", "10:00 - 19:00", 1, (40.41395, -3.69215)),
-    ("Museo Thyssen", "10:00 - 19:00", 1, (40.41618, -3.69490)),
-    ("Caixa Forum",  "10:00 - 20:00", 1, (40.41122, -3.69358)),
-    ("Museo Reina Sofia", "10:00 - 21:00", 1, (40.40805, -3.69460)),
-    ("Teatro Real", "10:00 - 18:30", 1, (40.41847, -3.71055)),
-    ("Jardines Sabatini", "9:00 - 22:00", 2, (40.42048, -3.71405)),
-    ("Palacio Real", "10:00 - 18:00", 1, (40.41803, -3.71438)),
-    ("Catedral Almudena", "10:00 - 20:30", 1, (40.41596, -3.71455)),
-    ("Parque del Retiro", "18:00 - 21:00", 2, (40.41317, -3.68307)),
-    ("Puerta de Alcala", "24h", 1, (40.42028, -3.68880)),
-    ("Plaza Mayor", "24h", 1, (40.41583, -3.70738)),
-    ("Museo Sorolla", "9:30 - 20:00", 1, (40.43548, -3.69247)),
-    ("Estadio Santiago Bernabeu", "9:30 - 19:00", 2, (40.45316, -3.68832)),
-    ("Las Cuatro Torres", "24h", 1, (40.47729, -3.68798)),
-    ("Museo del prado", "10:00 - 19:00", "IconMonumento", (40.41395, -3.69215)),
-    ("Estadio Civitas Metropolitano","10:00 - 19:00", "IconoDeportes", (40.43633, -3.59948)),
-    ("Parque de atracciones Warner", "10:00 - 19:00", 4, (40.44566, -3.65693)),
-    ("Centro comercial ABC Serrano", "10:00 - 19:00", "IconoWifi", (40.43256, -3.68720)),
-    ("Parque de Atracciones de Madrid",  "10:00 - 19:00", 4, (40.41203, -3.7500)),
-    ("Wizink Center",  "10:00 - 19:00", 6, (40.42400, -3.67173)),
-    ("Palacio Vistalegre Arena", "10:00 - 19:00", 6, (40.38614, -3.738)),
-    ("Ojala Bar", "10:00 - 19:00", 7, (40.42556, -3.70394)),
-    ("Cherry Pecas Bar", "10:00 - 19:00", 7, (40.44120, -3.71532)),
-    ("Oven Restaurante",  "10:00 - 19:00", 8, (40.42526, -3.70073)),
-    ("Steak Burger Restaurante", "10:00 - 19:00", 8, (40.41990, -3.69937)),
-    ("Banco de España", "10:00 - 19:00", "IconoBancos", (40.41872, -3.69443)),
-    ("Hospital Gregorio Marañon", "10:00 - 19:00", "IconoFarmacias", (40.41966, -3.67130)),
-    ("Carrefour", "10:00 - 19:00", "IconoSuper", (40.41793, -3.67321)),
-    ("Universidad CEU San Pablo Monteprincipe", "10:00 - 19:00", 1, (40.39801, -3.83492));*/
 
 
 INSERT INTO tag (name, description_tag)

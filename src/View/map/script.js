@@ -155,9 +155,25 @@ for(var i = 0; i < locationData.Locations.length; i++){
 
 
 const rutas = [];
+let buslat = null;
+let buslon = null;	
 
   function mostrar(e){
+    if(e.id == 'buscar'){
+      var busqueda = document.getElementById('nom0').value;
+      for(var i = 0; i < locationData.Locations.length; i++){
+        const location = locationData.Locations[i];
 
+        if(busqueda.toUpperCase() == location.name_place.toUpperCase()){
+          buslat = (location.latitude);
+          buslon = (location.longitude);
+        }
+      }
+
+      map.flyTo([buslat, buslon], 18);
+
+
+    }
     if(e.id == 'formRuta'){
       $("#ocultarMostrar").each(function() {
         displaying = $(this).css("display");
@@ -173,16 +189,15 @@ const rutas = [];
       });
 
     }if(e.id == 'hacerRuta'){
-
       var origen = document.getElementById('nom1').value;
       var destino = document.getElementById('nom2').value;
 
 
       for(var i = 0; i < locationData.Locations.length; i++){
         const location = locationData.Locations[i];
-        if(origen.toUpperCase() == location.description_place.toUpperCase()){
+        if(origen.toUpperCase() == location.name_place.toUpperCase()){
           rutas.push(location);
-        }else if(destino.toUpperCase() == location.description_place.toUpperCase()){
+        }else if(destino.toUpperCase() == location.name_place.toUpperCase()){
           rutas.push(location);
         }else{
          // console.log("No existe ningún destino con ese nombre");
@@ -203,7 +218,9 @@ const rutas = [];
 
         rutas.pop();
         rutas.pop();
+
     }
   }
+
 
 //});
