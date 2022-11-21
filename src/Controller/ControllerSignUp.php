@@ -22,7 +22,11 @@ else {
     if($_SESSION['ERROR_DUPLICATE']!=""){
         $controlador->displayMessage($_SESSION['ERROR_DUPLICATE']);
     }
-    $controlador->redirect("../View/register.html");
+    $controlador->setWrongInput(array(ucwords(strtolower($_POST["name"])), ucwords(strtolower($_POST["surname"])), strtolower($_POST["email"])));
+    $_SESSION["WRONG_INPUT"] = $controlador->getWrongInput();
+    //var_dump($controlador->getWrongInput());
+    $controlador->redirect('../View/register.php');
+    //$controlador->redirect('../View/register.php?array='.$_SESSION["WRONG_INPUT"][0]);
 }
 
 ?>
