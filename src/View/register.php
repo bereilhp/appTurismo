@@ -15,7 +15,11 @@
   <?php
   require_once '../Controller/Controller.php';
   session_start();
+
+  $backgroundColor = "white";
+  
   $array = $_SESSION['WRONG_INPUT'];
+
   //var_dump($array);
   ?>
 
@@ -33,19 +37,31 @@
           <h1 class="h3 mb-3 fw-normal">Register!</h1>
 
           <div>
-            <input class="form-control" type="name" id="name" name="name" placeholder="Marie Clarie" value="<?= $array[0] ?>" required />
+            <input class="form-control"
+            <?php
+            if ($array[3][0]) echo " style='background-color:red' ";
+            ?>
+             type="name" id="name" name="name" placeholder="Marie Clarie" value="<?= $array[0] ?>" required />
           </div>
 
           <div style="padding-top: 4%"></div>
 
           <div>
-            <input class="form-control" type="last name" id="last name" name="surname" placeholder="Stuart Miller" value="<?= $array[1] ?>" required />
+            <input class="form-control" 
+            <?php
+            if ($array[3][1]) echo " style='background-color:red' ";
+            ?>
+            type="last name" id="last name" name="surname" placeholder="Stuart Miller" value="<?= $array[1] ?>" required />
           </div>
 
           <div style="padding-top: 4%"></div>
 
           <div>
-            <input class="form-control" type="email" id="email" name="email" placeholder="marie@example.com" value="<?= $array[2] ?>" required />
+            <input class="form-control" 
+            <?php
+            if ($array[3][2] || $array[3][3]) echo " style='background-color:red' ";
+            ?>
+            type="email" id="email" name="email" placeholder="marie@example.com" value="<?= $array[2] ?>" required />
           </div>
 
           <div style="padding-top: 4%"></div>
