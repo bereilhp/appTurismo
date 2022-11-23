@@ -16,3 +16,7 @@ body {
     margin: auto;
 }
 
+.error{
+    background-color: red;
+}
+

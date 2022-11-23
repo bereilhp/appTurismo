@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="icon" type="image/png" href="./images/Favi.png" />
-  <link href="signing.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  <link href="signing.css" rel="stylesheet" />
 </head>
 
 <body class="text-center" style="background-color: rgb(5, 110, 133)">
@@ -37,9 +37,10 @@
           <h1 class="h3 mb-3 fw-normal">Register!</h1>
 
           <div>
-            <input class="form-control"
+            <input
             <?php
-            if ($array[3][0]) echo " style='background-color:red' ";
+            if ($array[3][0]) echo " class='form-control error' ";
+            else              echo " class='form-control' "; 
             ?>
              type="name" id="name" name="name" placeholder="Marie Clarie" value="<?= $array[0] ?>" required />
           </div>
@@ -47,9 +48,10 @@
           <div style="padding-top: 4%"></div>
 
           <div>
-            <input class="form-control" 
+            <input  
             <?php
-            if ($array[3][1]) echo " style='background-color:red' ";
+            if ($array[3][1]) echo " class='form-control error' ";
+            else              echo " class='form-control' "; 
             ?>
             type="last name" id="last name" name="surname" placeholder="Stuart Miller" value="<?= $array[1] ?>" required />
           </div>
@@ -57,9 +59,10 @@
           <div style="padding-top: 4%"></div>
 
           <div>
-            <input class="form-control" 
+            <input
             <?php
-            if ($array[3][2] || $array[3][3]) echo " style='background-color:red' ";
+            if ($array[3][2] || $array[3][3]) echo " class='form-control error' ";
+            else              echo " class='form-control' "; 
             ?>
             type="email" id="email" name="email" placeholder="marie@example.com" value="<?= $array[2] ?>" required />
           </div>
