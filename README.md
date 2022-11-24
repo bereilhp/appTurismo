@@ -23,6 +23,31 @@ En nuestro caso usamos varios plugins para hacer leaflet más potente como por e
 - ![Geolet](https://github.com/rhlt/leaflet-geolet): Un complemento de geolocalización simple pero altamente personalizable para Leaflet
 - ![Legend](https://github.com/ptma/Leaflet.Legend): Mostrar símbolos de leyenda y alternar superposiciones.
 
+
+Usamos también una API de routing llamada ![Leaflet Routing Machine API](https://www.liedman.net/leaflet-routing-machine/api/) para ayudarnos a implementar la creación de rutas. 
+
+Para añadir leaflet a nuetra applicación añadimos a nuestro código scripts y links css que nos deja utilizar toda la funcionanlidad de leaflet. 
+
+> Nota: Para mas información mirar este ![tutorial](https://leafletjs.com/examples/quick-start/)
+
+Añadimos estas dos conexiones a map.html para que funcione correctamente.
+
+Conexión a página de estilos de leaflet:
+```
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+````
+
+Conexión a todo la funcionalidad del mapa:
+```
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+```
+
+
 ## ¿Cómo replicar el entorno de pruebas?
 El entorno de pruebas, llamado PHPUnit, se ha instalado a través del uso de Composer (sistema de gestión de paquetes de PHP).  
 Para instalar y configurar el entorno de pruebas es necesario ejecutar los siguientes comandos (SO Ubuntu):
