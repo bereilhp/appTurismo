@@ -54,31 +54,15 @@ class PlaceDB
 	}
 
 
-	public function getDescriptionPlace(){
-		try{
-			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT name_place from place";
-			$stmt = $this->connection->prepare($sql);
-			$stmt->execute();
-			$result = $stmt->fetchAll(\PDO::FETCH_DEFAULT);
-			return $result;
-
-		}
-		catch (\PDOException $e) {
-			$this->exceptionSQL = $sql;
-			$this->exceptionPDO = $e->getMessage();
-			return null;
-		}
-	}
 
 	//super consulta
 	public function getPlaceData(){
 		try{
 			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT id_place, name_place, description_place, schedule, link_place, id_icon, latitude, longitude from place";
+			$sql = "SELECT * from place";
 			$stmt = $this->connection->prepare($sql);
 			$stmt->execute();
-			$result = $stmt->fetchAll(\PDO::FETCH_CLASS);
+			$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 			return $result;
 
 		}
@@ -89,22 +73,7 @@ class PlaceDB
 		}
 	}
 
-	public function getId_Icon(){
-		try{
-			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT id_icon from place";
-			$stmt = $this->connection->prepare($sql);
-			$stmt->execute();
-			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
-			return $result;
 
-		}
-		catch (\PDOException $e) {
-			$this->exceptionSQL = $sql;
-			$this->exceptionPDO = $e->getMessage();
-			return null;
-		}
-	}
 
 	public function getImage_Icon(){
 		try{
@@ -123,39 +92,6 @@ class PlaceDB
 		}
 	}
 
-	public function getLatitude(){
-		try{
-			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT latitude from place";
-			$stmt = $this->connection->prepare($sql);
-			$stmt->execute();
-			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
-			return $result;
-
-		}
-		catch (\PDOException $e) {
-			$this->exceptionSQL = $sql;
-			$this->exceptionPDO = $e->getMessage();
-			return null;
-		}
-	}
-
-	public function getLongitude(){
-		try{
-			$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$sql = "SELECT longitude from place";
-			$stmt = $this->connection->prepare($sql);
-			$stmt->execute();
-			$result = $stmt->fetchAll(\PDO::FETCH_COLUMN);
-			return $result;
-
-		}
-		catch (\PDOException $e) {
-			$this->exceptionSQL = $sql;
-			$this->exceptionPDO = $e->getMessage();
-			return null;
-		}
-	}
 
 
 

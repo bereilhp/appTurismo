@@ -164,8 +164,7 @@ class PlaceDBTest extends TestCase
                
     }
 
-
-    public function testGetDescriptionPlace():void
+    public function testGetPlaceData():void
     {
         $name_place = "Museo del prado";
         $schedule = "10:00 - 19:00";
@@ -176,94 +175,16 @@ class PlaceDBTest extends TestCase
         $obj = new App\Model\PlaceDB("madwayTest");
         $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
          
-	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
-		$stmt->execute();
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $expected = $obj->getDescriptionPlace();
-
-        assertEquals("Museo del prado", $expected[0],"no funciona");
+        $data = $obj->getPlaceData();
+        foreach($data as $row){
+            assertEquals($name_place, $row["name_place"], "Inserted name_place does not match the specified one");
+            assertEquals($schedule, $row["schedule"], "Inserted schedule does not match the specified one");
+            assertEquals($id_icon, $row["id_icon"], "Inserted id_icon does not match the specified one");
+            assertEquals($latitude, $row["latitude"], "Inserted latitude does not match the specified one");
+            assertEquals($longitude, $row["longitude"], "Inserted longitude does not match the specified one");
+        }
+        
+               
     }
-
-    public function testGetSchedule():void
-    {
-        $name_place = "Museo del prado";
-        $schedule = "10:00 - 19:00";
-        $id_icon = 1;
-        $latitude = 40.41395;
-        $longitude =  -3.69215;
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
-         
-	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
-		$stmt->execute();
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $expected = $obj->getSchedule();
-
-        assertEquals("10:00 - 19:00", $expected[0],"no funciona");
-    }
-
-    public function testGetIdIcon():void
-    {
-        $name_place = "Museo del prado";
-        $schedule = "10:00 - 19:00";
-        $id_icon = 1;
-        $latitude = 40.41395;
-        $longitude =  -3.69215;
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
-         
-	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
-		$stmt->execute();
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $expected = $obj->getId_Icon();
-
-        assertEquals(1, $expected[0],"no funciona");
-    }
-
-    public function testGetLatitude():void
-    {
-        $name_place = "Museo del prado";
-        $schedule = "10:00 - 19:00";
-        $id_icon = 1;
-        $latitude = 40.41395;
-        $longitude =  -3.69215;
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
-         
-	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
-		$stmt->execute();
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $expected = $obj->getLatitude();
-
-        assertEquals(40.41395, $expected[0],"no funciona");
-    }
-
-    public function testGetLongitude():void
-    {
-        $name_place = "Museo del prado";
-        $schedule = "10:00 - 19:00";
-        $id_icon = 1;
-        $latitude = 40.41395;
-        $longitude =  -3.69215;
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $obj->insertPlaceData($name_place, $schedule, $id_icon, $latitude, $longitude);
-         
-	    $stmt = $obj->getConnection()->prepare("SELECT * FROM place WHERE id_icon = $id_icon");
-		$stmt->execute();
-
-        $obj = new App\Model\PlaceDB("madwayTest");
-        $expected = $obj->getLongitude();
-
-        assertEquals(-3.69215, $expected[0],"no funciona");
-    }
-
 
 }
