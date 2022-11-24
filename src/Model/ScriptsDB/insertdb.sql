@@ -1,5 +1,4 @@
-/*Añadimos manualmente mediante PHPAdmin las imagenes de esta tabla*/
-/* system pwd desde MySQL para lanzar la petición*/
+
 INSERT INTO icon (icon_category, image_icon)
 VALUES
     ("IconoMonumento","https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/344/external-location-banking-and-financial-xnimrodx-lineal-color-xnimrodx.png"),
@@ -20,7 +19,6 @@ VALUES
 
 
 
-/*TODOS LOS NOMBRES TIENEN QUE SER ÚNICOS*/
 INSERT INTO place (name_place, description_place, schedule, link_place, id_icon, latitude, longitude)
 VALUES
     ("Museo del prado", "Museo Nacional del Prado - The Prado Museum is the main Spanish museum national art museum. It is widely considered to house one of the world's finest collections of Europe art, dating from the 12th century to the early 20th century, based on the former Spanish royal collection. We can find there the numerous works by Francisco Goya, Diego Velázquel or Peter Paul Rubens.", "10:00 - 19:00", "https://www.museodelprado.es/", 1, 40.41395, -3.69215),
@@ -52,19 +50,19 @@ VALUES
     ("Carrefour", "Carrefour - hypermarket of a French multinational retail and wholesaling corporation headquartered in Massy, France.", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.41793, -3.67321),
     ("Restaurante Gloria Bendita Madrid", "restaurnat", "11:00 - 24:00", "https://restaurante.covermanager.com/gloria-bendita-madrid/", 8, 40.41692334893603, -3.709958079106618), 
     ("McDonald's", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.41303322073356, -3.708161362955339), 
-    ("McDonald's1", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.41878383661649, -3.698891649019737), 
-    ("McDonald's2", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.43442127989187, -3.672823729221636), 
-    ("McDonald's3", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.399722141532166, -3.6687038566373915), 
-    ("McDonald's4", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.399722141532166, -3.6687038566373915), 
+    ("McDonald's", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.41878383661649, -3.698891649019737), 
+    ("McDonald's", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.43442127989187, -3.672823729221636), 
+    ("McDonald's", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.399722141532166, -3.6687038566373915), 
+    ("McDonald's", "Fast Food", "24h", "https://www.mcdonalds-mcdelivery.es/mc-delivery/home?utm_source=madrid&utm_medium=mybusiness&utm_campaign=madrid", 7, 40.399722141532166, -3.6687038566373915), 
     ("Burguer King", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.43947592622751, -3.717761637354845), 
-    ("Burguer King1", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.429349786474404, -3.667979838151149), 
-    ("Burguer King2", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.41288338822543, -3.6933857216330876), 
-    ("Burguer King3", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.44633580042253, -3.6666848951544684), 
-    ("Burguer King4", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.45107754453927, -3.711278044951719), 
+    ("Burguer King", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.429349786474404, -3.667979838151149), 
+    ("Burguer King", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.41288338822543, -3.6933857216330876), 
+    ("Burguer King", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.44633580042253, -3.6666848951544684), 
+    ("Burguer King", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.45107754453927, -3.711278044951719), 
     ("Banco Santander", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.46071712519201, -3.6890883467524995), 
-    ("Banco Santander1", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.431585063104535, -3.7206740386812185), 
+    ("Banco Santander", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.431585063104535, -3.7206740386812185), 
     ("CaixaBank", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.46211091439578, -3.6983803485434295), 
-    ("CaixaBank1", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.414422800509996, -3.6976937030667174), 
+    ("CaixaBank", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.414422800509996, -3.6976937030667174), 
     ("Farmacia Goya 12", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.426038044617265, -3.6853175733749484),
     ("Farmacia Recoletos", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.42250969636057, -3.689694938391637),
     ("Farmacia Molina 58", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.43845113202247, -3.6787944411932174),
