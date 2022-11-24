@@ -74,7 +74,7 @@ L.geolet({
     type: "image",
     url: "https://img.icons8.com/external-flatarticons-blue-flatarticons/344/external-location-coffee-shop-flatart-icons-lineal-color-flatarticons-1.png",
   },{
-    label: " Foot",
+    label: " Food",
     type: "image",
     url: "https://img.icons8.com/external-nawicon-outline-color-nawicon/344/external-location-food-delivery-nawicon-outline-color-nawicon.png",
   },{
@@ -206,8 +206,8 @@ let buslon = null;
 
       var control = L.Routing.control({
         waypoints: [
-           L.latLng([rutas[0].latitude, rutas[0].longitude]),
-           L.latLng([rutas[1].latitude, rutas[1].longitude])],
+           L.latLng([rutas[1].latitude, rutas[1].longitude]),
+           L.latLng([rutas[0].latitude, rutas[0].longitude])],
            createMarker: function()  {return null},
            router: new L.Routing.osrmv1({
             language: 'en',

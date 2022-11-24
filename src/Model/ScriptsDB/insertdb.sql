@@ -63,10 +63,8 @@ VALUES
     ("Burguer King4", "Fast Food", "24h", "https://www.burgerking.es/", 7, 40.45107754453927, -3.711278044951719), 
     ("Banco Santander", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.46071712519201, -3.6890883467524995), 
     ("Banco Santander1", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.431585063104535, -3.7206740386812185), 
-    ("Banco Santander2", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.4166875613916, -3.7177557966336945), 
     ("CaixaBank", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.46211091439578, -3.6983803485434295), 
     ("CaixaBank1", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.414422800509996, -3.6976937030667174), 
-    ("CaixaBank2", "Bank", "24h", "https://www.caixabank.es/?Origen=GMB", 10, 40.4099788973523, -3.747818826046741), 
     ("Farmacia Goya 12", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.426038044617265, -3.6853175733749484),
     ("Farmacia Recoletos", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.42250969636057, -3.689694938391637),
     ("Farmacia Molina 58", "Farmacia", "10:00 - 19:00", "https://www.farmaciashyg.es/", 9, 40.43845113202247, -3.6787944411932174),
@@ -83,6 +81,44 @@ VALUES
     ("Mercado de san Miguel", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.44171485952008, -3.6789404341520386),
     ("Sanchez Romero", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.428832114361796, -3.7065296516447104),
     ("Mercadona", "Supermarket", "10:00 - 19:00", "https://www.carrefour.es/", 14, 40.43463353522741, -3.7168810824955303),
+    ("Parque Ríos Rosas", "Parque", "10:00 - 20:00", "https://www.chamberi30dias.es/noticias/abre-el-parque-de-rios-rosas-el-primero-de-los-tres-prometidos-por-el-canal", 2, 40.44040067712061, -3.7009683245510394),
+    ("Parque de Santander", "Parque", "8:00 - 23:00", "http://www.esmadrid.com/", 2, 40.444287349580115, -3.709680139721373),
+    ("Dehesa de la Villa", "Parque", "24h", "http://www.esmadrid.com/", 2, 40.45951066888686, -3.720154172877343),
+    ("Real Jardín Botánico Alfonso XIII", "Parque", "24h", "http://www.esmadrid.com/", 2, 40.447329488658255, -3.726195234330417),
+    ("Parque del Oeste", "Parque", "24h", "http://www.esmadrid.com/", 2, 40.43578406961277, -3.7226467927680686),
+    ("Campo del moro", "Parque", "24h", "http://www.esmadrid.com/", 2, 40.41713707905363, -3.718375079648447),
+    ("Casa Campo", "Parque", "24h", "http://www.esmadrid.com/", 2, 40.420534491781645, -3.727210636362153),
+    ("Parque de San Isidro", "Parque", "24h", "http://www.esmadrid.com/", 2,  40.397303727450264, -3.7255876288902856),
+    ("Caja Mágica", "Caja Mágica", "9:30 - 19:00", "https://www.esmadrid.com/informacion-turistica/madrid-caja-magica", 4, 40.36899556319067, -3.684483617339239),
+    ("Ciudad Deportiva del Real Madrid, Camino de Sintra, Valdebebas", "Real madrid", "9:30 - 19:00", "https://www.realmadrid.com/estadio-santiago-bernabeu", 4,     40.48012300768005, -3.6127078308265768),
+    ("Bichopalo Restaurante", "Restaurante de carne", "10:00 - 19:00", "http://www.madrid.org", 8, 40.44368777968586, -3.6975892726965753),
+    ("Restaurante Barrera", "Restaurante de pasta", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43810231607572, -3.698096355638388),
+    ("El Picaporte", "Restaurante de mexicano", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43746260944251, -3.694051493369608),
+    ("Restaurante El Viso", "Restaurante de pasta", "10:00 - 19:00", "http://www.madrid.org", 8, 40.4457383439822, -3.684963685934556),
+    ("Restaurante El Yate", "Restaurante de carne", "10:00 - 19:00", "http://www.madrid.org", 8, 40.4364230731818, -3.6913198980712107),
+    ("Leña Madrid. Las brasas x Dani García", "Restaurante de carne brasas", "10:00 - 19:00", "https://grupodanigarcia.com/es/", 8, 40.43982149749217, -3.6911623060347645),
+    ("Restaurante Mutis", "Restaurante de atún", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43726269987138, -3.6882731186999216),
+    ("La Madreña Castellana", "Restaurante de pasta", "10:00 - 19:00", "https://lamadrena.com/", 8, 40.43968410613542, -3.69017319841583),
+    ("BiBo Madrid by Dani García", "Restaurante de pescado", "10:00 - 19:00", "https://www.grupodanigarcia.com/es/restaurantes-bibo/bibo-madrid/?utm_source=GBUSINESS", 8, 40.43604680490821, -3.6882053979202327),
+    ("Restaurante Torrenostra", "Restaurante de pasta", "10:00 - 19:00", "http://www.madrid.org", 8, 40.444613950605685, -3.695859993924038),
+    ("Le Coq", "Restaurante de pollo", "10:00 - 19:00", "http://www.madrid.org", 8, 40.44207201452997, -3.714240713200948),
+    ("Taberna la Daniela", "Restaurante de pasta", "10:00 - 19:00", "http://www.madrid.org", 8, 40.45083080228535, -3.6886467772949607),
+    ("Restaurante El Cardeño", "Restaurante de tapas", "10:00 - 19:00", "http://www.madrid.org", 8, 40.4504849620634, -3.6849334360281345),
+    ("Ochenta Grados Castellana", "Restaurante de pizza", "10:00 - 19:00", "http://www.madrid.org", 8, 40.4502077626746, -3.6901640735563612),
+    ("Restaurante Masterchef", "Restaurante de masterchef", "10:00 - 19:00", "http://www.madrid.org", 8, 40.44342968371789, -3.6821538826788687),
+    ("Carbón", "Restaurante de carne", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43303914535197, -3.6781995633883198),
+    ("Bendita Locura Coffee & Dreams", "Restaurante de pasta", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43552384629874, -3.679509120060144),
+    ("Marieta", "Restaurante chic que ofrece un menú extenso y creativo de gastronomía internacional, brunches y cócteles, con sesiones de DJs.", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43417826714633, -3.6874878821016117),
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
     ("Universidad CEU San Pablo Monteprincipe", "Universidad CEU San Pablo Monteprincipe - campus of the University CEU San Pablo, part of the largest and most traditional private education institution in Spain, CEU, founded in 1933 by the Catholic Association of Propagandists (ACdP). Here we can find faculties: pharmacy, medicine and an institute of technology.", "10:00 - 19:00", "https://www.uspceu.com/", 1, 40.39801, -3.83492);
 
 
