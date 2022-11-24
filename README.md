@@ -17,18 +17,18 @@ Los pasos para instalar XAMPP, en SO Ubuntu, han sido:
 
 ### Leaflet
 
-![Leaflet](https://leafletjs.com/) es la principal biblioteca JavaScript de código abierto para mapas interactivos. Está diseñada teniendo en cuenta la simplicidad, el rendimiento y la facilidad de uso. Funciona de manera eficiente en todas las principales plataformas móviles y de escritorio, se puede ampliar con muchos plugins, tiene una API, fácil de usar y bien documentada y un código fuente simple y legible al que es un placer contribuir.
+[Leaflet](https://leafletjs.com/) es la principal biblioteca JavaScript de código abierto para mapas interactivos. Está diseñada teniendo en cuenta la simplicidad, el rendimiento y la facilidad de uso. Funciona de manera eficiente en todas las principales plataformas móviles y de escritorio, se puede ampliar con muchos plugins, tiene una API, fácil de usar y bien documentada y un código fuente simple y legible al que es un placer contribuir.
 
 En nuestro caso usamos varios plugins para hacer leaflet más funcional como por ejemplo:
-- ![Geolet](https://github.com/rhlt/leaflet-geolet): Un complemento de geolocalización simple pero altamente personalizable para Leaflet
-- ![Legend](https://github.com/ptma/Leaflet.Legend): Mostrar símbolos de leyenda y alternar superposiciones.
+- [Geolet](https://github.com/rhlt/leaflet-geolet): Un complemento de geolocalización simple pero altamente personalizable para Leaflet
+- [Legend](https://github.com/ptma/Leaflet.Legend): Mostrar símbolos de leyenda y alternar superposiciones.
 
 
-Usamos también una API de routing llamada ![Leaflet Routing Machine API](https://www.liedman.net/leaflet-routing-machine/api/) para ayudarnos a implementar la creación de rutas. 
+Usamos también una API de routing llamada [Leaflet Routing Machine API](https://www.liedman.net/leaflet-routing-machine/api/) para ayudarnos a implementar la creación de rutas. 
 
 Para añadir leaflet a nuetra aplicación añadimos a nuestro código scripts y links css que nos deja utilizar toda la funcionanlidad de leaflet. 
 
-> Nota: Para mas información mirar este ![tutorial](https://leafletjs.com/examples/quick-start/)
+> Nota: Para mas información mirar este [tutorial](https://leafletjs.com/examples/quick-start/)
 
 Añadimos estas dos conexiones a map.html para que funcione correctamente.
 
