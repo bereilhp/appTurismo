@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 session_start();
 
 $_SESSION['ID_USER']=0;

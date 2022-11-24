@@ -31,7 +31,7 @@ for(var url of locationData.image_icon) {
 
 //setup map
 //$(document).ready(function () {
-var map = L.map('map').setView([40.416775, -3.703790], 14);
+var map = L.map('map').setView([40.43078, -3.69516], 14);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18
 }).addTo(map);

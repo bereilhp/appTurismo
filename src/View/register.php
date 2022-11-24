@@ -14,6 +14,8 @@
 
   <?php
   require_once '../Controller/Controller.php';
+
+  
   session_start();
 
   $backgroundColor = "white";

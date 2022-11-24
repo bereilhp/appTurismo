@@ -109,16 +109,27 @@ VALUES
     ("Carbón", "Restaurante de carne", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43303914535197, -3.6781995633883198),
     ("Bendita Locura Coffee & Dreams", "Restaurante de pasta", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43552384629874, -3.679509120060144),
     ("Marieta", "Restaurante chic que ofrece un menú extenso y creativo de gastronomía internacional, brunches y cócteles, con sesiones de DJs.", "10:00 - 19:00", "http://www.madrid.org", 8, 40.43417826714633, -3.6874878821016117),
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    ("Copernico", "Discoteca", "23:00 - 6:00", "http://www.madrid.org", 6, 40.43542603579415, -3.7136463326828832),
+    ("Penelope", "Discoteca", "23:00 - 6:00", "http://www.madrid.org", 6, 40.43599829999532, -3.7164795397244568),
+    ("The Bassement Club", "Discoteca", "23:00 - 6:00", "http://www.madrid.org", 6, 40.432917223841294, -3.7102698757992942),
+    ("Sala Look", "Discoteca", "23:00 - 6:00", "http://www.madrid.org", 6, 40.438880782292415, -3.709583670814574),
+    ("Posh Club", "Discoteca", "23:00 - 6:00", "http://www.madrid.org", 6, 40.450695392568946, -3.6948858419330284),
+    ("Nuit", "Discoteca", "23:00 - 6:00", "http://www.madrid.org", 6, 40.449057569100276, -3.694994601231328),
+    ("La pocha", "Discoteca", "23:00 - 6:00", "http://www.madrid.org", 6, 40.446060737067874, -3.6989430649251602),
+    ("Corte Ingles Castellana", "Centro Comercial", "10:00 - 22:00", "http://www.madrid.org", 5, 40.44727862643485, -3.69408680611562),
+    ("principe Pio", "Centro Comercial", "10:00 - 22:00", "http://www.madrid.org", 5, 40.42482754533305, -3.7169931020462594),
+    ("Centro Comercial Plaza Río 2", "Centro Comercial", "10:00 - 22:00", "http://www.madrid.org", 5, 40.39100293555581, -3.701416553847827),
+    ("Cinerama", "Cine", "10:00 - 19:00", "http://www.madrid.org", 11, 40.42593433208948, -3.6737901090201075),
+    ("Cines Verdi", "Cine", "10:00 - 19:00", "http://www.madrid.org", 11, 40.43769579602411, -3.7040658092838705),
+    ("Cines Callao", "Cine", "10:00 - 19:00", "http://www.madrid.org", 11, 40.421427469347634, -3.706383237824867),
+    ("Cines Renoir Princesa", "Cine", "10:00 - 19:00", "http://www.madrid.org", 11, 40.42672000747063, -3.712563046985621),
+    ("Cines Renoir Retiro", "Cine", "10:00 - 19:00", "http://www.madrid.org", 11, 40.421362126762226, -3.6759133437631917),
+    ("Cine Estudio del Circulo de Bellas Artes", "Cine", "10:00 - 19:00", "http://www.madrid.org", 11, 40.419728541655786, -3.695482740331609),
+    ("SALA EQUIS", "Cine", "10:00 - 19:00", "http://www.madrid.org", 11, 40.41352055644995, -3.7057824227165352),    
+    ("Hospital Vithas Madrid La Milagrosa", "Hospitales", "10:00 - 19:00", "http://www.madrid.org", 9, 40.43718134594504, -3.695644778588726),
+    ("Teatro Amaya", "Cine", "10:00 - 19:00", "http://www.madrid.org", 11, 40.435327366781, -3.697101986645859),
+    ("Parroquia de Santa Teresa y Santa Isabel", "Cine", "10:00 - 19:00", "http://www.madrid.org", 13, 40.43500810538126, -3.6992113016167707 ),
+    ("ING", "Bank", "24h", "http://www.bancosantander.es/", 10, 40.436087105740874, -3.6993462269519313), 
     ("Universidad CEU San Pablo Monteprincipe", "Universidad CEU San Pablo Monteprincipe - campus of the University CEU San Pablo, part of the largest and most traditional private education institution in Spain, CEU, founded in 1933 by the Catholic Association of Propagandists (ACdP). Here we can find faculties: pharmacy, medicine and an institute of technology.", "10:00 - 19:00", "https://www.uspceu.com/", 1, 40.39801, -3.83492);
 
 
