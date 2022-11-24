@@ -6,7 +6,7 @@ CREATE TABLE user (id_user INT NOT NULL AUTO_INCREMENT, name VARCHAR(30) NOT NUL
 
 CREATE TABLE icon (id_icon INT NOT NULL AUTO_INCREMENT, icon_category VARCHAR(50) NOT NULL UNIQUE, image_icon VARCHAR(200) NOT NULL, PRIMARY KEY (id_icon));
 
-CREATE TABLE place (id_place INT NOT NULL AUTO_INCREMENT, name_place VARCHAR(200) NOT NULL UNIQUE, description_place VARCHAR(2000) NOT NULL, schedule VARCHAR(50) NOT NULL, link_place VARCHAR(100) NOT NULL, id_icon INT NOT NULL, latitude decimal(7,5) NOT NULL, longitude decimal(7,5) NOT NULL, PRIMARY KEY (id_place), FOREIGN KEY (id_icon) REFERENCES icon(id_icon));
+CREATE TABLE place (id_place INT NOT NULL AUTO_INCREMENT, name_place VARCHAR(200) NOT NULL UNIQUE, description_place VARCHAR(2000) NOT NULL, schedule VARCHAR(50) NOT NULL, link_place VARCHAR(200) NOT NULL, id_icon INT NOT NULL, latitude decimal(7,5) NOT NULL, longitude decimal(7,5) NOT NULL, PRIMARY KEY (id_place), FOREIGN KEY (id_icon) REFERENCES icon(id_icon));
 
 CREATE TABLE userPlace (id_user INT NOT NULL, id_place INT NOT NULL, PRIMARY KEY (id_user, id_place), FOREIGN KEY (id_user) REFERENCES user(id_user), FOREIGN KEY (id_place) REFERENCES place(id_place));
 
