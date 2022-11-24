@@ -26,7 +26,7 @@ En nuestro caso usamos varios plugins para hacer leaflet más funcional como por
 
 Usamos también una API de routing llamada ![Leaflet Routing Machine API](https://www.liedman.net/leaflet-routing-machine/api/) para ayudarnos a implementar la creación de rutas. 
 
-Para añadir leaflet a nuetra applicación añadimos a nuestro código scripts y links css que nos deja utilizar toda la funcionanlidad de leaflet. 
+Para añadir leaflet a nuetra aplicación añadimos a nuestro código scripts y links css que nos deja utilizar toda la funcionanlidad de leaflet. 
 
 > Nota: Para mas información mirar este ![tutorial](https://leafletjs.com/examples/quick-start/)
 
