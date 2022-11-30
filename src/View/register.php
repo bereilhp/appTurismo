@@ -1,3 +1,13 @@
+<?php
+  require_once '../Controller/Controller.php';
+
+  if(!isset($_SESSION)) { 
+    session_start(); 
+  }
+
+  error_reporting(E_ERROR | E_PARSE);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,13 +23,8 @@
 <body class="text-center" style="background-color: rgb(5, 110, 133)">
 
   <?php
-  require_once '../Controller/Controller.php';
-
-  
-  session_start();
 
   $backgroundColor = "white";
-  
   $array = $_SESSION['WRONG_INPUT'];
 
   //var_dump($array);
