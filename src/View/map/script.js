@@ -159,21 +159,6 @@ let buslat = null;
 let buslon = null;	
 
   function mostrar(e){
-    if(e.id == 'buscar'){
-      var busqueda = document.getElementById('nom0').value;
-      for(var i = 0; i < locationData.Locations.length; i++){
-        const location = locationData.Locations[i];
-
-        if(busqueda.toUpperCase() == location.name_place.toUpperCase()){
-          buslat = (location.latitude);
-          buslon = (location.longitude);
-        }
-      }
-
-      map.flyTo([buslat, buslon], 18);
-
-
-    }
     if(e.id == 'formRuta'){
       $("#ocultarMostrar").each(function() {
         displaying = $(this).css("display");
@@ -224,3 +209,84 @@ let buslon = null;
 
 
 //});
+
+//////////////////////////////////////// search + autocomplete ////////////////////////////////
+function getCoords(placeName){
+  for(let i = 0; i < locationData.Locations.length; i++){
+    const location = locationData.Locations[i];
+    if(placeName.toUpperCase() == location.name_place.toUpperCase()){
+      buslat = (location.latitude);
+      buslon = (location.longitude);
+      break;
+    }
+  }
+  return [buslat, buslon]
+}
+
+const searchWrappers = document.querySelectorAll(".search-input");
+let elementList = [];
+for (let i = 0; i < searchWrappers.length; i++) {
+  let searchWrapper = searchWrappers[i];
+  let inputBox = searchWrapper.querySelector("input");
+  let suggBox = searchWrapper.querySelector(".autocom-box");
+  let icon = searchWrapper.querySelector(".icon");
+  elementList[i] = {
+    searchWrapper: searchWrapper,
+    inputBox: inputBox,
+    suggBox: suggBox,
+    icon: icon
+  }
+  if(icon){
+    icon.onclick = ()=>{      
+      const coords = getCoords(inputBox.value);
+      if(coords){
+        map.flyTo(coords, 18);   
+      }   
+    }
+  }
+  // any key pressed on the input search
+  inputBox.onkeyup = (e)=>{
+      let userData = e.target.value; //input data
+      let emptyArray = [];
+      if(userData){
+
+        emptyArray = locationData.Locations.filter((data)=>{          
+            return data.name_place.toUpperCase().indexOf(userData.toUpperCase()) > -1;
+        });
+        
+        emptyArray = emptyArray.map((data)=>{
+            // passing return data inside li tag
+            return data = `<li>${data.name_place}</li>`;
+        });
+        searchWrapper.classList.add("active"); //show autocomplete box
+        showSuggestions(emptyArray);
+
+        let allList = suggBox.querySelectorAll("li");
+        for (let j = 0; j < allList.length; j++) {
+            //adding onclick attribute in all li tag
+            allList[j].setAttribute("onclick", `select(this, ${i})`);
+        }
+      }else{
+          searchWrapper.classList.remove("active"); //hide autocomplete box
+      }
+  }
+
+  
+  function select(element, index){
+      let selectData = element.textContent;
+      elementList[index].inputBox.value = selectData;
+      elementList[index].searchWrapper.classList.remove("active");
+  }
+  function showSuggestions(list){
+      let listData;
+      if(!list.length){
+          userValue = inputBox.value;
+          listData = `<li>${userValue}</li>`;
+      }else{
+        listData = list.join('');
+      }
+      suggBox.innerHTML = listData;
+  }
+}
+
+////////////////////////////////////////////////////////

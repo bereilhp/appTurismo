@@ -2,51 +2,6 @@
 <html>
 
 <head>
-	<style>
-
-		#map{
-			width: 100%;
-			height: 740px;
-			box-shadow: 5px 5px 5px #888;
-		}
-
-		.contenido{
-			width: 100%;
-		}	
-
-		.title{
-			font-size: 20px;
-			font-weight: bold;
-			padding-left: 10px;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			width: 97%;
-		}
-
-		.left{
-			padding-left: 10px;
-			padding-top: 10px;
-			margin-left: 57px;
-			float: left;
-			position: relative;
-			width: 68%;
-			height: auto;
-		}
-
-		.right{
-			padding-top: 10px;
-			padding-left: 10px;
-			margin-left: 10px;
-			position: relative;
-			float: left;
-			width: 25%;
-			height: auto;
-		}
-
-		
-
-	</style>
-
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="#">
 
@@ -57,7 +12,9 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-	
+	<link rel="stylesheet" href="estilo.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
@@ -86,7 +43,7 @@
 	
 
 	
-
+	
 
 </head>
 
@@ -98,18 +55,39 @@
 		<div class="right">
 			<div> <img src="../images/logoMadWaySinFondo(1).png" alt="MadWayLogo" width="100%" style="padding-top: 30px"/></div>
 			<div class="title"> Get information about a place </div>
-			<input type="text" class="form-control" id="nom0"><br><button class="btn btn-primary" id="buscar" onclick="mostrar(this)">Search</button>
-			<button class="btn btn-primary" id="formRuta" onclick="mostrar(this)">Directions</button>
-			<br>
-			<br>
-			<div id="ocultarMostrar" style="display: none;">
-			<p>From:</p>
-			<input type="text" class="form-control" id="nom1">
-			<p>To:</p>
-			<input type="text" class="form-control" id="nom2">
-			<br>
-			<button class="btn btn-primary" type="button" id="hacerRuta" onclick="mostrar(this)">GO</button>
-			<br>
+
+			<div class="wrapper">
+				<div class="search-input">
+				  	<input type="text" class="form-control" id="nom0" placeholder="Type to search..">
+				  	<div class="autocom-box">
+						<!-- suggestions are inserted here from js -->
+				  	</div>
+					<div class="icon"><i class="fas fa-search"></i></div>
+				</div>
+			</div>
+
+			<div class ="wrapper">
+				<button class="btn btn-primary" id="formRuta" onclick="mostrar(this)">Directions</button>
+
+				<div id="ocultarMostrar" style="display: none;">
+					<p>From:</p>
+					<div class="search-input">
+						<input type="text" class="form-control" id="nom1">
+						<div class="autocom-box">
+							<!-- suggestions are inserted here from js -->
+						</div>
+					</div>
+					
+					<p>To:</p>
+					<div class="search-input">
+						<input type="text" class="form-control" id="nom2">
+						<div class="autocom-box">
+							<!-- suggestions are inserted here from js -->
+						</div>
+					</div>
+					<button class="btn btn-primary" type="button" id="hacerRuta" onclick="mostrar(this)">GO</button>	
+				</div>
+			
 			</div>
 		</div>
 	</div>
