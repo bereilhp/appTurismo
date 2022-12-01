@@ -44,6 +44,7 @@ L.geolet({
 
 
  L.control.Legend({
+  collapsed: true, 
   position: "bottomright",
   legends: [{
     label: " Monuments",
