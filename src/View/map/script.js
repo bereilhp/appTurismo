@@ -44,7 +44,7 @@ L.geolet({
 
 
  L.control.Legend({
-  collapsed: true, 
+  collapsed: true,
   position: "bottomright",
   legends: [{
     label: " Monuments",
@@ -129,14 +129,31 @@ function formatPopup(data){
   sel.find("div.popup").on('click', () => visibilityChange(sel.find(".popup-big")));
   sel.find('#name').text(data.Nombre);
   sel.find('#description').text(data.Description);
+  sel.find('#link').attr("href", data.Link);
+  sel.find('#set-start').on('click', () => setPlace('start', data.Nombre));
+  sel.find('#set-end').on('click', () => setPlace('end', data.Nombre));
   return sel[0];
 }
 
 function visibilityChange(sel){
   if (sel.css("display") == "none")
-    sel.css("display","inline");
-  else if (sel.css("display") == "inline")
+    sel.css("display","block");
+  else if (sel.css("display") == "block")
     sel.css("display","none");
+}
+
+function setPlace(dir, name){
+  if(dir == "start") {
+    $("#nom1").val(name);
+  }
+  if(dir == "end") {
+    $("#nom2").val(name);
+  }
+
+  if($("#ocultarMostrar").css("display") == "none")
+    mostrar({id: "formRuta"});
+
+
 }
 
 //draw map markers
@@ -149,6 +166,7 @@ for(var i = 0; i < locationData.Locations.length; i++){
     ID: location.id_place,
     Nombre: location.name_place, //hay que cambiar esta linea luego --------------------------------------------------------------------
     Description: location.description_place,
+    Link: location.link_place,
     Icono: Icons[location.id_icon - 1] //por array indexing
   });
 }
@@ -157,7 +175,7 @@ for(var i = 0; i < locationData.Locations.length; i++){
 
 const rutas = [];
 let buslat = null;
-let buslon = null;	
+let buslon = null;
 
   function mostrar(e){
     if(e.id == 'formRuta'){
@@ -238,11 +256,11 @@ for (let i = 0; i < searchWrappers.length; i++) {
     icon: icon
   }
   if(icon){
-    icon.onclick = ()=>{      
+    icon.onclick = ()=>{
       const coords = getCoords(inputBox.value);
       if(coords){
-        map.flyTo(coords, 18);   
-      }   
+        map.flyTo(coords, 18);
+      }
     }
   }
   // any key pressed on the input search
@@ -251,10 +269,10 @@ for (let i = 0; i < searchWrappers.length; i++) {
       let emptyArray = [];
       if(userData){
 
-        emptyArray = locationData.Locations.filter((data)=>{          
+        emptyArray = locationData.Locations.filter((data)=>{
             return data.name_place.toUpperCase().indexOf(userData.toUpperCase()) > -1;
         });
-        
+
         emptyArray = emptyArray.map((data)=>{
             // passing return data inside li tag
             return data = `<li>${data.name_place}</li>`;
@@ -272,7 +290,7 @@ for (let i = 0; i < searchWrappers.length; i++) {
       }
   }
 
-  
+
   function select(element, index){
       let selectData = element.textContent;
       elementList[index].inputBox.value = selectData;
