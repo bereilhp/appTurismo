@@ -126,7 +126,8 @@ function formatPopup(data){
   xhr.open("GET", "popup.html?shit="+ Math.random().toString(), false) //WARNING: "?shit="+ Math.random().toString()" is using to testing popups only!
   xhr.send();
   let sel = $('<div>', { id: "M"+ data.ID, html: xhr.responseText});
-  sel.find("div.popup").on('click', () => visibilityChange(sel.find(".popup-big")));
+  sel.find("div.popup-small").on('click', () => visibilityChange(sel.find("div.popup")));
+  //sel.find("div.popup").on('click', () => visibilityChange(sel.find(".popup-big")));
   sel.find('#name').text(data.Nombre);
   sel.find('#description').text(data.Description);
   sel.find('#link').attr("href", data.Link);
@@ -136,10 +137,14 @@ function formatPopup(data){
 }
 
 function visibilityChange(sel){
-  if (sel.css("display") == "none")
+  /*if (sel.css("display") == "none")
     sel.css("display","block");
   else if (sel.css("display") == "block")
-    sel.css("display","none");
+    sel.css("display","none");*/
+  if (sel.hasClass("expanded"))
+    sel.removeClass("expanded");
+  else
+    sel.addClass("expanded");
 }
 
 function setPlace(dir, name){
@@ -174,6 +179,8 @@ for(var i = 0; i < locationData.Locations.length; i++){
 
 
 const rutas = [];
+let locationOrigen;
+let locationDestino;
 let buslat = null;
 let buslon = null;
 
@@ -196,13 +203,14 @@ let buslon = null;
       var origen = document.getElementById('nom1').value;
       var destino = document.getElementById('nom2').value;
 
-
       for(var i = 0; i < locationData.Locations.length; i++){
         const location = locationData.Locations[i];
         if(origen.toUpperCase() == location.name_place.toUpperCase()){
-          rutas.push(location);
+          //rutas.push(location);
+          locationOrigen = location;
         }else if(destino.toUpperCase() == location.name_place.toUpperCase()){
-          rutas.push(location);
+          //rutas.push(location);
+          locationDestino = location;
         }else{
          // console.log("No existe ningún destino con ese nombre");
         }
@@ -210,8 +218,10 @@ let buslon = null;
 
       var control = L.Routing.control({
         waypoints: [
-           L.latLng([rutas[1].latitude, rutas[1].longitude]),
-           L.latLng([rutas[0].latitude, rutas[0].longitude])],
+           L.latLng([locationOrigen.latitude, locationOrigen.longitude]),
+           L.latLng([locationDestino.latitude, locationDestino.longitude])],
+           //L.latLng([rutas[0].latitude, rutas[0].longitude]),
+           //L.latLng([rutas[1].latitude, rutas[1].longitude])],
            createMarker: function()  {return null},
            router: new L.Routing.osrmv1({
             language: 'en',
@@ -220,8 +230,8 @@ let buslon = null;
 
         }).addTo(map);
 
-        rutas.pop();
-        rutas.pop();
+        //rutas.pop();
+        //rutas.pop();
 
     }
   }
